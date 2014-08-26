@@ -1,0 +1,28 @@
+#Files and folders specified here will never be tracked.
+
+*.log
+*.int
+*.rsc
+*.dmb
+*.lk
+*.backup
+*.ban
+*.bdb
+*.sav
+
+#Compiled files and other files generated during compilation.
+thumbs.db
+info.json
+/config/admins.txt
+/config/moderators.txt
+/config/dbconfig.txt
+/data/logs
+/data/player_saves
+/data/ban_unban_log.txt
+/data/investigate
+/maps/backup
+/tools/Runtime Condenser/Output.txt
+/tools/Runtime Condenser/Input.txt
+/data/mode.txt
+*.int
+NTstation13.int
