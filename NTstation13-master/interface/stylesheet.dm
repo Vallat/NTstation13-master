@@ -23,8 +23,8 @@ em						{font-style: normal;	font-weight: bold;}
 .name					{					font-weight: bold;}
 
 .say					{}
-.deadsay				{color: #5c00e6;}
-.radio					{color: #008000;}
+.deadsay				{color: #0000CD;}
+.radio					{color: #FFD700;}
 .sciradio				{color: #993399;}
 .comradio				{color: #ACA82D;}
 .secradio				{color: #B22222;}
@@ -51,7 +51,7 @@ h1.alert, h2.alert		{color: #000000;}
 .danger					{color: #ff0000;}
 .warning				{color: #ff0000;	font-style: italic;}
 .announce 				{color: #228b22;	font-weight: bold;}
-.rose					{color: #ff5050;}
+.rose					{color: #8B0000;}
 .info					{color: #0000CC;}
 .notice					{color: #000099;}
 .unconscious			{color: #0000FF;	font-weight: bold;}
