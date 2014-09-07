@@ -370,7 +370,7 @@ var/list/blood_splatter_icons = list()
 	return pass_flags&passflag
 
 /atom/proc/isinspace()
-	if(istype(get_turf(src), /turf/space))
+	if(istype(get_turf(src), /turf/space/k))
 		return 1
 	else
 		return 0

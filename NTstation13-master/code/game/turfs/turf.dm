@@ -49,6 +49,7 @@
 /turf/ex_act(severity)
 	return 0
 
+
 /turf/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
 	if(movement_disabled && usr.ckey != movement_disabled_exception)
 		usr << "\red Movement is admin-disabled." //This is to identify lag problems
@@ -115,7 +116,7 @@
 		O.update_gravity(has_gravity)
 		if(!has_gravity)
 			inertial_drift(O)
-		else if(!istype(src, /turf/space))
+		else if(!istype(src, /turf/space/k))
 			O.inertia_dir = 0
 	..()
 	var/objects = 0
@@ -170,7 +171,7 @@
 			O.hide(src.intact)
 
 // override for space turfs, since they should never hide anything
-/turf/space/levelupdate()
+/turf/space/k/levelupdate()
 	for(var/obj/O in src)
 		if(O.level == 1)
 			O.hide(0)
@@ -221,7 +222,7 @@
 
 		for(var/direction in cardinal)//Only use cardinals to cut down on lag
 			var/turf/T = get_step(src,direction)
-			if(istype(T,/turf/space))//Counted as no air
+			if(istype(T,/turf/space/k))//Counted as no air
 				turf_count++//Considered a valid turf for air calcs
 				continue
 			else if(istype(T,/turf/simulated/floor))
@@ -242,7 +243,7 @@
 			air_master.add_to_active(src)
 
 /turf/proc/ReplaceWithLattice()
-	src.ChangeTurf(/turf/space)
+	src.ChangeTurf(/turf/space/k)
 	new /obj/structure/lattice( locate(src.x, src.y, src.z) )
 
 /turf/proc/kill_creatures(mob/U = null)//Will kill people/creatures and damage mechs./N
@@ -389,3 +390,5 @@
 			M.Weaken(w_amount)
 			return 1
 	return 0 // no success. Used in clown pda and wet floors
+
+

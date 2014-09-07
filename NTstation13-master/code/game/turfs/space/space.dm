@@ -3,18 +3,20 @@
 	name = "\proper space"
 	icon_state = "0"
 
-	temperature = TCMB
-	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
-	heat_capacity = 700000
+	temperature = PLASMA_MINIMUM_BURN_TEMPERATURE
+	thermal_conductivity = 0.040
+	heat_capacity = 10000
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
-/turf/space/New()
+turf/space/New()
 	if(!istype(src, /turf/space/transit))
 		icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 
-/turf/space/attack_paw(mob/user as mob)
+turf/space/attack_paw(mob/user as mob)
 	return src.attack_hand(user)
 
-/turf/space/attackby(obj/item/C as obj, mob/user as mob)
+turf/space/attackby(obj/item/C as obj, mob/user as mob)
 
 	if (istype(C, /obj/item/stack/rods))
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
@@ -43,6 +45,7 @@
 
 // Ported from unstable r355
 
+/*
 /turf/space/Entered(atom/movable/A as mob|obj)
 	if(movement_disabled)
 		usr << "\red Movement is admin-disabled." //This is to identify lag problems
@@ -249,3 +252,5 @@
 
 /turf/space/handle_slip()
 	return
+
+	*/

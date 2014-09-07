@@ -349,7 +349,7 @@
 
 	var/dense_object = 0
 	for(var/turf/turf in oview(1,src))
-		if(istype(turf,/turf/space))
+		if(istype(turf,/turf/space/k))
 			continue
 
 		if(!turf.density && !mob_negates_gravity())

@@ -3,13 +3,13 @@
 	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
-	//layer = 4
+	layer = 4
 	stat = DEAD
 	density = 0
 	canmove = 0
 	blinded = 0
 	anchored = 1	//  don't get pushed around
-	//invisibility = INVISIBILITY_OBSERVER
+	invisibility = INVISIBILITY_OBSERVER
 	var/can_reenter_corpse
 	var/datum/hud/living/carbon/hud = null // hud
 	var/bootime = 0
