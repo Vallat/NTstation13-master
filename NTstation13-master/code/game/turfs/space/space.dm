@@ -1,6 +1,6 @@
 /turf/space
 	icon = 'icons/turf/space.dmi'
-	name = "\proper space"
+	name = "sand"
 	icon_state = "0"
 
 	temperature = PLASMA_MINIMUM_BURN_TEMPERATURE
