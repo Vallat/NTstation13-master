@@ -357,7 +357,7 @@
 
 
 /obj/machinery/power/smes/magical
-	name = "Thermo_Electric_Generator"
+	name = "Thermoelectric generator"
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. Magically produces power."
 	icon_state = "CH"
 	process()

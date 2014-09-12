@@ -1,6 +1,5 @@
 #if !defined(MAP_FILE)
 
-        #include "map_files\tgstation.2.1.3.dmm"
 
         #define MAP_FILE "tgstation.2.1.3.dmm"
         #define MAP_NAME "TGstation 2"
