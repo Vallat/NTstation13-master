@@ -1,5 +1,10 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Space Station 13!</h1>
+<h1>Welcome to Sand City 13!</h1>
 
 <i>This server is running a NTstation 13 Github build.</i>
+
+<i>Map by Vox</i>
+<i>Code and sprite changes by Derven</i>
+<i>Concept by Rovager, Dilireum</i>
+

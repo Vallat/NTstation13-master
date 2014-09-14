@@ -25,7 +25,7 @@
 	item_color = "green"
 
 /obj/item/clothing/under/color/grey
-	name = "grey jumpsuit"
+	name = "assistant jumpsuit"
 	icon_state = "grey"
 	item_state = "gy_suit"
 	item_color = "grey"

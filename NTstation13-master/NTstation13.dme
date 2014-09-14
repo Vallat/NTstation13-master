@@ -60,7 +60,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\tgstation2.dm"
-#include "_maps\map_files\tgstation.2.1.3.dmm"
+#include "_maps\map_files\tgstation.2.1.3 (3).dmm"
 #include "code\_compile_options.dm"
 #include "code\closing_credits.dm"
 #include "code\hub.dm"
@@ -649,6 +649,7 @@
 #include "code\game\objects\items\weapons\storage\briefcase.dm"
 #include "code\game\objects\items\weapons\storage\fancy.dm"
 #include "code\game\objects\items\weapons\storage\firstaid.dm"
+#include "code\game\objects\items\weapons\storage\jumpsuit.dm"
 #include "code\game\objects\items\weapons\storage\lockbox.dm"
 #include "code\game\objects\items\weapons\storage\secure.dm"
 #include "code\game\objects\items\weapons\storage\storage.dm"
@@ -722,6 +723,7 @@
 #include "code\game\objects\structures\transit_tubes\station.dm"
 #include "code\game\objects\structures\transit_tubes\transit_tube.dm"
 #include "code\game\objects\structures\transit_tubes\transit_tube_pod.dm"
+#include "code\game\turfs\lol.dm"
 #include "code\game\turfs\simulated.dm"
 #include "code\game\turfs\turf.dm"
 #include "code\game\turfs\unsimulated.dm"
