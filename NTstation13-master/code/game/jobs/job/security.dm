@@ -8,7 +8,7 @@
 Head of Shitcurity
 */
 /datum/job/hos
-	title = "Head of Security"
+	title = "Head of Police"
 	flag = HOS
 	department_head = list("Captain")
 	department_flag = ENGSEC
@@ -21,7 +21,7 @@ Head of Shitcurity
 	minimal_player_age = 14
 
 	default_id = /obj/item/weapon/card/id/silver
-	default_pda = /obj/item/device/pda/heads/hos
+	//default_pda = /obj/item/device/pda/heads/hos
 	default_headset = /obj/item/device/radio/headset/heads/hos
 	default_backpack = /obj/item/weapon/storage/backpack/security
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
@@ -44,7 +44,6 @@ Head of Shitcurity
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/HoS(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/hud/security/sunglasses(H), slot_glasses)
-	H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(H), slot_s_store)
 
 	if(H.backbag == 1)
 		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -71,7 +70,7 @@ Warden
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
-	default_pda = /obj/item/device/pda/warden
+	//default_pda = /obj/item/device/pda/warden
 	default_headset = /obj/item/device/radio/headset/headset_sec
 	default_backpack = /obj/item/weapon/storage/backpack/security
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
@@ -84,11 +83,11 @@ Warden
 /datum/job/warden/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/warden(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/warden(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/warden(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/hud/security/sunglasses(H), slot_glasses)
 	H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	if(H.backbag == 1)
 		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_hand)
@@ -119,7 +118,7 @@ Detective
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
-	default_pda = /obj/item/device/pda/detective
+	//default_pda = /obj/item/device/pda/detective
 	default_headset = /obj/item/device/radio/headset/headset_sec
 
 	access = list(access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_court, access_weapons)
@@ -156,7 +155,7 @@ Detective
 Security Officer
 */
 /datum/job/officer
-	title = "Security Officer"
+	title = "Officer"
 	flag = OFFICER
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -168,7 +167,7 @@ Security Officer
 	minimal_player_age = 7
 	var/list/dep_access = null
 
-	default_pda = /obj/item/device/pda/security
+	//default_pda = /obj/item/device/pda/security
 	default_headset = /obj/item/device/radio/headset/headset_sec
 	default_backpack = /obj/item/weapon/storage/backpack/security
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
@@ -182,11 +181,11 @@ Security Officer
 	assign_sec_to_department(H)
 
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_s_store)
 	H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	if(H.backbag == 1)
 		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_r_store)

@@ -569,28 +569,28 @@ var/list/ai_list = list()
 		src << "<span class='danger'>Interface error. Unit is already in use.</span>"
 		return
 
-	var/area/end_area = get_area(end_loc)
-	var/turf/start_loc = get_turf(Bot) //Get the bot's location.
+	//var/area/end_area = get_area(end_loc)
+	//var/turf/start_loc = get_turf(Bot) //Get the bot's location.
 
 	//For giving the bot all-access.
-	var/obj/item/weapon/card/id/all_access = new /obj/item/weapon/card/id
-	var/datum/job/captain/All = new/datum/job/captain
-	all_access.access = All.get_access()
+	//var/obj/item/weapon/card/id/all_access = new /obj/item/weapon/card/id
+	//var/datum/job/captain/All = new/datum/job/captain
+	//all_access.access = All.get_access()
 
-	var/list/call_path = list()
-	call_path = AStar(start_loc, end_loc, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance_cardinal, 0, 150, id=all_access)
+	//var/list/call_path = list()
+	//call_path = AStar(start_loc, end_loc, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance_cardinal, 0, 150, id=all_access)
 
-	if(call_path && call_path.len) //Ensures that a valid path is calculated!
-		if(!Bot.on)
-			Bot.turn_on() //Saves the AI the hassle of having to activate a bot manually.
-		Bot.bot_reset() //Reset a bot becore setting it to call mode.
-		Bot.pathset = 0 //Forces the bot to accept a new rute if already under an AI call.
-		Bot.call_path = call_path //Send the path to the bot!
-		Bot.botcard = all_access //Give the bot all-access while under the AI's command.
-		Bot.calling_ai = src //Link the AI to the bot!
-		src << "<span class='notice'>[Bot.name] called to [end_area.name]. [call_path.len-1] meters to destination.</span>"
-	else
-		src << "<span class='danger'>Failed to calculate a valid route. Ensure destination is clear of obstructions and within range.</span>"
+	//if(call_path && call_path.len) //Ensures that a valid path is calculated!
+		//if(!Bot.on)
+		//	Bot.turn_on() //Saves the AI the hassle of having to activate a bot manually.
+	//	Bot.bot_reset() //Reset a bot becore setting it to call mode.
+	//	Bot.pathset = 0 //Forces the bot to accept a new rute if already under an AI call.
+	//	Bot.call_path = call_path //Send the path to the bot!
+		//Bot.botcard = all_access //Give the bot all-access while under the AI's command.
+	//	Bot.calling_ai = src //Link the AI to the bot!
+	//	src << "<span class='notice'>[Bot.name] called to [end_area.name]. [call_path.len-1] meters to destination.</span>"
+	//else
+	//	src << "<span class='danger'>Failed to calculate a valid route. Ensure destination is clear of obstructions and within range.</span>"
 
 /mob/living/silicon/ai/triggerAlarm(var/class, area/A, var/O, var/alarmsource)
 	if (stat == 2)

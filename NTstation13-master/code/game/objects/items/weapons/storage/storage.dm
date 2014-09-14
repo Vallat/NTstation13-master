@@ -18,6 +18,13 @@
 /obj/item/clothing/gloves
 	storage_slots = 2
 
+/obj/item/clothing/glasses
+	storage_slots = 0
+
+/obj/item/clothing/mask
+	storage_slots = 0
+
+
 /obj/item/clothing
 	var/interaction_sound = "rustle"
 	var/list/can_hold = new/list() //List of objects which this item can store (if set, it can't store anything else)

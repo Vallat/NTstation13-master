@@ -32,9 +32,10 @@ Chief Medical Officer
 /datum/job/cmo/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_medical_officer(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/brown(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat/cmo(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	if(H.backbag != 1)
 		H.equip_to_slot_or_del(new /obj/item/weapon/melee/telebaton(H), slot_in_backpack)
@@ -43,7 +44,7 @@ Chief Medical Officer
 Medical Doctor
 */
 /datum/job/doctor
-	title = "Medical Doctor"
+	title = "Doctor"
 	flag = DOCTOR
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
@@ -53,7 +54,7 @@ Medical Doctor
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 
-	default_pda = /obj/item/device/pda/medical
+	//default_pda = /obj/item/device/pda/medical
 	default_headset = /obj/item/device/radio/headset/headset_med
 	default_backpack = /obj/item/weapon/storage/backpack/medic
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_med
@@ -66,9 +67,10 @@ Medical Doctor
 /datum/job/doctor/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/white(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	if(H.backbag != 1)
 		H.equip_to_slot_or_del(new /obj/item/bodybag(H), slot_in_backpack)
@@ -77,7 +79,7 @@ Medical Doctor
 Chemist
 */
 /datum/job/chemist
-	title = "Chemist"
+	title = "Alchemist"
 	flag = CHEMIST
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
@@ -87,7 +89,7 @@ Chemist
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 
-	default_pda = /obj/item/device/pda/chemist
+	//default_pda = /obj/item/device/pda/chemist
 	default_headset = /obj/item/device/radio/headset/headset_med
 	default_backpack = /obj/item/weapon/storage/backpack/medic
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_chem
@@ -100,11 +102,11 @@ Chemist
 /datum/job/chemist/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chemist(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/white(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat/chemist(H), slot_wear_suit)
-
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*
 Geneticist
-*/
+
 /datum/job/geneticist
 	title = "Geneticist"
 	flag = GENETICIST
@@ -163,3 +165,4 @@ Virologist
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat/virologist(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
 
+*/

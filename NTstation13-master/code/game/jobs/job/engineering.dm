@@ -15,8 +15,8 @@ Chief Engineer
 	minimal_player_age = 7
 
 	default_id = /obj/item/weapon/card/id/silver
-	default_pda = /obj/item/device/pda/heads/ce
-	default_pda_slot = slot_l_store
+	//default_pda = /obj/item/device/pda/heads/ce
+	//default_pda_slot = slot_l_store
 	default_headset = /obj/item/device/radio/headset/heads/ce
 	default_backpack = /obj/item/weapon/storage/backpack/industrial
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
@@ -49,7 +49,7 @@ Chief Engineer
 Station Engineer
 */
 /datum/job/engineer
-	title = "Station Engineer"
+	title = "Steam Engineer"
 	flag = ENGINEER
 	department_head = list("Chief Engineer")
 	department_flag = ENGSEC
@@ -59,8 +59,8 @@ Station Engineer
 	supervisors = "the chief engineer"
 	selection_color = "#fff5cc"
 
-	default_pda = /obj/item/device/pda/engineering
-	default_pda_slot = slot_l_store
+	//default_pda = /obj/item/device/pda/engineering
+	//default_pda_slot = slot_l_store
 	default_headset = /obj/item/device/radio/headset/headset_eng
 	default_backpack = /obj/item/weapon/storage/backpack/industrial
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
@@ -79,6 +79,7 @@ Station Engineer
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/device/t_scanner(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	H.mind.store_memory(all_solved_wires[/obj/machinery/door/airlock])
 	H.mind.store_memory(all_solved_wires[/obj/machinery/power/apc])
@@ -104,6 +105,7 @@ Atmospheric Technician
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
 	default_storagebox = /obj/item/weapon/storage/box/engineer
 
+
 	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 									access_external_airlocks, access_construction, access_atmospherics)
 	minimal_access = list(access_atmospherics, access_maint_tunnels, access_emergency_storage, access_construction)
@@ -115,6 +117,7 @@ Atmospheric Technician
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/analyzer(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/atmostech/(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	H.mind.store_memory(all_solved_wires[/obj/machinery/door/airlock])
 	H.mind.store_memory(all_solved_wires[/obj/machinery/power/apc])

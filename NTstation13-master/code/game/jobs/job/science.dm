@@ -15,7 +15,7 @@ Research Director
 	minimal_player_age = 7
 
 	default_id = /obj/item/weapon/card/id/silver
-	default_pda = /obj/item/device/pda/heads/rd
+	//default_pda = /obj/item/device/pda/heads/rd
 	default_headset = /obj/item/device/radio/headset/heads/rd
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_tox
 
@@ -56,7 +56,7 @@ Scientist
 	supervisors = "the research director"
 	selection_color = "#ffeeff"
 
-	default_pda = /obj/item/device/pda/toxins
+	//default_pda = /obj/item/device/pda/toxins
 	default_headset = /obj/item/device/radio/headset/headset_sci
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_tox
 
@@ -74,7 +74,7 @@ Scientist
 Roboticist
 */
 /datum/job/roboticist
-	title = "Roboticist"
+	title = "Steam and energy master"
 	flag = ROBOTICIST
 	department_head = list("Research Director")
 	department_flag = MEDSCI
@@ -84,7 +84,7 @@ Roboticist
 	supervisors = "research director"
 	selection_color = "#ffeeff"
 
-	default_pda = /obj/item/device/pda/roboticist
+	//default_pda = /obj/item/device/pda/roboticist
 	default_headset = /obj/item/device/radio/headset/headset_sci
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_robo
 

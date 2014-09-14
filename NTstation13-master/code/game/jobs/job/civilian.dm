@@ -12,7 +12,7 @@ Bartender
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/bar
+	//default_pda = /obj/item/device/pda/bar
 	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue, access_mineral_storeroom, access_weapons)
@@ -42,8 +42,9 @@ Bartender
 
 /datum/job/bartender/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/bartender(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	if(H.backbag != 1)
 		H.equip_to_slot_or_del(new /obj/item/ammo_casing/shotgun/beanbag(H), slot_in_backpack)
@@ -65,7 +66,7 @@ Chef
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/chef
+	//default_pda = /obj/item/device/pda/chef
 	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue)
@@ -93,7 +94,7 @@ Botanist
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/botanist
+	//default_pda = /obj/item/device/pda/botanist
 	default_headset = /obj/item/device/radio/headset/headset_srv
 	default_backpack = /obj/item/weapon/storage/backpack
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_hyd
@@ -114,7 +115,7 @@ Botanist
 Quartermaster
 */
 /datum/job/qm
-	title = "Quartermaster"
+	title = "Trader"
 	flag = QUARTERMASTER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -124,7 +125,7 @@ Quartermaster
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/quartermaster
+	//default_pda = /obj/item/device/pda/quartermaster
 	default_headset = /obj/item/device/radio/headset/headset_cargo
 
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mint, access_mining, access_mining_station, access_mineral_storeroom)
@@ -138,12 +139,13 @@ Quartermaster
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
 	H.equip_to_slot_or_del(new /obj/item/weapon/clipboard(H), slot_l_hand)
-
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*
 Cargo Technician
 */
 /datum/job/cargo_tech
-	title = "Cargo Technician"
+	title = "Trader  Technician"
 	flag = CARGOTECH
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -153,7 +155,7 @@ Cargo Technician
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/cargo
+	//default_pda = /obj/item/device/pda/cargo
 	default_headset = /obj/item/device/radio/headset/headset_cargo
 
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining)
@@ -165,7 +167,8 @@ Cargo Technician
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/cargotech(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
-
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*
 Shaft Miner
 */
@@ -180,7 +183,7 @@ Shaft Miner
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/shaftminer
+	//default_pda = /obj/item/device/pda/shaftminer
 	default_headset = /obj/item/device/radio/headset/headset_cargo
 	default_backpack = /obj/item/weapon/storage/backpack/industrial
 	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
@@ -219,7 +222,7 @@ Clown
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/clown
+	d//efault_pda = /obj/item/device/pda/clown
 	default_backpack = /obj/item/weapon/storage/backpack/clown
 
 	access = list(access_theatre, access_maint_tunnels)
@@ -307,7 +310,7 @@ Janitor
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/janitor
+	//default_pda = /obj/item/device/pda/janitor
 	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_janitor, access_maint_tunnels)
@@ -318,7 +321,7 @@ Janitor
 /datum/job/janitor/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
-
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*
 Librarian
 */
@@ -333,7 +336,7 @@ Librarian
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/librarian
+	//default_pda = /obj/item/device/pda/librarian
 
 	access = list(access_library, access_maint_tunnels)
 	minimal_access = list(access_library)
@@ -362,7 +365,7 @@ Lawyer
 	selection_color = "#dddddd"
 	var/global/lawyers = 0 //Counts lawyer amount
 
-	default_pda = /obj/item/device/pda/lawyer
+	//default_pda = /obj/item/device/pda/lawyer
 	default_headset = /obj/item/device/radio/headset/headset_sec
 
 	access = list(access_lawyer, access_court, access_sec_doors, access_maint_tunnels)
@@ -383,3 +386,4 @@ Lawyer
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/briefcase(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/laser_pointer(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)

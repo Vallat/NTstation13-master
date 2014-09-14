@@ -250,7 +250,7 @@ datum/preferences
 
 		else if(job_engsec_high)
 			switch(job_engsec_high)
-				if(CAPTAIN)
+				/*if(CAPTAIN)
 					clothes_s = new /icon('icons/mob/uniform.dmi', "captain_s")
 					clothes_s.Blend(new /icon('icons/mob/feet.dmi', "brown"), ICON_UNDERLAY)
 					clothes_s.Blend(new /icon('icons/mob/head.dmi', "captain"), ICON_OVERLAY)
@@ -259,7 +259,7 @@ datum/preferences
 					if(backbag == 2)
 						clothes_s.Blend(new /icon('icons/mob/back.dmi', "captainpack"), ICON_OVERLAY)
 					if(backbag == 3)
-						clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel-cap"), ICON_OVERLAY)
+						clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel-cap"), ICON_OVERLAY) */
 				if(HOS)
 					clothes_s = new /icon('icons/mob/uniform.dmi', "hosred_s")
 					clothes_s.Blend(new /icon('icons/mob/feet.dmi', "jackboots"), ICON_UNDERLAY)

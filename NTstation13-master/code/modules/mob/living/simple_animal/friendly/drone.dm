@@ -42,9 +42,9 @@
 	name = "Drone ([rand(100,999)])"
 	real_name = name
 
-	access_card = new /obj/item/weapon/card/id(src)
-	var/datum/job/captain/C = new /datum/job/captain
-	access_card.access = C.get_access()
+	//ccess_card = new /obj/item/weapon/card/id(src)
+	//var/datum/job/captain/C = new /datum/job/captain
+	//access_card.access = C.get_access()
 
 /mob/living/simple_animal/drone/attack_hand(mob/user)
 	if(isdrone(user))
