@@ -35,6 +35,19 @@
 	caliber = "38"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/suicide
+	name = "d-tiv revolver cylinder"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/c38/e
+	caliber = "38"
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/striker
+	name = "d-tiv revolver cylinder"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/c38/e
+	caliber = "38"
+	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"

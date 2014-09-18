@@ -17,6 +17,13 @@
 	name = "speed loader (.38 Expansive)"
 	ammo_type = /obj/item/ammo_casing/c38/e
 
+/obj/item/ammo_box/suicide
+	name = "speed loader (.38)"
+	icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 1
+	multiple_sprites = 1
+
 /obj/item/ammo_box/a418
 	name = "ammo box (.418)"
 	icon_state = "418"

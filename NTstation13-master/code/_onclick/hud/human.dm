@@ -123,7 +123,7 @@
 	inv_box.screen_loc = ui_storage1
 	inv_box.slot_id = slot_l_store
 	inv_box.layer = 19
-	adding += inv_box
+//	adding += inv_box
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "storage2"
@@ -132,7 +132,7 @@
 	inv_box.screen_loc = ui_storage2
 	inv_box.slot_id = slot_r_store
 	inv_box.layer = 19
-	adding += inv_box
+//	adding += inv_box
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "suit storage"

@@ -26,7 +26,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	level = 1 //is underfloor
 	anchored =1
 	var/datum/powernet/powernet
-	name = "power cable"
+	name = "steam pipe"
 	desc = "A flexible superconducting cable for heavy-duty power transfer"
 	icon = 'icons/obj/power_cond/power_cond_red.dmi'
 	icon_state = "0-1"

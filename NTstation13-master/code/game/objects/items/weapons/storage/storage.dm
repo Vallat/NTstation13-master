@@ -16,7 +16,7 @@
 	storage_slots = 1
 
 /obj/item/clothing/gloves
-	storage_slots = 2
+	storage_slots = 0
 
 /obj/item/clothing/glasses
 	storage_slots = 0

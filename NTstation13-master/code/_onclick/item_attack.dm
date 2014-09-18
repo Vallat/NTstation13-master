@@ -1,3 +1,8 @@
+//so much RP
+
+var/global/HARDRP = 2.5
+
+
 // Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
 /obj/item/proc/attack_self(mob/user)
 	return
@@ -14,7 +19,7 @@
 	I.attack(src, user)
 
 /mob/living/proc/attacked_by(obj/item/I, mob/living/user, def_zone)
-	apply_damage(I.force, I.damtype)
+	apply_damage(I.force*HARDRP, I.damtype)
 	if(I.damtype == "brute")
 		if(prob(33) && I.force)
 			var/turf/location = src.loc

@@ -181,6 +181,19 @@
 	var/list/sideslist = list("heads","tails")
 	var/cmineral = null
 	var/cooldown = 0
+	var/caliber = null							//Which kind of guns it can be loaded into
+	var/projectile_type = null					//The bullet type to create when New() is called
+	var/obj/item/projectile/BB = null 			//The loaded bullet
+	var/pellets = 0								//Pellets for spreadshot
+	var/variance = 0							//Variance for inaccuracy fundamental to the casing
+	var/trace_residue = "Gunpowder residue."
+
+
+/obj/item/weapon/coin/proc/newshot() //For energy weapons and shotgun shells.
+	if (!BB)
+		BB = new projectile_type(src)
+	return
+
 
 /obj/item/weapon/coin/New()
 	pixel_x = rand(0,16)-8

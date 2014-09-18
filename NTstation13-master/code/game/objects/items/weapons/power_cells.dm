@@ -117,3 +117,6 @@
 	m_amt = 0
 	g_amt = 0
 	rating = 3
+
+
+

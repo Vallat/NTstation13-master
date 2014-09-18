@@ -414,3 +414,146 @@
 			dispose()
 	updateUsrDialog()
 	return
+
+
+/obj/machinery/microwave/blacksmith_machine
+	name = "blacksmith_machine"
+	icon = 'icons/obj/machines/mining_machines.dmi'
+	icon_state = "lol"
+
+
+/obj/machinery/microwave/blacksmith_machine/New()
+	create_reagents(100)
+	if(!available_recipes)
+		available_recipes = new
+		for(var/type in (typesof(/datum/steam) - /datum/steam))
+			available_recipes += new type
+		acceptable_items = new
+		acceptable_reagents = new
+		for(var/datum/recipe/recipe in available_recipes)
+			for(var/item in recipe.items)
+				acceptable_items |= item
+			for(var/reagent in recipe.reagents)
+				acceptable_reagents |= reagent
+			if(recipe.items)
+				max_n_of_items = max(max_n_of_items, recipe.items.len)
+
+	component_parts = list()
+	component_parts += new /obj/item/weapon/circuitboard/microwave(null)
+	component_parts += new /obj/item/weapon/stock_parts/micro_laser(null)
+	component_parts += new /obj/item/weapon/stock_parts/console_screen(null)
+	component_parts += new /obj/item/stack/cable_coil(null, 2)
+	RefreshParts()
+
+
+/obj/machinery/microwave/blacksmith_machine/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(!broken && !dirty && !operating)
+		if(default_deconstruction_screwdriver(user, "mw-o", "mw", O))
+			return
+		if(default_unfasten_wrench(user, O))
+			return
+
+	if(exchange_parts(user, O))
+		return
+
+	default_deconstruction_crowbar(O)
+
+	if(src.broken > 0)
+		if(src.broken == 2 && istype(O, /obj/item/weapon/wirecutters)) // If it's broken and they're using a screwdriver
+			user.visible_message( \
+				"\blue [user] starts to fix part of the microwave.", \
+				"\blue You start to fix part of the microwave." \
+			)
+			if (do_after(user,20))
+				user.visible_message( \
+					"\blue [user] fixes part of the microwave.", \
+					"\blue You have fixed part of the microwave." \
+				)
+				src.broken = 1 // Fix it a bit
+		else if(src.broken == 1 && istype(O, /obj/item/weapon/weldingtool)) // If it's broken and they're doing the wrench
+			user.visible_message( \
+				"\blue [user] starts to fix part of the microwave.", \
+				"\blue You start to fix part of the microwave." \
+			)
+			if (do_after(user,20))
+				user.visible_message( \
+					"\blue [user] fixes the microwave.", \
+					"\blue You have fixed the microwave." \
+				)
+				src.icon_state = "mw"
+				src.broken = 0 // Fix it!
+				src.dirty = 0 // just to be sure
+				src.flags = OPENCONTAINER
+				return 0 //to use some fuel
+		else
+			user << "\red It's broken!"
+			return 1
+	else if(istype(O, /obj/item/weapon/reagent_containers/spray/))
+		var/obj/item/weapon/reagent_containers/spray/clean_spray = O
+		if(clean_spray.reagents.has_reagent("cleaner",clean_spray.amount_per_transfer_from_this))
+			clean_spray.reagents.remove_reagent("cleaner",clean_spray.amount_per_transfer_from_this,1)
+			playsound(loc, 'sound/effects/spray3.ogg', 50, 1, -6)
+			user.visible_message( \
+				"\blue [user]  has cleaned  the microwave.", \
+				"\blue You have cleaned the microwave." \
+			)
+			src.dirty = 0 // It's clean!
+			src.broken = 0 // just to be sure
+			src.icon_state = "mw"
+			src.flags = OPENCONTAINER
+			src.updateUsrDialog()
+			return 1 // Disables the after-attack so we don't spray the floor/user.
+		else
+			user << "\red You need more space cleaner!"
+			return 1
+
+	else if(istype(O, /obj/item/weapon/soap/)) // If they're trying to clean it then let them
+		user.visible_message( \
+			"\blue [user] starts to clean the microwave.", \
+			"\blue You start to clean the microwave." \
+		)
+		if (do_after(user,20))
+			user.visible_message( \
+				"\blue [user]  has cleaned  the microwave.", \
+				"\blue You have cleaned the microwave." \
+			)
+			src.dirty = 0 // It's clean!
+			src.broken = 0 // just to be sure
+			src.icon_state = "mw"
+			src.flags = OPENCONTAINER
+	else if(src.dirty==100) // The microwave is all dirty so can't be used!
+		user << "\red It's dirty!"
+		return 1
+	else if(is_type_in_list(O,acceptable_items))
+		if (contents.len>=max_n_of_items)
+			user << "\red This [src] is full of ingredients, you cannot put more."
+			return 1
+		if (istype(O,/obj/item))
+			new O.type (src)
+			O:use(1)
+			user.visible_message( \
+				"\blue [user] has added one of [O] to \the [src].", \
+				"\blue You add one of [O] to \the [src].")
+		else
+		//	user.unEquip(O)	//This just causes problems so far as I can tell. -Pete
+			if(!user.drop_item())
+				user << "<span class='notice'>\the [O] is stuck to your hand, you cannot put it in \the [src]</span>"
+				return 0
+			O.loc = src
+			user.visible_message( \
+				"\blue [user] has added \the [O] to \the [src].", \
+				"\blue You add \the [O] to \the [src].")
+	else if(istype(O,/obj/item/weapon/reagent_containers/glass) || \
+	        istype(O,/obj/item/weapon/reagent_containers/food/drinks) || \
+	        istype(O,/obj/item/weapon/reagent_containers/food/condiment) \
+		)
+
+		//G.reagents.trans_to(src,G.amount_per_transfer_from_this)
+	else if(istype(O,/obj/item/weapon/grab))
+		var/obj/item/weapon/grab/G = O
+		user << "\red This is ridiculous. You can not fit \the [G.affecting] in this [src]."
+		return 1
+//	else
+//		user << "\red You have no idea what you can cook with this [O]."
+//		return 1
+	src.updateUsrDialog()

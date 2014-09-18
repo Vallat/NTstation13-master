@@ -223,3 +223,28 @@
 					return
 	..()
 
+
+//fortune!
+
+/obj/item/weapon/gun/projectile/revolver/steam/reaver
+
+	desc = "A reaver"
+	name = "reaver"
+	icon_state = "revolver_coin"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+
+
+/obj/item/weapon/gun/projectile/revolver/steam/suicide
+
+	desc = "A suicide"
+	name = "suicide"
+	icon_state = "suicide"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/suicide
+
+/obj/item/weapon/gun/projectile/revolver/steam/striker
+
+	desc = "A striker"
+	name = "striker"
+	icon_state = "striker"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/striker
+

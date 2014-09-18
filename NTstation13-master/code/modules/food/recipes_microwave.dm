@@ -1214,3 +1214,68 @@
 		/obj/item/toy/crayon/purple,
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/burger/purple
+
+// HOLY COPYPAST
+
+/datum/steam
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/metal,
+	)
+	result = /obj/item/weapon/circular_saw
+
+
+/datum/steam
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/metal,
+	)
+	result = /obj/item/weapon/circular_saw
+
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/metal,
+		/obj/item/stack/sheet/mineral/silver,
+	)
+	result = /obj/item/weapon/gun/projectile/revolver/steam/suicide
+
+	items = list(
+		/obj/item/stack/sheet/glass,
+		/obj/item/stack/sheet/metal,
+	)
+	result = /obj/item/clothing/glasses/sunglasses
+
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/metal,
+		/obj/item/weapon/coin/iron,
+	)
+	result = /obj/item/weapon/gun/projectile/revolver/steam/reaver
+
+	items = list(
+		/obj/item/stack/sheet/glass,
+		/obj/item/stack/sheet/mineral/adamantine,
+	)
+	result = /obj/item/clothing/glasses/meson
+
+	items = list(
+		/obj/item/stack/sheet/rglass,
+		/obj/item/stack/sheet/mineral/adamantine,
+	)
+	result = /obj/item/clothing/glasses/meson
+
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/mineral/adamantine,
+	)
+	result = /obj/item/weapon/gun/projectile/revolver/steam/striker
+
+	items = list(
+		/obj/item/stack/sheet/mineral/wood,
+		/obj/item/stack/sheet/mineral/adamantine,
+		/obj/item/stack/sheet/mineral/gold,
+		/obj/item/stack/sheet/mineral/silver,
+	)
+	result = /obj/item/weapon/gun/energy/temperature
+
+

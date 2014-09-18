@@ -6,6 +6,7 @@
 	opacity = 1
 	density = 1
 	blocks_air = 1
+	var/health = 14.0
 
 	thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 312500 //a little over 5 cm thick , 312500 for 1 m by 2.5 m by 0.25 m plasteel wall
@@ -288,4 +289,16 @@
 		thermite = 0
 		spawn(50)
 			if(O)	qdel(O)
+	return
+
+//Derven pizdabol
+
+/turf/simulated/wall/bullet_act(var/obj/item/projectile/Proj)
+	if((Proj.damage_type == BRUTE || Proj.damage_type == BURN))
+		health -= Proj.damage
+	..()
+	if(health <= 0)
+		new /obj/structure/lattice(loc)
+		new /obj/structure/girder(loc)
+		qdel(src)
 	return

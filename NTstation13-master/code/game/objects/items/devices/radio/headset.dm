@@ -15,10 +15,12 @@
 	var/obj/item/device/encryptionkey/keyslot2 = null
 	maxf = 1489
 
+
 /obj/item/device/radio/headset/New()
 	..()
 	keyslot1 = new /obj/item/device/encryptionkey/
 	recalculateChannels()
+
 
 /obj/item/device/radio/headset/talk_into(mob/living/M as mob, message, channel)
 	if (!listening)

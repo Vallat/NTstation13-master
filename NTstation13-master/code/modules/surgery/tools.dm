@@ -81,7 +81,7 @@
 
 
 /obj/item/weapon/circular_saw
-	name = "circular saw"
+	name = "steam saw"
 	desc = "For heavy duty cutting."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "saw"
