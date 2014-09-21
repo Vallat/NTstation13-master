@@ -49,6 +49,37 @@
 	attack_verb = list("stabbed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
+/obj/item/weapon/screwdriver/dagger
+	name = "dagger"
+	desc = "You can stab"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "dagger"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = 9.0
+	w_class = 2.0
+	throwforce = 18.0
+	throw_speed = 5
+	throw_range = 10
+	g_amt = 0
+	m_amt = 75
+
+/obj/item/weapon/screwdriver/spear
+	name = "spear"
+	desc = "You can stab"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "spear"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = 16.0
+	w_class = 4.0
+	throwforce = 26.0
+	throw_speed = 4
+	throw_range = 6
+	g_amt = 0
+	m_amt = 75
+
+
 /obj/item/weapon/screwdriver/suicide_act(mob/user)
 	user.visible_message(pick("<span class='suicide'>[user] is stabbing the [src.name] into \his temple! It looks like \he's trying to commit suicide.</span>", \
 						"<span class='suicide'>[user] is stabbing the [src.name] into \his heart! It looks like \he's trying to commit suicide.</span>"))

@@ -8,6 +8,9 @@ var/datum/global_hud/global_hud = new()
 /datum/global_hud
 	var/obj/screen/druggy
 	var/obj/screen/blurry
+	var/obj/screen/green
+	var/obj/screen/red
+	var/obj/screen/lol
 	var/list/vimpaired
 	var/list/darkMask
 
@@ -26,6 +29,24 @@ var/datum/global_hud/global_hud = new()
 	blurry.icon_state = "blurry"
 	blurry.layer = 17
 	blurry.mouse_opacity = 0
+
+	green = new /obj/screen()
+	green.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	green.icon_state = "green"
+	green.layer = 17
+	green.mouse_opacity = 0
+
+	red = new /obj/screen()
+	red.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	red.icon_state = "red"
+	red.layer = 17
+	red.mouse_opacity = 0
+
+	lol = new /obj/screen()
+	lol.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	lol.icon_state = "lol"
+	lol.layer = 17
+	lol.mouse_opacity = 0
 
 	var/obj/screen/O
 	var/i

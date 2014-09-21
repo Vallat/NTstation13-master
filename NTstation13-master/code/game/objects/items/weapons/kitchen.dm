@@ -165,7 +165,7 @@
  * Rolling Pins
  */
 
-/obj/item/weapon/kitchen/rollingpin
+/obj/item/weapon/kitchen/dabadee
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."
 	icon_state = "rolling_pin"
@@ -175,6 +175,28 @@
 	throw_range = 7
 	w_class = 3.0
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+
+/obj/item/weapon/kitchen/dabadee/hammer
+
+	name = "hammer"
+	desc = "Used to knock and stab"
+	icon_state = "hammer"
+	force = 16.0
+	throwforce = 3.0
+	throw_speed = 1
+	throw_range = 3
+	w_class = 5.0
+
+/obj/item/weapon/kitchen/dabadee/bambam
+
+	name = "stick"
+	desc = "Used to knock"
+	icon_state = "stick"
+	force = 13.0
+	throwforce = 4.0
+	throw_speed = 2
+	throw_range = 5
+	w_class = 4.0
 
 /*
  * Trays - Agouri

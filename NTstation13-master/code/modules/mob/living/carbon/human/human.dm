@@ -1,3 +1,7 @@
+
+/mob/living/carbon/human
+
+
 /mob/living/carbon/human
 	name = "Unknown"
 	real_name = "Unknown"

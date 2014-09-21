@@ -49,29 +49,29 @@
 
 	//Job specific items
 	var/default_id				= /obj/item/weapon/card/id //this is just the looks of it
-	var/default_pda				= /obj/item/device/pda
-	var/default_pda_slot	= slot_belt
-	var/default_headset		= /obj/item/device/radio/headset
-	var/default_backpack	= /obj/item/weapon/storage/backpack
-	var/default_satchel		= /obj/item/weapon/storage/backpack/satchel_norm
-	var/default_storagebox= /obj/item/weapon/storage/box/survival
+//	var/default_pda				= /obj/item/device/pda
+	//var/default_pda_slot	= slot_belt
+//	var/default_headset		= /obj/item/device/radio/headset
+//	var/default_backpack	= /obj/item/weapon/storage/backpack
+//	var/default_satchel		= /obj/item/weapon/storage/backpack/satchel_norm
+//	var/default_storagebox= /obj/item/weapon/storage/box/survival
 
 //Only override this proc
 /datum/job/proc/equip_items(var/mob/living/carbon/human/H)
 
 //Or this proc
-/datum/job/proc/equip_backpack(var/mob/living/carbon/human/H)
-	switch(H.backbag)
-		if(1) //No backpack or satchel
-			H.equip_to_slot_or_del(new default_storagebox(H), slot_r_hand)
-		if(2) // Backpack
-			var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
-			new default_storagebox(BPK)
-			H.equip_to_slot_or_del(BPK, slot_back,1)
-		if(3) //Satchel
-			var/obj/item/weapon/storage/backpack/BPK = new default_satchel(H)
-			new default_storagebox(BPK)
-			H.equip_to_slot_or_del(BPK, slot_back,1)
+//datum/job/proc/equip_backpack(var/mob/living/carbon/human/H)
+//	switch(H.backbag)
+//		if(1) //No backpack or satchel
+//			H.equip_to_slot_or_del(new default_storagebox(H), slot_r_hand)
+//		if(2) // Backpack
+//			var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
+//			new default_storagebox(BPK)
+//			H.equip_to_slot_or_del(BPK, slot_back,1)
+//		if(3) //Satchel
+//			var/obj/item/weapon/storage/backpack/BPK = new default_satchel(H)
+//			new default_storagebox(BPK)
+//			H.equip_to_slot_or_del(BPK, slot_back,1)
 
 //But don't override this
 /datum/job/proc/equip(var/mob/living/carbon/human/H)
@@ -79,7 +79,7 @@
 		return 0
 
 	//Equip backpack
-	equip_backpack(H)
+//	equip_backpack(H)
 
 	//Equip the rest of the gear
 	equip_items(H)
@@ -93,14 +93,14 @@
 	H.equip_to_slot_or_del(C, slot_wear_id)
 
 	//Equip PDA
-	var/obj/item/device/pda/PDA = new default_pda(H)
-	PDA.owner = H.real_name
-	PDA.ownjob = H.job
-	PDA.update_label()
-	H.equip_to_slot_or_del(PDA, default_pda_slot)
+//	var/obj/item/device/pda/PDA = new default_pda(H)
+//	PDA.owner = H.real_name
+//	PDA.ownjob = H.job
+//	PDA.update_label()
+//	H.equip_to_slot_or_del(PDA, default_pda_slot)
 
 	//Equip headset
-	H.equip_to_slot_or_del(new src.default_headset(H), slot_ears)
+//	H.equip_to_slot_or_del(new src.default_headset(H), slot_ears)
 
 /datum/job/proc/apply_fingerprints(var/mob/living/carbon/human/H)
 	if(!istype(H))

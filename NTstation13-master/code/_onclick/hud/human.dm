@@ -192,7 +192,7 @@
 	inv_box.screen_loc = ui_ears
 	inv_box.slot_id = slot_ears
 	inv_box.layer = 19
-	other += inv_box
+	//other += inv_box
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "head"

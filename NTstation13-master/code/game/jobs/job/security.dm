@@ -22,9 +22,9 @@ Head of Shitcurity
 
 	default_id = /obj/item/weapon/card/id/silver
 	//default_pda = /obj/item/device/pda/heads/hos
-	default_headset = /obj/item/device/radio/headset/heads/hos
-	default_backpack = /obj/item/weapon/storage/backpack/security
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
+//	default_headset = /obj/item/device/radio/headset/heads/hos
+//	default_backpack = /obj/item/weapon/storage/backpack/security
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
 
 	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_weapons,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
@@ -71,9 +71,9 @@ Warden
 	minimal_player_age = 7
 
 	//default_pda = /obj/item/device/pda/warden
-	default_headset = /obj/item/device/radio/headset/headset_sec
-	default_backpack = /obj/item/weapon/storage/backpack/security
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
+//	default_headset = /obj/item/device/radio/headset/headset_sec
+//	default_backpack = /obj/item/weapon/storage/backpack/security
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
 
 	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_maint_tunnels, access_morgue)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_weapons) //See /datum/job/warden/get_access()
@@ -89,10 +89,10 @@ Warden
 	H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
-	if(H.backbag == 1)
-		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_hand)
-	else
-		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_in_backpack)
+//	if(H.backbag == 1)
+//		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_hand)
+//	else
+//		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_in_backpack)
 
 	var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
 	L.imp_in = H
@@ -119,7 +119,7 @@ Detective
 	minimal_player_age = 7
 
 	//default_pda = /obj/item/device/pda/detective
-	default_headset = /obj/item/device/radio/headset/headset_sec
+//	default_headset = /obj/item/device/radio/headset/headset_sec
 
 	access = list(access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_court, access_weapons)
 	minimal_access = list(access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_court, access_weapons)
@@ -168,9 +168,9 @@ Security Officer
 	var/list/dep_access = null
 
 	//default_pda = /obj/item/device/pda/security
-	default_headset = /obj/item/device/radio/headset/headset_sec
-	default_backpack = /obj/item/weapon/storage/backpack/security
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
+//	default_headset = /obj/item/device/radio/headset/headset_sec
+//	default_backpack = /obj/item/weapon/storage/backpack/security
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_sec
 
 	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_morgue, access_weapons)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_weapons) //But see /datum/job/warden/get_access()
@@ -218,22 +218,22 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 		switch(department)
 			if("supply")
 				H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/cargo(H), slot_w_uniform)
-				default_headset = /obj/item/device/radio/headset/headset_sec/department/supply
+			//	default_headset = /obj/item/device/radio/headset/headset_sec/department/supply
 				dep_access = list(access_mailsorting, access_mining)
 				destination = /area/security/checkpoint/supply
 			if("engineering")
 				H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/engine(H), slot_w_uniform)
-				default_headset = /obj/item/device/radio/headset/headset_sec/department/engi
+		//		default_headset = /obj/item/device/radio/headset/headset_sec/department/engi
 				dep_access = list(access_construction, access_engine)
 				destination = /area/security/checkpoint/engineering
 			if("medical")
 				H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/med(H), slot_w_uniform)
-				default_headset = /obj/item/device/radio/headset/headset_sec/department/med
+		//		default_headset = /obj/item/device/radio/headset/headset_sec/department/med
 				dep_access = list(access_medical)
 				destination = /area/security/checkpoint/medical
 			if("science")
 				H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security/science(H), slot_w_uniform)
-				default_headset = /obj/item/device/radio/headset/headset_sec/department/sci
+		//		default_headset = /obj/item/device/radio/headset/headset_sec/department/sci
 				dep_access = list(access_research)
 				destination = /area/security/checkpoint/science
 		var/teleport = 0

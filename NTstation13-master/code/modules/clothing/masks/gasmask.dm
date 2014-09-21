@@ -1,3 +1,6 @@
+
+
+
 /obj/item/clothing/mask/gas
 	name = "gas mask"
 	desc = "A face-covering mask that can be connected to an air supply."

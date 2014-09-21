@@ -2,7 +2,7 @@
 Chief Medical Officer
 */
 /datum/job/cmo
-	title = "Chief Medical Officer"
+	title = "CMO"
 	flag = CMO
 	department_head = list("Captain")
 	department_flag = MEDSCI
@@ -15,10 +15,10 @@ Chief Medical Officer
 	minimal_player_age = 7
 
 	default_id = /obj/item/weapon/card/id/silver
-	default_pda = /obj/item/device/pda/heads/cmo
-	default_headset = /obj/item/device/radio/headset/heads/cmo
-	default_backpack = /obj/item/weapon/storage/backpack/medic
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_med
+//	default_pda = /obj/item/device/pda/heads/cmo
+//	default_headset = /obj/item/device/radio/headset/heads/cmo
+//	default_backpack = /obj/item/weapon/storage/backpack/medic
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_med
 
 	access = list(access_medical, access_morgue, access_genetics, access_heads, access_mineral_storeroom,
 			access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
@@ -31,7 +31,7 @@ Chief Medical Officer
 
 /datum/job/cmo/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_medical_officer(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/brown(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
@@ -55,9 +55,9 @@ Medical Doctor
 	selection_color = "#ffeef0"
 
 	//default_pda = /obj/item/device/pda/medical
-	default_headset = /obj/item/device/radio/headset/headset_med
-	default_backpack = /obj/item/weapon/storage/backpack/medic
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_med
+//	default_headset = /obj/item/device/radio/headset/headset_med
+//	default_backpack = /obj/item/weapon/storage/backpack/medic
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_med
 
 	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics)
 	minimal_access = list(access_medical, access_morgue, access_surgery)
@@ -66,14 +66,14 @@ Medical Doctor
 
 /datum/job/doctor/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/white(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
-	if(H.backbag != 1)
-		H.equip_to_slot_or_del(new /obj/item/bodybag(H), slot_in_backpack)
+//	if(H.backbag != 1)
+//		H.equip_to_slot_or_del(new /obj/item/bodybag(H), slot_in_backpack)
 
 /*
 Chemist
@@ -90,9 +90,9 @@ Chemist
 	selection_color = "#ffeef0"
 
 	//default_pda = /obj/item/device/pda/chemist
-	default_headset = /obj/item/device/radio/headset/headset_med
-	default_backpack = /obj/item/weapon/storage/backpack/medic
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_chem
+//	default_headset = /obj/item/device/radio/headset/headset_med
+//	default_backpack = /obj/item/weapon/storage/backpack/medic
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_chem
 
 	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_mineral_storeroom)
 	minimal_access = list(access_medical, access_chemistry, access_mineral_storeroom)
@@ -101,7 +101,7 @@ Chemist
 
 /datum/job/chemist/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chemist(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/white(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*

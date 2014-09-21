@@ -2,7 +2,7 @@
 Chief Engineer
 */
 /datum/job/chief_engineer
-	title = "Chief Engineer"
+	title = "CE"
 	flag = CHIEF
 	department_head = list("Captain")
 	department_flag = ENGSEC
@@ -17,10 +17,10 @@ Chief Engineer
 	default_id = /obj/item/weapon/card/id/silver
 	//default_pda = /obj/item/device/pda/heads/ce
 	//default_pda_slot = slot_l_store
-	default_headset = /obj/item/device/radio/headset/heads/ce
-	default_backpack = /obj/item/weapon/storage/backpack/industrial
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
-	default_storagebox = /obj/item/weapon/storage/box/engineer
+//	default_headset = /obj/item/device/radio/headset/heads/ce
+//	default_backpack = /obj/item/weapon/storage/backpack/industrial
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
+//	default_storagebox = /obj/item/weapon/storage/box/engineer
 
 	access = list(access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 			            access_external_airlocks, access_atmospherics, access_emergency_storage, access_eva,
@@ -35,15 +35,15 @@ Chief Engineer
 
 /datum/job/chief_engineer/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_engineer(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/brown(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/white(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 
-	if(H.backbag != 1)
-		H.equip_to_slot_or_del(new /obj/item/weapon/melee/telebaton(H), slot_in_backpack)
-	H.mind.store_memory(all_solved_wires[/obj/machinery/door/airlock])
-	H.mind.store_memory(all_solved_wires[/obj/machinery/power/apc])
+//	if(H.backbag != 1)
+//		H.equip_to_slot_or_del(new /obj/item/weapon/melee/telebaton(H), slot_in_backpack)
+//	H.mind.store_memory(all_solved_wires[/obj/machinery/door/airlock])
+//	H.mind.store_memory(all_solved_wires[/obj/machinery/power/apc])
 
 /*
 Station Engineer
@@ -61,10 +61,10 @@ Station Engineer
 
 	//default_pda = /obj/item/device/pda/engineering
 	//default_pda_slot = slot_l_store
-	default_headset = /obj/item/device/radio/headset/headset_eng
-	default_backpack = /obj/item/weapon/storage/backpack/industrial
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
-	default_storagebox = /obj/item/weapon/storage/box/engineer
+//	default_headset = /obj/item/device/radio/headset/headset_eng
+//	default_backpack = /obj/item/weapon/storage/backpack/industrial
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
+//	default_storagebox = /obj/item/weapon/storage/box/engineer
 
 	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 									access_external_airlocks, access_construction, access_atmospherics, access_tcomsat)
@@ -75,7 +75,7 @@ Station Engineer
 
 /datum/job/engineer/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/engineer(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/orange(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/device/t_scanner(H), slot_r_store)
@@ -86,7 +86,8 @@ Station Engineer
 
 /*
 Atmospheric Technician
-*/
+
+
 /datum/job/atmos
 	title = "Atmospheric Technician"
 	flag = ATMOSTECH
@@ -98,12 +99,12 @@ Atmospheric Technician
 	supervisors = "the chief engineer"
 	selection_color = "#fff5cc"
 
-	default_pda = /obj/item/device/pda/atmos
-	default_pda_slot = slot_l_store
-	default_headset = /obj/item/device/radio/headset/headset_eng
-	default_backpack = /obj/item/weapon/storage/backpack/industrial
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
-	default_storagebox = /obj/item/weapon/storage/box/engineer
+//	default_pda = /obj/item/device/pda/atmos
+//	default_pda_slot = slot_l_store
+//	default_headset = /obj/item/device/radio/headset/headset_eng
+//	default_backpack = /obj/item/weapon/storage/backpack/industrial
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
+//	default_storagebox = /obj/item/weapon/storage/box/engineer
 
 
 	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
@@ -121,3 +122,5 @@ Atmospheric Technician
 
 	H.mind.store_memory(all_solved_wires[/obj/machinery/door/airlock])
 	H.mind.store_memory(all_solved_wires[/obj/machinery/power/apc])
+
+*/

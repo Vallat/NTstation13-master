@@ -57,7 +57,7 @@ Captain
 Head of Personnel
 */
 /datum/job/hop
-	title = "Head of city"
+	title = "Gouverner"
 	flag = HOP
 	department_head = list("Captain")
 	department_flag = CIVILIAN
@@ -71,7 +71,7 @@ Head of Personnel
 
 	default_id = /obj/item/weapon/card/id/silver
 	//default_pda = /obj/item/device/pda/heads/hop
-	default_headset = /obj/item/device/radio/headset/heads/hop
+	//default_headset = /obj/item/device/radio/headset/heads/hop
 	assistant_access = list(access_heads)
 	assistant_title = "HoP's Assistant"
 
@@ -91,7 +91,7 @@ Head of Personnel
 
 /datum/job/hop/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/head_of_personnel(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/brown(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/hopcap(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/monocle(H), slot_glasses)
 

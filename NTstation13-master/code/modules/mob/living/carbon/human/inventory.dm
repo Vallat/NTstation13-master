@@ -306,6 +306,7 @@
 				internals.icon_state = "internal0"
 			internal = null
 		update_inv_wear_mask(0)
+
 	else if(I == wear_id)
 		wear_id = null
 		update_inv_wear_id(0)

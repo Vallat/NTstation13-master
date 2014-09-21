@@ -1189,7 +1189,14 @@
 				client.screen += global_hud.vimpaired
 			if(eye_blurry)			client.screen += global_hud.blurry
 			if(druggy)				client.screen += global_hud.druggy
-
+			if(istype(wear_mask, /obj/item/clothing/mask/gas)) client.screen += global_hud.green
+			if(istype(wear_mask, null)) client.screen -= global_hud.lol
+			if(istype(glasses, /obj/item/clothing/glasses/meson)) client.screen += global_hud.green
+			if(istype(glasses, null)) client.screen -= global_hud.lol
+			if(istype(glasses, /obj/item/clothing/glasses/regular)) client.screen += global_hud.lol
+			if(istype(glasses, null)) client.screen -= global_hud.lol
+			if(istype(glasses, /obj/item/clothing/glasses/thermal)) client.screen += global_hud.red
+			if(istype(glasses, null)) client.screen -= global_hud.lol
 
 			if(eye_stat > 20)
 				if(eye_stat > 30)	client.screen += global_hud.darkMask
@@ -1199,7 +1206,7 @@
 				if(!machine.check_eye(src))		reset_view(null)
 			else
 				if(!client.adminobs)			reset_view(null)
-		return 1
+		return //1
 
 	proc/handle_random_events()
 		// Puke if toxloss is too high

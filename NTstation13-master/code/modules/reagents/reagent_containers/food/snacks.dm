@@ -2824,7 +2824,7 @@
 
 // Dough + rolling pin = flat dough
 /obj/item/weapon/reagent_containers/food/snacks/dough/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/weapon/kitchen/rollingpin))
+	if(istype(I, /obj/item/weapon/kitchen/dabadee))
 		if(isturf(loc))
 			new /obj/item/weapon/reagent_containers/food/snacks/sliceable/flatdough(loc)
 			user << "<span class='notice'>You flatten [src].</span>"

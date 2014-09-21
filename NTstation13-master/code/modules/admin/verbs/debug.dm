@@ -721,7 +721,7 @@ var/global/list/g_fancy_list_of_safe_types = null
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/chefhat(M), slot_head)
 
-			M.equip_to_slot_or_del(new /obj/item/weapon/kitchen/rollingpin(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/weapon/kitchen/dabadee(M), slot_r_hand)
 			M.equip_to_slot_or_del(new /obj/item/weapon/kitchenknife(M), slot_l_hand)
 			M.equip_to_slot_or_del(new /obj/item/weapon/kitchenknife(M), slot_r_store)
 			M.equip_to_slot_or_del(new /obj/item/weapon/kitchenknife(M), slot_s_store)

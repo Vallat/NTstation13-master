@@ -1,6 +1,6 @@
 /*
 AI
-*/
+
 /datum/job/ai
 	title = "AI"
 	flag = AI
@@ -38,3 +38,5 @@ Cyborg
 /datum/job/cyborg/equip(var/mob/living/carbon/human/H)
 	if(!H)	return 0
 	return H.Robotize()
+
+*/

@@ -2,7 +2,7 @@
 Bartender
 */
 /datum/job/bartender
-	title = "Bartender"
+	title = "bartender"
 	flag = BARTENDER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -13,32 +13,32 @@ Bartender
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/bar
-	default_headset = /obj/item/device/radio/headset/headset_srv
+//	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue, access_mineral_storeroom, access_weapons)
 	minimal_access = list(access_bar, access_mineral_storeroom)
 	assistant_access = list(access_bar)
 	assistant_title = "Barista"
 
-/datum/job/bartender/equip_backpack(var/mob/living/carbon/human/H)
-	switch(H.backbag)
-		if(1) //No backpack or satchel
+//datum/job/bartender/equip_backpack(var/mob/living/carbon/human/H)
+//	switch(H.backbag)
+	//	if(1) //No backpack or satchel
 
-			var/obj/item/weapon/storage/box/box = new default_storagebox(H)
-			new /obj/item/ammo_casing/shotgun/beanbag(box)
-			new /obj/item/ammo_casing/shotgun/beanbag(box)
-			new /obj/item/ammo_casing/shotgun/beanbag(box)
-			new /obj/item/ammo_casing/shotgun/beanbag(box)
-			H.equip_to_slot_or_del(box, slot_r_hand)
+		//	var/obj/item/weapon/storage/box/box = new default_storagebox(H)
+		//	new /obj/item/ammo_casing/shotgun/beanbag(box)
+		//	new /obj/item/ammo_casing/shotgun/beanbag(box)
+		//	new /obj/item/ammo_casing/shotgun/beanbag(box)
+		//	new /obj/item/ammo_casing/shotgun/beanbag(box)
+		//	H.equip_to_slot_or_del(box, slot_r_hand)
 
-		if(2) // Backpack
-			var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
-			new default_storagebox(BPK)
-			H.equip_to_slot_or_del(BPK, slot_back,1)
-		if(3) //Satchel
-			var/obj/item/weapon/storage/backpack/BPK = new default_satchel(H)
-			new default_storagebox(BPK)
-			H.equip_to_slot_or_del(BPK, slot_back,1)
+	//	if(2) // Backpack
+			//var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
+			//new default_storagebox(BPK)
+			//H.equip_to_slot_or_del(BPK, slot_back,1)
+	//	if(3) //Satchel
+		//	var/obj/item/weapon/storage/backpack/BPK = new default_satchel(H)
+		//	new default_storagebox(BPK)
+		//	H.equip_to_slot_or_del(BPK, slot_back,1)
 
 /datum/job/bartender/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
@@ -56,7 +56,7 @@ Bartender
 Chef
 */
 /datum/job/chef
-	title = "Chef"
+	title = "chef"
 	flag = CHEF
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -67,7 +67,7 @@ Chef
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/chef
-	default_headset = /obj/item/device/radio/headset/headset_srv
+//	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue)
 	minimal_access = list(access_kitchen, access_morgue)
@@ -84,7 +84,7 @@ Chef
 Botanist
 */
 /datum/job/hydro
-	title = "Botanist"
+	title = "botanist"
 	flag = BOTANIST
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -95,9 +95,9 @@ Botanist
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/botanist
-	default_headset = /obj/item/device/radio/headset/headset_srv
-	default_backpack = /obj/item/weapon/storage/backpack
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_hyd
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+//	default_backpack = /obj/item/weapon/storage/backpack
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_hyd
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue) // Removed tox and chem access because STOP PISSING OFF THE CHEMIST GUYS // //Removed medical access because WHAT THE FUCK YOU AREN'T A DOCTOR YOU GROW WHEAT //Given Morgue access because they have a viable means of cloning.
 	minimal_access = list(access_hydroponics, access_morgue) // Removed tox and chem access because STOP PISSING OFF THE CHEMIST GUYS // //Removed medical access because WHAT THE FUCK YOU AREN'T A DOCTOR YOU GROW WHEAT //Given Morgue access because they have a viable means of cloning.
@@ -126,7 +126,7 @@ Quartermaster
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/quartermaster
-	default_headset = /obj/item/device/radio/headset/headset_cargo
+//	default_headset = /obj/item/device/radio/headset/headset_cargo
 
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mint, access_mining, access_mining_station, access_mineral_storeroom)
 	minimal_access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mint, access_mining, access_mining_station)
@@ -135,7 +135,7 @@ Quartermaster
 
 /datum/job/qm/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/cargo(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/brown(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
 	H.equip_to_slot_or_del(new /obj/item/weapon/clipboard(H), slot_l_hand)
@@ -145,7 +145,7 @@ Quartermaster
 Cargo Technician
 */
 /datum/job/cargo_tech
-	title = "Trader  Technician"
+	title = "Trade Worker"
 	flag = CARGOTECH
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -156,7 +156,7 @@ Cargo Technician
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/cargo
-	default_headset = /obj/item/device/radio/headset/headset_cargo
+//	default_headset = /obj/item/device/radio/headset/headset_cargo
 
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining)
 	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting)
@@ -165,7 +165,7 @@ Cargo Technician
 
 /datum/job/cargo_tech/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/cargotech(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/that(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
@@ -173,7 +173,7 @@ Cargo Technician
 Shaft Miner
 */
 /datum/job/mining
-	title = "Shaft Miner"
+	title = "Shaft miner"
 	flag = MINER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -184,10 +184,10 @@ Shaft Miner
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/shaftminer
-	default_headset = /obj/item/device/radio/headset/headset_cargo
-	default_backpack = /obj/item/weapon/storage/backpack/industrial
-	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
-	default_storagebox = /obj/item/weapon/storage/box/engineer
+//	default_headset = /obj/item/device/radio/headset/headset_cargo
+//	default_backpack = /obj/item/weapon/storage/backpack/industrial
+//	default_satchel = /obj/item/weapon/storage/backpack/satchel_eng
+//	default_storagebox = /obj/item/weapon/storage/box/engineer
 
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_mint, access_mining, access_mining_station, access_mineral_storeroom)
 	minimal_access = list(access_mining, access_mint, access_mining_station, access_mailsorting, access_mineral_storeroom)
@@ -196,7 +196,7 @@ Shaft Miner
 
 /datum/job/mining/equip_items(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/miner(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
 
 	if(H.backbag == 1)
@@ -210,7 +210,7 @@ Shaft Miner
 
 /*
 Clown
-*/
+
 /datum/job/clown
 	title = "Clown"
 	flag = CLOWN
@@ -222,23 +222,23 @@ Clown
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	d//efault_pda = /obj/item/device/pda/clown
-	default_backpack = /obj/item/weapon/storage/backpack/clown
+	//default_pda = /obj/item/device/pda/clown
+//	default_backpack = /obj/item/weapon/storage/backpack/clown
 
 	access = list(access_theatre, access_maint_tunnels)
 	minimal_access = list(access_theatre)
 	assistant_access = list(access_theatre)
 	assistant_title = "Comic-Relief"
 
-/datum/job/clown/equip_backpack(var/mob/living/carbon/human/H)
-	var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
+//datum/job/clown/equip_backpack(var/mob/living/carbon/human/H)
+//	var/obj/item/weapon/storage/backpack/BPK = new default_backpack(H)
 
-	new default_storagebox(BPK)
-	new /obj/item/weapon/reagent_containers/food/snacks/grown/banana(BPK, 50)
-	new /obj/item/weapon/stamp/clown(BPK)
-	new /obj/item/weapon/reagent_containers/spray/waterflower(BPK)
+//	new default_storagebox(BPK)
+//	new /obj/item/weapon/reagent_containers/food/snacks/grown/banana(BPK, 50)
+//	new /obj/item/weapon/stamp/clown(BPK)
+//	new /obj/item/weapon/reagent_containers/spray/waterflower(BPK)
 
-	H.equip_to_slot_or_del(BPK, slot_back)
+//	H.equip_to_slot_or_del(BPK, slot_back)
 
 /datum/job/clown/equip_items(var/mob/living/carbon/human/H)
 	H.fully_replace_character_name(H.real_name, pick(clown_names)) // Give him a temporary random name to prevent identity revealing
@@ -266,8 +266,8 @@ Mime
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 
-	default_pda = /obj/item/device/pda/mime
-	default_backpack = /obj/item/weapon/storage/backpack/mime
+//	default_pda = /obj/item/device/pda/mime
+//	default_backpack = /obj/item/weapon/storage/backpack/mime
 
 	access = list(access_theatre, access_maint_tunnels)
 	minimal_access = list(access_theatre)
@@ -282,19 +282,20 @@ Mime
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/beret(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/suspenders(H), slot_wear_suit)
 
-	if(H.backbag == 1)
-		H.equip_to_slot_or_del(new /obj/item/toy/crayon/mime(H), slot_l_store)
-		H.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing(H), slot_l_hand)
-	else
-		H.equip_to_slot_or_del(new /obj/item/toy/crayon/mime(H), slot_in_backpack)
-		H.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing(H), slot_in_backpack)
+//	if(H.backbag == 1)
+	//	H.equip_to_slot_or_del(new /obj/item/toy/crayon/mime(H), slot_l_store)
+//		H.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing(H), slot_l_hand)
+//	else
+	//	H.equip_to_slot_or_del(new /obj/item/toy/crayon/mime(H), slot_in_backpack)
+	//	H.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing(H), slot_in_backpack)
 
-	if(H.mind)
-		H.mind.spell_list += new /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall(null)
+//	if(H.mind)
+	//	H.mind.spell_list += new /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall(null)
 //		H.mind.spell_list += new /obj/effect/proc_holder/spell/targeted/mime/speak(null)
-		H.mind.miming = 1
+	//	H.mind.miming = 1
 
 	H.rename_self("mime")
+*/
 
 /*
 Janitor
@@ -311,7 +312,7 @@ Janitor
 	selection_color = "#dddddd"
 
 	//default_pda = /obj/item/device/pda/janitor
-	default_headset = /obj/item/device/radio/headset/headset_srv
+//	default_headset = /obj/item/device/radio/headset/headset_srv
 
 	access = list(access_janitor, access_maint_tunnels)
 	minimal_access = list(access_janitor, access_maint_tunnels)
@@ -324,7 +325,7 @@ Janitor
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 /*
 Librarian
-*/
+
 /datum/job/librarian
 	title = "Librarian"
 	flag = LIBRARIAN
@@ -366,7 +367,7 @@ Lawyer
 	var/global/lawyers = 0 //Counts lawyer amount
 
 	//default_pda = /obj/item/device/pda/lawyer
-	default_headset = /obj/item/device/radio/headset/headset_sec
+//	default_headset = /obj/item/device/radio/headset/headset_sec
 
 	access = list(access_lawyer, access_court, access_sec_doors, access_maint_tunnels)
 	minimal_access = list(access_lawyer, access_court, access_sec_doors)
@@ -387,3 +388,5 @@ Lawyer
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/briefcase(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/device/laser_pointer(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
+
+	*/

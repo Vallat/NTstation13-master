@@ -65,6 +65,20 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
+
+/obj/item/clothing/suit/armor/steam_armor
+	name = "steam suit"
+	desc = "A suit of armor with heavy padding to protect against melee attacks. Looks like it might impair movement."
+	icon_state = "steam_armor"
+	item_state = "swat_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 1
+	armor = list(melee = 80, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+	flags_inv = HIDEJUMPSUIT
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+
+
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"
 	desc = "A vest that excels in protecting the wearer against high-velocity solid projectiles."
