@@ -44,6 +44,8 @@
 #define ui_storage1 "CENTER+1:18,SOUTH:5"
 #define ui_storage2 "CENTER+2:20,SOUTH:5"
 
+#define ui_implant "CENTER+1:18,SOUTH:5"
+
 #define ui_inv1 "CENTER-2:16,SOUTH:5"			//borgs
 #define ui_inv2 "CENTER-1  :16,SOUTH:5"			//borgs
 #define ui_inv3 "CENTER  :16,SOUTH:5"			//borgs
@@ -61,6 +63,10 @@
 #define ui_pull_resist "EAST-2:26,SOUTH+1:7"
 #define ui_movi "EAST-2:26,SOUTH:5"
 #define ui_acti "EAST-3:24,SOUTH:5"
+#define ui_def "CENTER+1:18,SOUTH:5"
+#define ui_react "CENTER+2:20,SOUTH:5"
+
+
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5"	//alternative intent switcher for when the interface is hidden (F12)
 
@@ -69,20 +75,20 @@
 #define ui_borg_intents "EAST-2:26,SOUTH:5"
 
 //Upper-middle right (damage indicators)
-#define ui_toxin "EAST-1:28,CENTER+5:27"
-#define ui_fire "EAST-1:28,CENTER+4:25"
-#define ui_oxygen "EAST-1:28,CENTER+3:23"
-#define ui_pressure "EAST-1:28,CENTER+2:21"
+#define ui_toxin "WEST:6,CENTER+5:27"
+#define ui_fire "WEST:6,CENTER+4:25"
+#define ui_oxygen "WEST:6,CENTER+3:23"
+#define ui_pressure "WEST:6,CENTER+2:21"
 
-#define ui_alien_toxin "EAST-1:28,CENTER+5:25"
-#define ui_alien_fire "EAST-1:28,CENTER+4:25"
-#define ui_alien_oxygen "EAST-1:28,CENTER+3:25"
+#define ui_alien_toxin "WEST:6,CENTER+5:25"
+#define ui_alien_fire "WEST:6,CENTER+4:25"
+#define ui_alien_oxygen "WEST:6,CENTER+3:25"
 
 //Middle right (status indicators)
-#define ui_nutrition "EAST-1:28,CENTER-3:11"
-#define ui_temp "EAST-1:28,CENTER-2:13"
-#define ui_health "EAST-1:28,CENTER-1:15"
-#define ui_internal "EAST-1:28,CENTER:17"
+#define ui_nutrition "WEST:6,CENTER-3:11"
+#define ui_temp "WEST:6,CENTER-2:13"
+#define ui_health "WEST:6,CENTER-1:15"
+#define ui_internal "WEST:6,CENTER:17"
 
 //borgs and aliens
 #define ui_borg_health "EAST-1:28,CENTER-1:15"		//borgs have the health display where humans have the pressure damage indicator.

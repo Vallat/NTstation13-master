@@ -122,6 +122,59 @@ for reference:
 			return 0
 
 
+/obj/structure/barricade/wooden/tower
+	name = "power tower"
+	desc = "Dont't touch so much."
+	icon = 'icons/obj/machines/artillery.dmi'
+	icon_state = "tower"
+	anchored = 1.0
+	density = 1.0
+	health = 100.0
+	maxhealth = 100.0
+
+
+	attackby(obj/item/W as obj, mob/user as mob)
+		if (istype(W, /obj/item/stack/sheet/metal))
+			if (src.health < src.maxhealth)
+				visible_message("\red [user] begins to repair the [src]!")
+				if(do_after(user,20))
+					src.health = src.maxhealth
+					W:use(1)
+					visible_message("\red [user] repairs the [src]!")
+					return
+			else
+				return
+			return
+		else
+			switch(W.damtype)
+				if("fire")
+					src.health -= W.force * 1
+				if("brute")
+					src.health -= W.force * 0.75
+				else
+			if (src.health <= 0)
+				visible_message("\red <B>The tower is smashed apart!</B>")
+				new /obj/item/stack/sheet/metal(get_turf(src))
+				new /obj/item/stack/sheet/metal(get_turf(src))
+				new /obj/item/stack/sheet/metal(get_turf(src))
+				qdel(src)
+			..()
+
+	ex_act(severity)
+		switch(severity)
+			if(1.0)
+				visible_message("\red <B>The tower is blown apart!</B>")
+				qdel(src)
+				return
+			if(2.0)
+				src.health -= 25
+				if (src.health <= 0)
+					visible_message("\red <B>The tower is blown apart!</B>")
+					new /obj/item/stack/sheet/metal(get_turf(src))
+					new /obj/item/stack/sheet/metal(get_turf(src))
+					new /obj/item/stack/sheet/metal(get_turf(src))
+					qdel(src)
+				return
 //Actual Deployable machinery stuff
 
 /obj/machinery/deployable

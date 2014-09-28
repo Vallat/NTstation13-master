@@ -14,6 +14,7 @@
 	adding += using
 	action_intent = using
 
+
 	using = new /obj/screen()
 	using.name = "mov_intent"
 	using.icon = ui_style
@@ -39,6 +40,15 @@
 	inv_box.screen_loc = ui_iclothing
 	inv_box.layer = 19
 	other += inv_box
+
+	inv_box = new /obj/screen/inventory()
+	inv_box.name = "implant"
+	inv_box.icon = ui_style
+	inv_box.slot_id = slot_w_implant
+	inv_box.icon_state = "implant"
+	inv_box.screen_loc = ui_implant
+	inv_box.layer = 19
+	//other += inv_box
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "o_clothing"
@@ -274,6 +284,22 @@
 	mymob.pullin.name = "pull"
 	mymob.pullin.screen_loc = ui_pull_resist
 	hotkeybuttons += mymob.pullin
+
+	//mymob.defense = new /obj/screen()
+	//mymob.defense.name = "defense"
+	//mymob.defense.icon = ui_style
+	//mymob.defense.icon_state = "defense"
+	//mymob.defense.screen_loc = ui_def
+	//mymob.layer = 19
+	//hotkeybuttons += mymob.defense
+
+	//mymob.react = new /obj/screen()
+	//mymob.react.name = "reaction"
+	//mymob.react.icon_state = "reaction"
+	//mymob.react.screen_loc = ui_react
+	//mymob.react.layer = 19
+	//hotkeybuttons += mymob.react
+
 
 	lingchemdisplay = new /obj/screen()
 	lingchemdisplay.name = "chemical storage"

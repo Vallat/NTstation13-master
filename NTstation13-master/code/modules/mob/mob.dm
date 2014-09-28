@@ -207,7 +207,8 @@ var/list/slot_equipment_priority = list( \
 		slot_belt,\
 		slot_s_store,\
 		slot_l_store,\
-		slot_r_store\
+		slot_r_store,\
+		slot_w_implant,\
 	)
 
 //puts the item "W" into an appropriate slot in a human's inventory

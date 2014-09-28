@@ -36,8 +36,8 @@
 
 /obj/screen/close/Click()
 	if(master)
-		if(istype(master, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/S = master
+		if(istype(master, /obj/item/clothing ))
+			var/obj/item/clothing/S = master
 			S.close(usr)
 	return 1
 

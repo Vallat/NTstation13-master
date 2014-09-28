@@ -238,6 +238,8 @@
 			return glasses
 		if(slot_gloves)
 			return gloves
+		if(slot_w_implant)
+			return w_implant
 		if(slot_head)
 			return head
 		if(slot_shoes)
@@ -351,6 +353,8 @@
 		if(slot_handcuffed)
 			handcuffed = I
 			update_inv_handcuffed(redraw_mob)
+		if(slot_w_implant)
+			w_implant = I
 		if(slot_legcuffed)
 			legcuffed = I
 			update_inv_legcuffed(redraw_mob)

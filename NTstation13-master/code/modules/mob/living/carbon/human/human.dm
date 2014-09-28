@@ -110,12 +110,18 @@
 			step(AM, t)
 		now_pushing = 0
 
+
+
 /mob/living/carbon/human/Stat()
 	..()
 	statpanel("Status")
 
+
 	stat(null, "Intent: [a_intent]")
 	stat(null, "Move Mode: [m_intent]")
+	stat(null, "Blood type: [blood_type]")
+	stat(null, "Age: [age]")
+	stat(null, "Gender: [gender]")
 	if(ticker && ticker.mode && ticker.mode.name == "AI malfunction")
 		if(ticker.mode:malf_mode_declared)
 			stat(null, "Time left: [max(ticker.mode:AI_win_timeleft/(ticker.mode:apcs/3), 0)]")
@@ -139,6 +145,10 @@
 				stat("Absorbed DNA", mind.changeling.absorbedcount)
 		if (istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)&&wear_suit:s_initialized)
 			stat("Energy Charge", round(wear_suit:cell:charge/100))
+
+	if(istype(glasses, /obj/item/clothing/glasses/meson))
+		stat(null, "Eye implant activated system")
+
 
 
 /mob/living/carbon/human/ex_act(severity)

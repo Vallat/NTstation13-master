@@ -232,6 +232,12 @@
 					M.disabilities &= ~NEARSIGHTED
 		..()
 
+/obj/item/clothing/glasses/thermal
+	name = "Optical Thermal Scanner"
+	desc = "Thermals in the shape of glasses."
+	icon_state = "th_implant"
+	item_state = "glasses"
+
 /obj/item/clothing/glasses/thermal/syndi	//These are now a traitor item, concealed as mesons.	-Pete
 	name = "Optical Meson Scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."

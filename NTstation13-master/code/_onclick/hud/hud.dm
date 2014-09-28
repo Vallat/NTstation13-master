@@ -151,6 +151,7 @@ datum/hud/New(mob/owner)
 			if(H.shoes)		H.shoes.screen_loc = ui_shoes
 			if(H.gloves)	H.gloves.screen_loc = ui_gloves
 			if(H.ears)		H.ears.screen_loc = ui_ears
+			if(H.w_implant)	H.w_implant.screen_loc = ui_implant
 			if(H.glasses)	H.glasses.screen_loc = ui_glasses
 			if(H.w_uniform)	H.w_uniform.screen_loc = ui_iclothing
 			if(H.wear_suit)	H.wear_suit.screen_loc = ui_oclothing
@@ -160,6 +161,7 @@ datum/hud/New(mob/owner)
 			if(H.shoes)		H.shoes.screen_loc = null
 			if(H.gloves)	H.gloves.screen_loc = null
 			if(H.ears)		H.ears.screen_loc = null
+			if(H.w_implant)	H.w_implant.screen_loc = null
 			if(H.glasses)	H.glasses.screen_loc = null
 			if(H.w_uniform)	H.w_uniform.screen_loc = null
 			if(H.wear_suit)	H.wear_suit.screen_loc = null

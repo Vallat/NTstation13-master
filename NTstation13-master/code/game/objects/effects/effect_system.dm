@@ -847,6 +847,18 @@ steam.start() -- spawns the effect
 		spawn(5)
 			delete()
 
+//lol
+/obj/effect/effect/black
+
+/obj/effect/effect/black/Crossed(var/atom/movable/AM)
+
+	if (istype(AM, /mob/living/carbon))
+		var/mob/living/carbon/M = AM
+		M.gib()
+
+//lol
+
+
 
 /obj/effect/effect/foam/Crossed(var/atom/movable/AM)
 	if(metal)

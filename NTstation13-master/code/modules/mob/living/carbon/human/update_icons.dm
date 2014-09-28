@@ -326,6 +326,7 @@ Please contact me on #coderbus IRC. ~Carnie x
 	update_inv_shoes()
 	update_inv_s_store()
 	update_inv_wear_mask()
+	update_inv_implant()
 	update_inv_head()
 	update_inv_belt()
 	update_inv_back()

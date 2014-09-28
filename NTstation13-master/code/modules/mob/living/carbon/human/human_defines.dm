@@ -25,6 +25,7 @@
 	//Equipment slots
 	var/obj/item/clothing/suit/wear_suit = null
 	var/obj/item/w_uniform = null
+	var/obj/item/w_implant = null
 	var/obj/item/shoes = null
 	var/obj/item/belt = null
 	var/obj/item/gloves = null
