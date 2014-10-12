@@ -160,13 +160,13 @@
 		if(istype(A, /mob/living) && A:lying)
 			img.Turn(A:lying)
 
-		var/offX = 32 * (A.x - center.x) + A.pixel_x + 33
-		var/offY = 32 * (A.y - center.y) + A.pixel_y + 33
-		if(istype(A, /atom/movable))
-			offX += A:step_x
-			offY += A:step_y
+		//var/offX = 32 * (A.x - center.x) + A.pixel_x + 33
+		//var/offY = 32 * (A.y - center.y) + A.pixel_y + 33
+		//if(istype(A, /atom/movable))
+//			offX += A:step_x
+//			offY += A:step_y
 
-		res.Blend(img, blendMode2iconMode(A.blend_mode), offX, offY)
+		//res.Blend(img, blendMode2iconMode(A.blend_mode), offX, offY)
 
 		if(istype(A, /obj/item/blueprints))
 			blueprints = 1

@@ -98,6 +98,12 @@
 	origin_tech = "materials=1;biotech=1"
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
 
+/obj/item/weapon/circular_saw/arm_saw
+	name = "arm steam saw"
+	icon_state = "arm_saw"
+	flags = ABSTRACT | NODROP | SHARP
+	force = 30.0
+	item_state = "armsaw"
 
 /obj/item/weapon/surgical_drapes
 	name = "surgical drapes"

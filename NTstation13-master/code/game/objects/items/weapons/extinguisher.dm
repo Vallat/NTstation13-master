@@ -52,7 +52,7 @@
 /obj/item/weapon/extinguisher/afterattack(atom/target, mob/user , flag)
 	//TODO; Add support for reagents in water.
 
-	if( istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(src,target) <= 1)
+	if( istype(target, /obj/effect/effect/watertank) && get_dist(src,target) <= 1)
 		var/obj/o = target
 		o.reagents.trans_to(src, max_water)
 		user << "\blue \The [src] is now refilled"

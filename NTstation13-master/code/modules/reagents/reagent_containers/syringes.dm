@@ -116,7 +116,7 @@
 						user << "<span class='notice'>[target] is empty.</span>"
 						return
 
-					if(!target.is_open_container() && !istype(target,/obj/structure/reagent_dispensers) && !istype(target,/obj/item/slime_extract))
+					if(!target.is_open_container() && !istype(target,/obj/effect/effect) && !istype(target,/obj/item/slime_extract))
 						user << "<span class='notice'>You cannot directly remove reagents from [target].</span>"
 						return
 

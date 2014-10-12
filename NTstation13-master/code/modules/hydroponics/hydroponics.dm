@@ -1045,6 +1045,14 @@ obj/machinery/hydroponics/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	use_power = 0
 	unwrenchable = 0
 
+/obj/machinery/hydroponics/soil/a //Not actually hydroponics at all! Honk!
+	name = "soil"
+	icon = 'icons/obj/hydroponics.dmi'
+	icon_state = "so"
+	density = 0
+	use_power = 0
+	unwrenchable = 0
+
 /obj/machinery/hydroponics/soil/update_icon() // Same as normal but with the overlays removed - Cheridan.
 	overlays.Cut()
 

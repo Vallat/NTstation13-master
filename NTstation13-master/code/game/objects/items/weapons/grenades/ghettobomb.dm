@@ -34,11 +34,11 @@
 
 /obj/item/weapon/grenade/iedcasing/afterattack(atom/target, mob/user , flag) //Filling up the can
 	if(assembled == 0)
-		if(istype(target, /obj/structure/reagent_dispensers/fueltank) && in_range(src, target))
+		if(istype(target, /obj/effect/effect/fueltank) && in_range(src, target))
 			if(target.reagents.total_volume < 50)
 				user << "<span  class='notice'>There's not enough fuel left to work with.</span>"
 				return
-			var/obj/structure/reagent_dispensers/fueltank/F = target
+			var/obj/effect/effect/fueltank/F = target
 			F.reagents.remove_reagent("fuel", 50, 1)//Deleting 50 fuel from the welding fuel tank,
 			assembled = 1
 			user << "<span  class='notice'>You've filled the makeshift explosive with welding fuel.</span>"

@@ -32,6 +32,6 @@ var/list/liftable_structures = list(
 	/obj/structure/closet,
 	/obj/machinery/photocopier,
 	/obj/structure/filingcabinet,
-	/obj/structure/reagent_dispensers,
+	/obj/effect/effect,
 	/obj/machinery/portable_atmospherics/canister
 	)

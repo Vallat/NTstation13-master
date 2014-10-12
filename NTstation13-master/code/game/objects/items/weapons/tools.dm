@@ -29,6 +29,14 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 
 
+/obj/item/weapon/wrench/arm_wrench
+	name = "arm wrench"
+	desc = "A wrench with common uses."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "arm_wrench"
+	item_state = "arm_wrench"
+	flags = ABSTRACT | NODROP
+
 /*
  * Screwdriver
  */
@@ -243,7 +251,7 @@
 
 /obj/item/weapon/weldingtool/afterattack(atom/O, mob/user, proximity)
 	if(!proximity) return
-	if(istype(O, /obj/structure/reagent_dispensers/fueltank) && in_range(src, O))
+	if(istype(O, /obj/effect/effect/fueltank) && in_range(src, O))
 		if(!welding)
 			O.reagents.trans_to(src, max_fuel)
 			user << "<span class='notice'>[src] refueled.</span>"

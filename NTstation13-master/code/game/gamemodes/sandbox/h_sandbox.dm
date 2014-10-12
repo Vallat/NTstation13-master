@@ -63,8 +63,8 @@ datum/hSB
 
 					"Miscellaneous",
 					"Spawn Air Scrubber"				= "hsbscrubber",
-					"Spawn Welding Fuel Tank"			= "hsbspawn&path=[/obj/structure/reagent_dispensers/fueltank]",
-					"Spawn Water Tank"					= "hsbspawn&path=[/obj/structure/reagent_dispensers/watertank]",
+					"Spawn Welding Fuel Tank"			= "hsbspawn&path=[/obj/effect/effect/fueltank]",
+					"Spawn Water Tank"					= "hsbspawn&path=[/obj/effect/effect/watertank]",
 
 					"Bots",
 					"Spawn Cleanbot"					= "hsbspawn&path=[/obj/machinery/bot/cleanbot]",

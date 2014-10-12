@@ -64,7 +64,7 @@
 
 /obj/item/weapon/reagent_containers/food/condiment/afterattack(obj/target, mob/user , proximity)
 	if(!proximity) return
-	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
+	if(istype(target, /obj/effect/effect)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
 			user << "<span class='warning'>[target] is empty.</span>"

@@ -9,8 +9,99 @@ would spawn and follow the beaker, even if it is carried or thrown.
 /obj/effect/effect
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
-	mouse_opacity = 0
+	mouse_opacity = 1
 	unacidable = 1//So effect are not targeted by alien acid.
+	layer = TURF_LAYER
+
+/obj/effect/effect/goodwater
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "water"
+	var/life = 15.0
+	mouse_opacity = 1
+	layer = MOB_LAYER+1
+	New()
+		..()
+		reagents.add_reagent("water",1000)
+
+/obj/effect/effect/radwater
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "rad_water"
+	var/life = 15.0
+	mouse_opacity = 1
+	layer = MOB_LAYER+1
+	luminosity = 3
+	New()
+		..()
+		reagents.add_reagent("mutagen", 1000)
+
+/obj/effect/effect/radwater/two
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "rad"
+	life = 15.0
+	mouse_opacity = 0
+	layer = MOB_LAYER+1
+	luminosity = 1
+	New()
+		..()
+		reagents.add_reagent("mutagen", 1000)
+
+/obj/effect/effect/capsaicinwater
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "cap_water"
+	var/life = 15.0
+	mouse_opacity = 1
+	layer = MOB_LAYER+1
+	luminosity = 3
+	New()
+		..()
+		reagents.add_reagent("capsaicin", 1000)
+
+
+/obj/effect/effect/tripwater
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "trip_water"
+	var/life = 15.0
+	mouse_opacity = 1
+	layer = MOB_LAYER+1
+	luminosity = 3
+	New()
+		..()
+		reagents.add_reagent("space_drugs", 1000)
+
+/obj/effect/effect/goodwater/Crossed(mob/living/carbon/M as mob )
+	..()
+	reagents.reaction(M)
+
+	return
+
+/obj/effect/effect/radwater/Crossed(mob/living/carbon/M as mob )
+	..()
+	reagents.reaction(M)
+
+	return
+
+/obj/effect/effect/capsaicinwater/Crossed(mob/living/carbon/M as mob )
+	..()
+	reagents.reaction(M)
+
+	return
+
+/obj/effect/effect/tripwater/Crossed(mob/living/carbon/M as mob )
+	..()
+	reagents.reaction(M)
+
+	return
+
+//obj/effect/effect/radwater/Crossed(var/atom/movable/AM)
+
+//	if (istype(AM, /mob/living/carbon))
+//		var/mob/living/carbon/M = AM
+//		M.handle_mutations_and_radiation()
 
 /obj/effect/effect/water
 	name = "water"

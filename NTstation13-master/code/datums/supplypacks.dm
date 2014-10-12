@@ -374,7 +374,7 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 
 /datum/supply_packs/engineering/fueltank
 	name = "Fuel tank crate"
-	contains = list(/obj/structure/reagent_dispensers/fueltank)
+	contains = list(/obj/effect/effect/fueltank)
 	cost = 8
 	containertype = /obj/structure/largecrate
 	containername = "fuel tank crate"
@@ -900,7 +900,7 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 
 /datum/supply_packs/misc/watertank
 	name = "Water tank crate"
-	contains = list(/obj/structure/reagent_dispensers/watertank)
+	contains = list(/obj/effect/effect/watertank)
 	cost = 8
 	containertype = /obj/structure/largecrate
 	containername = "water tank crate"

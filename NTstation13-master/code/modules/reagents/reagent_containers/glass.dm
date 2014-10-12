@@ -63,7 +63,7 @@
 			spawn(5) reagents.clear_reagents()
 			return
 
-		else if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
+		else if(istype(target, /obj/effect/effect)) //A dispenser. Transfer FROM it TO us.
 
 			if(!target.reagents.total_volume && target.reagents)
 				user << "<span class='notice'>[target] is empty.</span>"

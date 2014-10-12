@@ -38,6 +38,9 @@
 	user.put_in_hands(new /obj/item/weapon/melee/arm_blade(user))
 	return 1
 
+
+
+
 /obj/item/weapon/melee/arm_blade
 	name = "arm blade"
 	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter"
