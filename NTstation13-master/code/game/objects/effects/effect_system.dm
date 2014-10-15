@@ -13,6 +13,10 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	unacidable = 1//So effect are not targeted by alien acid.
 	layer = TURF_LAYER
 
+/obj/effect/effect/decorative
+	mouse_opacity = 0
+	icon_state = "decorative"
+
 /obj/effect/effect/goodwater
 	name = "water"
 	icon = 'icons/effects/water.dmi'
