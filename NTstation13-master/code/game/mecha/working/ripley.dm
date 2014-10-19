@@ -1,6 +1,6 @@
 /obj/mecha/working/ripley
-	desc = "Autonomous Power Loader Unit. The workhorse of the exosuit world."
-	name = "\improper APLU \"Ripley\""
+	desc = "It is able to go?"
+	name = "bucket of bolts"
 	icon_state = "ripley"
 	step_in = 6
 	max_temperature = 20000

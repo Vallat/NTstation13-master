@@ -393,6 +393,16 @@
 	reinf = 1
 	health = 40
 
+/obj/structure/window/shuttle/castle
+	name = "window"
+	desc = "It looks rather strong. Might take a few good hits to shatter it."
+	icon = 'icons/obj/podwindows.dmi'
+	icon_state = "window_c"
+	dir = 5
+	reinf = 1
+	health = 40
+
+
 /obj/structure/window/shuttle/update_icon() //icon_state has to be set manually
 	return
 

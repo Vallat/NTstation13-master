@@ -17,13 +17,28 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	mouse_opacity = 0
 	icon_state = "decorative"
 
+/obj/effect/effect/decorative/g
+	mouse_opacity = 0
+	icon_state = "decorative_g"
+	luminosity = 1
+	layer = MOB_LAYER + 7
+
+/obj/effect/effect/decorative/wood
+	mouse_opacity = 0
+	icon_state = "wood"
+	layer = MOB_LAYER + 7
+
+/obj/effect/effect/h
+	mouse_opacity = 0
+	icon_state = "wood_h"
+
 /obj/effect/effect/goodwater
 	name = "water"
 	icon = 'icons/effects/water.dmi'
 	icon_state = "water"
 	var/life = 15.0
 	mouse_opacity = 1
-	layer = MOB_LAYER+1
+	layer = MOB_LAYER+7
 	New()
 		..()
 		reagents.add_reagent("water",1000)
@@ -34,7 +49,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	icon_state = "rad_water"
 	var/life = 15.0
 	mouse_opacity = 1
-	layer = MOB_LAYER+1
+	layer = MOB_LAYER+7
 	luminosity = 3
 	New()
 		..()
@@ -58,7 +73,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	icon_state = "cap_water"
 	var/life = 15.0
 	mouse_opacity = 1
-	layer = MOB_LAYER+1
+	layer = MOB_LAYER+7
 	luminosity = 3
 	New()
 		..()
@@ -71,7 +86,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	icon_state = "trip_water"
 	var/life = 15.0
 	mouse_opacity = 1
-	layer = MOB_LAYER+1
+	layer = MOB_LAYER+7
 	luminosity = 3
 	New()
 		..()

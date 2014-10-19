@@ -103,6 +103,30 @@
 		reagents.add_reagent("fuel",1000)
 
 
+/obj/effect/effect/ntank
+	name = "neurotoxintank"
+	desc = "A neurotoxin"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "ntank"
+	amount_per_transfer_from_this = 10
+	New()
+		..()
+		reagents.add_reagent("neurotoxin",1000)
+
+
+
+/obj/effect/effect/stank
+	name = "stimulanttank"
+	desc = "A stimulant"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "stank"
+	amount_per_transfer_from_this = 10
+	New()
+		..()
+		reagents.add_reagent("hyperzine", 300)
+		reagents.add_reagent("ethylredoxrazine", 300)
+		reagents.add_reagent("coffee", 300)
+
 /obj/effect/effect/fueltank/bullet_act(var/obj/item/projectile/Proj)
 	..()
 	if(istype(Proj ,/obj/item/projectile/beam)||istype(Proj,/obj/item/projectile/bullet))
