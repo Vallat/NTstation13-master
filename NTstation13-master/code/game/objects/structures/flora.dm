@@ -200,7 +200,8 @@
 /obj/structure/flora/kirbyplants
 	name = "Potted plant"
 	icon = 'icons/obj/flora/plants.dmi'
-	icon_state = "plant-01"
+	icon_state = "plant-19"
+	luminosity = 2
 
 /obj/structure/flora/kirbyplants/dead
 	name = "RD's potted plant"

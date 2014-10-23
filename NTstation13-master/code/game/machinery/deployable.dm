@@ -132,6 +132,36 @@ for reference:
 	health = 100.0
 	maxhealth = 100.0
 
+/obj/structure/barricade/wooden/tower/car
+	name = "car"
+	desc = "Drive my car in the bar."
+	icon = 'icons/obj/machines/gateway.dmi'
+	icon_state = "car1"
+	anchored = 1.0
+	density = 1.0
+	health = 100.0
+	maxhealth = 100.0
+
+/obj/structure/barricade/wooden/tower/car_z
+	name = "car"
+	desc = "Beeeep."
+	icon = 'icons/obj/machines/gateway.dmi'
+	icon_state = "car2"
+	anchored = 1.0
+	density = 1.0
+	health = 100.0
+	maxhealth = 100.0
+
+/obj/structure/barricade/wooden/tower/car_y
+	name = "car"
+	desc = "..."
+	icon = 'icons/obj/machines/gateway.dmi'
+	icon_state = "car3"
+	anchored = 1.0
+	density = 1.0
+	health = 100.0
+	maxhealth = 100.0
+
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if (istype(W, /obj/item/stack/sheet/metal))

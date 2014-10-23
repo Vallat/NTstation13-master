@@ -185,6 +185,20 @@
 			var/mob/living/carbon/U = usr
 			U.unset_sting()
 
+
+		if("vomit")
+			var/mob/living/L = usr
+			if(isliving(usr))
+				L.Stun(4)
+				L.visible_message("<span class='danger'>[L] throws up!</span>")
+				L.nutrition -= 20
+				L.adjustToxLoss(-2)
+				var/turf/pos = get_turf(L)
+				pos.add_vomit_floor(L)
+				playsound(pos, 'sound/effects/splat.ogg', 50, 1)
+				L.getBruteLoss(2)
+				return
+
 		if("resist")
 			if(isliving(usr))
 				var/mob/living/L = usr
@@ -241,6 +255,7 @@
 							usr.a_intent_change("disarm")
 		if("pull")
 			usr.stop_pulling()
+
 		if("throw/catch")
 			if(!usr.stat && isturf(usr.loc) && !usr.restrained())
 				usr:toggle_throw_mode()

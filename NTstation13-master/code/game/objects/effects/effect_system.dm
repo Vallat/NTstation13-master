@@ -55,6 +55,18 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		..()
 		reagents.add_reagent("mutagen", 1000)
 
+/obj/effect/effect/fuelwater
+	name = "water"
+	icon = 'icons/effects/water.dmi'
+	icon_state = "f_water"
+	var/life = 15.0
+	mouse_opacity = 1
+	layer = MOB_LAYER+7
+	luminosity = 3
+	New()
+		..()
+		reagents.add_reagent("fuel", 1000)
+
 /obj/effect/effect/radwater/two
 	name = "water"
 	icon = 'icons/effects/water.dmi'
@@ -105,6 +117,12 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	return
 
 /obj/effect/effect/capsaicinwater/Crossed(mob/living/carbon/M as mob )
+	..()
+	reagents.reaction(M)
+
+	return
+
+/obj/effect/effect/fuelwater/Crossed(mob/living/carbon/M as mob )
 	..()
 	reagents.reaction(M)
 

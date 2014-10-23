@@ -64,10 +64,23 @@
 	desc = "A watertank"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "watertank"
+	density = 1
 	amount_per_transfer_from_this = 10
 	New()
 		..()
 		reagents.add_reagent("water",1000)
+
+/obj/effect/effect/watertankA
+	name = "watertank"
+	desc = "A watertank"
+	icon = 'icons/obj/machines/artillery.dmi'
+	icon_state = "watertank"
+	density = 1
+	anchored = 1
+	amount_per_transfer_from_this = 10
+	New()
+		..()
+		reagents.add_reagent("fuel",10000)
 
 /obj/effect/effect/watertank/ex_act(severity)
 	switch(severity)
@@ -76,12 +89,12 @@
 			return
 		if(2.0)
 			if (prob(50))
-				new /obj/effect/effect/water(src.loc)
+				new /obj/effect/effect/goodwater(src.loc)
 				qdel(src)
 				return
 		if(3.0)
 			if (prob(5))
-				new /obj/effect/effect/water(src.loc)
+				new /obj/effect/effect/goodwater(src.loc)
 				qdel(src)
 				return
 		else
@@ -97,10 +110,23 @@
 	desc = "A fueltank"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "weldtank"
+	density = 1
+	anchored = 1
 	amount_per_transfer_from_this = 10
 	New()
 		..()
 		reagents.add_reagent("fuel",1000)
+
+/obj/effect/effect/fueltankA
+	name = "fueltank"
+	desc = "A fueltank"
+	icon = 'icons/obj/machines/artillery.dmi'
+	icon_state = "weldtank"
+	density = 1
+	amount_per_transfer_from_this = 10
+	New()
+		..()
+		reagents.add_reagent("fuel",10000)
 
 
 /obj/effect/effect/ntank
@@ -108,6 +134,7 @@
 	desc = "A neurotoxin"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ntank"
+	density = 1
 	amount_per_transfer_from_this = 10
 	New()
 		..()
@@ -120,6 +147,7 @@
 	desc = "A stimulant"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "stank"
+	density = 1
 	amount_per_transfer_from_this = 10
 	New()
 		..()
@@ -197,6 +225,7 @@
 	name = "beer keg"
 	desc = "A beer keg"
 	icon = 'icons/obj/objects.dmi'
+	density = 1
 	icon_state = "beertankTEMP"
 	amount_per_transfer_from_this = 10
 	New()

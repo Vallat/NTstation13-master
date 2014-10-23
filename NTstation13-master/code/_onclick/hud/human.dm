@@ -14,6 +14,26 @@
 	adding += using
 	action_intent = using
 
+	using = new /obj/screen()
+	using.name = "vomit"
+	using.icon_state = "vomit"
+	using.screen_loc = ui_vom
+	using.layer = 20
+	src.adding += using
+
+
+	using = new /obj/screen() //left hud bar
+	using.dir = SOUTH
+	using.screen_loc = "WEST:6,SOUTH to WEST:6,NORTH"
+	using.layer = 18
+	src.adding += using
+
+	using = new /obj/screen() //Lower hud bar
+	using.dir = EAST
+	using.screen_loc = "WEST,SOUTH:5 to EAST,SOUTH:5"
+	using.layer = 18
+	src.adding += using
+
 
 	using = new /obj/screen()
 	using.name = "mov_intent"
@@ -144,14 +164,14 @@
 	inv_box.layer = 19
 //	adding += inv_box
 
-	inv_box = new /obj/screen/inventory()
-	inv_box.name = "suit storage"
-	inv_box.icon = ui_style
-	inv_box.icon_state = "suit_storage"
-	inv_box.screen_loc = ui_sstore1
-	inv_box.slot_id = slot_s_store
-	inv_box.layer = 19
-	adding += inv_box
+//	inv_box = new /obj/screen/inventory()
+//	inv_box.name = "suit storage"
+//	inv_box.icon = ui_style
+//	inv_box.icon_state = "suit_storage"
+//	inv_box.screen_loc = ui_sstore1
+//	inv_box.slot_id = slot_s_store
+//	inv_box.layer = 19
+//	adding += inv_box
 
 	using = new /obj/screen()
 	using.name = "resist"
