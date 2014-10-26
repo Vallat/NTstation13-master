@@ -172,7 +172,7 @@
 				usr.hud_used.inventory_shown = 1
 				usr.client.screen += usr.hud_used.other
 
-			usr.hud_used.hidden_inventory_update()
+			//usr.hud_used.hidden_inventory_update()
 
 		if("equip")
 			if (istype(usr.loc,/obj/mecha)) // stops inventory actions in a mech

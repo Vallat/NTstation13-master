@@ -1,3 +1,77 @@
+mob
+	var //variables!
+		obj/item //typecasting the variable!
+		money = 10000
+		limit = 10
+		weight = 0
+	Stat()
+		statpanel("Pack") // naming the statpanel
+		//stat("Money",money) // showing money value
+		//stat("Weight Limit", limit) //shows the Capsule's weight limit
+		stat("Weight Used", weight) ///shows the capsule's used weight
+		//stat("--Weight--","--Item--") // seperator
+		for(var/obj/A in contents)
+			stat("[A.weight]",A) //the user's inventory
+	//	if(captarget&&(captarget in src)) //used for checking if the capsule, to open the tab.
+	//		statpanel("Capsule")
+	//		stat(captarget) //shows the capsule
+	//		stat("Weight Limit", captarget.limit) //shows the Capsule's weight limit
+	//		stat("Weight Used", captarget.weight) ///shows the capsule's used weight
+	//		stat("--Weight--","--Contained Item--") // seperator
+	//		for(var/obj/x in captarget) //shows the contents of the capsule
+	//			stat("[x.weight]",x) // here too
+
+obj
+	var/weight = 1 //we define the weight var! bigger items should get a higher weight, see below
+//	MouseDrop(turf/loca) // used for removing the item from the capsule
+		//if((loca in view(4))&&!(loca in usr)&&(isturf(loca))//&(src in usr.captarget)) // checking to see if the item is in the contents of the capsule, and if the location is within range
+		//	src.loc = loca // setting the location
+			//usr.captarget.weight -= src.weight // subtracting the weight
+		//	view() << "[usr] threw a capsule at the ground, releasing the [src]." // text output
+	MouseDown() //setting the mouse icon while dragging.
+		if(istype(src,/obj/item)&&(src in usr)) src.mouse_drag_pointer = src //setting the capsule as mouse's icon while dragging
+		//else if(src in usr.captarget) src.mouse_drag_pointer = src // setting the item in capsule while being dragged out
+		else src.mouse_drag_pointer = null
+	Item
+		verb
+			Get() // used to pick up the item
+				set src in oview(1)
+				if((src.weight + usr.weight) <= usr.limit)
+					src.Move(usr) //pickin it up!
+					usr << "You picked up \a [src]"
+					usr.weight += src.weight
+				else usr << "This object is too heavy, try dropping some others before picking this one up!!"
+			Drop() //used to put the item down
+				set src in usr
+				src.Move(usr.loc) //puttin it down!
+				usr << "You've dropped \a [src]"
+				usr.weight -= src.weight
+
+		/*	MouseDrop(obj/A) //here's where we drag the capsule over to another item, and drop it there. that's how we get the item in the capsule.
+				if(istype(A,/obj)&&src!=A&&(A in view(4))&&(src in usr)) // some checks which should be obvious
+					if((src.weight+A.weight) <= src.limit) // more checks, to see if the limit is not gone over
+						if(!istype(A,/obj/item)) //checking to see if the capsule...is not being put in another capsule!
+							if(ismob(A))
+								var/mob/X = A.loc
+								X.weight =- A.weight
+							A.Move(src) //setting the location of the capsule
+							src.weight+=A.weight //setting the new weight of the capsule
+							view() << "[usr] throws \a [src] at [A], succesfully containing it.." // text output
+						else
+							usr << "Immpossible Action!" //if the capsule is put into another capsule, this is outputted.
+							return
+					else usr << "This capsule is full, upgrade it further to allow more items to be keep within it." // says the capsule is not big enough
+			verb/Upgrade(Z as num) //verb to upgrade capsule limit
+				set desc="Upgrade the Capsule's capacity by using your Zennie (100 monies = 1 limit)"
+				if(Z <= usr.money) // checking to see if you have enough money
+					var/upgrade=(Z/100) //cince one-hundred monies = 1+ weight increase, we do this, divide the amount of money put in, by 100.
+					usr << "You upgrade the capsule's Capacity by [upgrade]."
+					src.limit+=upgrade //we upgrade it!
+					usr.money -= Z // we take away your money!
+	// random items!
+
+*/
+
 /obj/item
 	name = "item"
 	icon = 'icons/obj/items.dmi'

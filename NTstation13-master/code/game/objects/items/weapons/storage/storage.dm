@@ -268,7 +268,7 @@
 	W.loc = src
 	W.on_enter_storage(src)
 	if(usr)
-		if(usr.client && usr.s_active != src)
+		if(usr.s_active != src)
 			usr.client.screen -= W
 
 		add_fingerprint(usr)

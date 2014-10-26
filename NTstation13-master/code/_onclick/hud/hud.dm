@@ -146,17 +146,19 @@ datum/hud/New(mob/owner)
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
 		if(H.handcuffed)
-			H.handcuffed.screen_loc = null	//no handcuffs in my UI!
+			H.handcuffed.screen_loc = null
+				//no handcuffs in my UI!
+
 		if(inventory_shown && hud_shown)
-			if(H.shoes)		H.shoes.screen_loc = ui_shoes
-			if(H.gloves)	H.gloves.screen_loc = ui_gloves
-			if(H.ears)		H.ears.screen_loc = ui_ears
-			if(H.w_implant)	H.w_implant.screen_loc = ui_implant
-			if(H.glasses)	H.glasses.screen_loc = ui_glasses
-			if(H.w_uniform)	H.w_uniform.screen_loc = ui_iclothing
-			if(H.wear_suit)	H.wear_suit.screen_loc = ui_oclothing
-			if(H.wear_mask)	H.wear_mask.screen_loc = ui_mask
-			if(H.head)		H.head.screen_loc = ui_head
+			if(H.shoes)		H.shoes.screen_loc = null
+			if(H.gloves)	H.gloves.screen_loc = null
+			if(H.ears)		H.ears.screen_loc = null
+			if(H.w_implant)	H.w_implant.screen_loc = null
+			if(H.glasses)	H.glasses.screen_loc = null
+			if(H.w_uniform)	H.w_uniform.screen_loc = null
+			if(H.wear_suit)	H.wear_suit.screen_loc = null
+			if(H.wear_mask)	H.wear_mask.screen_loc = null
+			if(H.head)		H.head.screen_loc = null
 		else
 			if(H.shoes)		H.shoes.screen_loc = null
 			if(H.gloves)	H.gloves.screen_loc = null
@@ -176,12 +178,12 @@ datum/hud/New(mob/owner)
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
 		if(hud_shown)
-			if(H.s_store)	H.s_store.screen_loc = ui_sstore1
-			if(H.wear_id)	H.wear_id.screen_loc = ui_id
-			if(H.belt)		H.belt.screen_loc = ui_belt
-			if(H.back)		H.back.screen_loc = ui_back
-			if(H.l_store)	H.l_store.screen_loc = ui_storage1
-			if(H.r_store)	H.r_store.screen_loc = ui_storage2
+			if(H.s_store)	H.s_store.screen_loc = null
+			if(H.wear_id)	H.wear_id.screen_loc = null
+			if(H.belt)		H.belt.screen_loc = null
+			if(H.back)		H.back.screen_loc = null
+			if(H.l_store)	H.l_store.screen_loc = null
+			if(H.r_store)	H.r_store.screen_loc = null
 		else
 			if(H.s_store)	H.s_store.screen_loc = null
 			if(H.wear_id)	H.wear_id.screen_loc = null
@@ -189,6 +191,7 @@ datum/hud/New(mob/owner)
 			if(H.back)		H.back.screen_loc = null
 			if(H.l_store)	H.l_store.screen_loc = null
 			if(H.r_store)	H.r_store.screen_loc = null
+
 
 
 /datum/hud/proc/instantiate()

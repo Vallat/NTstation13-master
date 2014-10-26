@@ -25,24 +25,24 @@
 #define ui_action_slot5 "WEST+4:14,NORTH-1:26"
 
 //Lower left, persistant menu
-#define ui_inventory "WEST:6,SOUTH:5"
+//#define ui_inventory "WEST:6,SOUTH:5"
 
 //Middle left indicators
 #define ui_lingchemdisplay "WEST:6,CENTER-1:15"
 #define ui_lingstingdisplay "WEST:6,CENTER-3:11"
 
 //Lower center, persistant menu
-#define ui_sstore1 "CENTER-5:10,SOUTH:5"
-#define ui_id "CENTER-4:12,SOUTH:5"
-#define ui_belt "CENTER-3:14,SOUTH:5"
-#define ui_back "CENTER-5:10,SOUTH:5" //CENTER-2:14,SOUTH:5
+//#define ui_sstore1 "CENTER-5:10,SOUTH:5"
+//#define ui_id "CENTER-4:12,SOUTH:5"
+//#define ui_belt "CENTER-3:14,SOUTH:5"
+//#define ui_back "CENTER-5:10,SOUTH:5" //CENTER-2:14,SOUTH:5
 #define ui_rhand "CENTER:-16,SOUTH:5"
 #define ui_lhand "CENTER: 16,SOUTH:5"
-#define ui_equip "CENTER:-16,SOUTH+1:5"
+#define ui_equip "CENTER-3:14,SOUTH:5"
 #define ui_swaphand1 "CENTER:-16,SOUTH+1:5"
 #define ui_swaphand2 "CENTER: 16,SOUTH+1:5"
-#define ui_storage1 "CENTER+1:18,SOUTH:5"
-#define ui_storage2 "CENTER+2:20,SOUTH:5"
+//#define ui_storage1 "CENTER+1:18,SOUTH:5"
+//#define ui_storage2 "CENTER+2:20,SOUTH:5"
 
 #define ui_implant "CENTER+1:18,SOUTH:5"
 
@@ -76,9 +76,9 @@
 
 //Upper-middle right (damage indicators)
 #define ui_toxin "WEST:6,CENTER+5:27"
-#define ui_fire "WEST:6,CENTER+4:25"
-#define ui_oxygen "WEST:6,CENTER+3:23"
-#define ui_pressure "WEST:6,CENTER+2:21"
+#define ui_fire "CENTER-5:10,SOUTH:5"
+#define ui_oxygen "CENTER-4:12,SOUTH:5"
+#define ui_pressure "WEST+1:8,SOUTH:5"
 
 #define ui_alien_toxin "WEST:6,CENTER+5:25"
 #define ui_alien_fire "WEST:6,CENTER+4:25"
@@ -86,10 +86,10 @@
 
 //Middle right (status indicators)
 #define ui_nutrition "WEST:6,CENTER-3:11"
-#define ui_temp "WEST:6,CENTER-2:13"
-#define ui_health "WEST:6,CENTER-1:15"
+#define ui_temp "CENTER+4:24,SOUTH:5"
+#define ui_health "WEST:6,SOUTH:5"
 #define ui_vom "WEST:6,CENTER+1:15"
-#define ui_internal "WEST:6,CENTER:17"
+#define ui_internal "CENTER+3:22,SOUTH:5"
 
 //borgs and aliens
 #define ui_borg_health "EAST-1:28,CENTER-1:15"		//borgs have the health display where humans have the pressure damage indicator.
@@ -115,16 +115,16 @@
 #define ui_ai_sensor "SOUTH:6,WEST+14"
 
 //Pop-up inventory
-#define ui_shoes "WEST+1:8,SOUTH:5"
+//#define ui_shoes "WEST+1:8,SOUTH:5"
 
-#define ui_iclothing "WEST:6,SOUTH+1:7"
-#define ui_oclothing "WEST+1:8,SOUTH+1:7"
-#define ui_gloves "WEST+2:10,SOUTH+1:7"
+//#define ui_iclothing "WEST:6,SOUTH+1:7"
+//#define ui_oclothing "WEST+1:8,SOUTH+1:7"
+//#define ui_gloves "WEST+2:10,SOUTH+1:7"
 
-#define ui_glasses "WEST:6,SOUTH+2:9"
-#define ui_mask "WEST+1:8,SOUTH+2:9"
-#define ui_ears "WEST+2:10,SOUTH+2:9"
+//#define ui_glasses "WEST:6,SOUTH+2:9"
+//#define ui_mask "WEST+1:8,SOUTH+2:9"
+//#define ui_ears "WEST+2:10,SOUTH+2:9"
 
-#define ui_head "WEST+2:10,SOUTH+2:9" //WEST+1:8,SOUTH+3:11
+//#define ui_head "WEST+2:10,SOUTH+2:9" //WEST+1:8,SOUTH+3:11
 
 

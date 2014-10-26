@@ -17,16 +17,17 @@
 	using = new /obj/screen()
 	using.name = "vomit"
 	using.icon_state = "vomit"
-	using.screen_loc = ui_vom
+	//using.screen_loc = ui_vom
 	using.layer = 20
 	src.adding += using
 
 
-	using = new /obj/screen() //left hud bar
+/*	using = new /obj/screen() //left hud bar
 	using.dir = SOUTH
 	using.screen_loc = "WEST:6,SOUTH to WEST:6,NORTH"
 	using.layer = 18
 	src.adding += using
+*/
 
 	using = new /obj/screen() //Lower hud bar
 	using.dir = EAST
@@ -51,7 +52,7 @@
 	using.screen_loc = ui_drop_throw
 	using.layer = 19
 	hotkeybuttons += using
-
+ /*
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "i_clothing"
 	inv_box.icon = ui_style
@@ -79,6 +80,7 @@
 	inv_box.layer = 19
 	other += inv_box
 
+*/
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "r_hand"
 	inv_box.icon = ui_style
@@ -123,7 +125,7 @@
 	inv_box.name = "id"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "id"
-	inv_box.screen_loc = ui_id
+	//inv_box.screen_loc = ui_id
 	inv_box.slot_id = slot_wear_id
 	inv_box.layer = 19
 	adding += inv_box
@@ -132,7 +134,7 @@
 	inv_box.name = "mask"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
-	inv_box.screen_loc = ui_mask
+	//inv_box.screen_loc = ui_mask
 	inv_box.slot_id = slot_wear_mask
 	inv_box.layer = 19
 	other += inv_box
@@ -141,7 +143,7 @@
 	inv_box.name = "back"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "back"
-	inv_box.screen_loc = ui_back
+	//inv_box.screen_loc = ui_back
 	inv_box.slot_id = slot_back
 	inv_box.layer = 19
 	adding += inv_box
@@ -150,7 +152,7 @@
 	inv_box.name = "storage1"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
-	inv_box.screen_loc = ui_storage1
+	//inv_box.screen_loc = ui_storage1
 	inv_box.slot_id = slot_l_store
 	inv_box.layer = 19
 //	adding += inv_box
@@ -159,7 +161,7 @@
 	inv_box.name = "storage2"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
-	inv_box.screen_loc = ui_storage2
+	//inv_box.screen_loc = ui_storage2
 	inv_box.slot_id = slot_r_store
 	inv_box.layer = 19
 //	adding += inv_box
@@ -180,7 +182,7 @@
 	using.screen_loc = ui_pull_resist
 	using.layer = 19
 	hotkeybuttons += using
-
+/*
 	using = new /obj/screen()
 	using.name = "toggle"
 	using.icon = ui_style
@@ -188,7 +190,7 @@
 	using.screen_loc = ui_inventory
 	using.layer = 20
 	adding += using
-
+*/
 	using = new /obj/screen()
 	using.name = "equip"
 	using.icon = ui_style
@@ -201,7 +203,7 @@
 	inv_box.name = "gloves"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "gloves"
-	inv_box.screen_loc = ui_gloves
+	//inv_box.screen_loc = ui_gloves
 	inv_box.slot_id = slot_gloves
 	inv_box.layer = 19
 	other += inv_box
@@ -210,7 +212,7 @@
 	inv_box.name = "eyes"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "glasses"
-	inv_box.screen_loc = ui_glasses
+	//inv_box.screen_loc = ui_glasses
 	inv_box.slot_id = slot_glasses
 	inv_box.layer = 19
 	other += inv_box
@@ -219,7 +221,7 @@
 	inv_box.name = "ears"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "ears"
-	inv_box.screen_loc = ui_ears
+	//inv_box.screen_loc = ui_ears
 	inv_box.slot_id = slot_ears
 	inv_box.layer = 19
 	//other += inv_box
@@ -228,7 +230,7 @@
 	inv_box.name = "head"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "head"
-	inv_box.screen_loc = ui_head
+	//inv_box.screen_loc = ui_head
 	inv_box.slot_id = slot_head
 	inv_box.layer = 19
 	other += inv_box
@@ -237,7 +239,7 @@
 	inv_box.name = "shoes"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "shoes"
-	inv_box.screen_loc = ui_shoes
+	//inv_box.screen_loc = ui_shoes
 	inv_box.slot_id = slot_shoes
 	inv_box.layer = 19
 	other += inv_box
@@ -246,7 +248,7 @@
 	inv_box.name = "belt"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "belt"
-	inv_box.screen_loc = ui_belt
+	//inv_box.screen_loc = ui_belt
 	inv_box.slot_id = slot_belt
 	inv_box.layer = 19
 	adding += inv_box
@@ -266,12 +268,12 @@
 	mymob.pressure = new /obj/screen()
 	mymob.pressure.icon_state = "pressure0"
 	mymob.pressure.name = "pressure"
-	mymob.pressure.screen_loc = ui_pressure
+	//mymob.pressure.screen_loc = ui_pressure
 
 	mymob.toxin = new /obj/screen()
 	mymob.toxin.icon_state = "tox0"
 	mymob.toxin.name = "toxin"
-	mymob.toxin.screen_loc = ui_toxin
+	//mymob.toxin.screen_loc = ui_toxin
 
 	mymob.internals = new /obj/screen()
 	mymob.internals.icon_state = "internal0"
@@ -281,7 +283,7 @@
 	mymob.fire = new /obj/screen()
 	mymob.fire.icon_state = "fire0"
 	mymob.fire.name = "fire"
-	mymob.fire.screen_loc = ui_fire
+	//mymob.fire.screen_loc = ui_fire
 
 	mymob.bodytemp = new /obj/screen()
 	mymob.bodytemp.icon_state = "temp1"
@@ -296,7 +298,7 @@
 	mymob.nutrition_icon = new /obj/screen()
 	mymob.nutrition_icon.icon_state = "nutrition0"
 	mymob.nutrition_icon.name = "nutrition"
-	mymob.nutrition_icon.screen_loc = ui_nutrition
+	//mymob.nutrition_icon.screen_loc = ui_nutrition
 
 	mymob.pullin = new /obj/screen()
 	mymob.pullin.icon = ui_style

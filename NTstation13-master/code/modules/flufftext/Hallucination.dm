@@ -41,10 +41,10 @@ mob/living/carbon/proc/handle_hallucinations()
 					if(l_hand) slots_free -= ui_lhand
 					if(r_hand) slots_free -= ui_rhand
 					if(istype(src,/mob/living/carbon/human))
-						var/mob/living/carbon/human/H = src
-						if(!H.belt) slots_free += ui_belt
-						if(!H.l_store) slots_free += ui_storage1
-						if(!H.r_store) slots_free += ui_storage2
+					//	var/mob/living/carbon/human/H = src
+						//if(!H.belt) slots_free += ui_belt
+						//if(!H.l_store) slots_free += ui_storage1
+						//if(!H.r_store) slots_free += ui_storage2
 					if(slots_free.len)
 						halitem.screen_loc = pick(slots_free)
 						halitem.layer = 50

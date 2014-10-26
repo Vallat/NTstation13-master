@@ -343,3 +343,39 @@
 		usr << "\red Access denied."
 	return
 
+
+/obj/structure/crematorium/auto
+	name = "crematorium"
+	desc = "A human incinerator. Works well on barbeque nights."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "CR"
+	density = 1
+
+/obj/structure/crematorium/auto/Bumped(var/atom/movable/AM)
+
+	if(istype(AM, /obj))
+		var/obj/O = AM
+		O.loc = src
+	else if(istype(AM, /mob))
+		var/mob/K = AM
+		K.loc = src
+		if(src.allowed(usr))
+			for (var/obj/structure/crematorium/C in world)
+				if (C.id == id)
+					if (!C.cremating)
+						C.cremate(AM)
+
+/obj/structure/crematorium/auto/update_icon()
+	if(!connected || connected.loc != src)
+		icon_state = "CR"
+	else
+
+		if(src.contents.len > 1)
+			src.icon_state = "CR"
+		else
+			src.icon_state = "CR"
+
+		if(cremating)
+			src.icon_state = "CR"
+
+	return

@@ -39,6 +39,7 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
+/*
 	using = new /obj/screen()
 	using.name = "drop"
 	using.icon = ui_style
@@ -46,7 +47,7 @@
 	using.screen_loc = ui_storage1
 	using.layer = 19
 	adding += using
-
+*/
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "r_hand"
 	inv_box.icon = ui_style

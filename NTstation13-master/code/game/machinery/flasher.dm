@@ -24,17 +24,22 @@
 
 /obj/machinery/flasher/New()
 	bulb = new /obj/item/device/flash(src)
+	sleep(4)
+	ul_SetLuminosity(0,2,0)
 
 /obj/machinery/flasher/power_change()
 	if (powered() && anchored && bulb)
 		stat &= ~NOPOWER
 		if(bulb.broken)
 			icon_state = "[base_state]1-p"
+			src.ul_SetLuminosity(0)
 		else
 			icon_state = "[base_state]1"
+			src.ul_SetLuminosity(0,2,0)
 	else
 		stat |= ~NOPOWER
 		icon_state = "[base_state]1-p"
+		src.ul_SetLuminosity(0)
 
 //Don't want to render prison breaks impossible
 /obj/machinery/flasher/attackby(obj/item/weapon/W, mob/user)
