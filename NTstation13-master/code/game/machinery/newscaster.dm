@@ -183,17 +183,20 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	return
 
 /obj/machinery/newscaster/power_change()
-	if(isbroken) //Broken shit can't be powered.
+	if(isbroken)
+		src.ul_SetLuminosity(0) //Broken shit can't be powered.
 		return
 	if( src.powered() )
 		src.ispowered = 1
 		stat &= ~NOPOWER
 		src.update_icon()
+		src.ul_SetLuminosity(0,4,0)
 	else
 		spawn(rand(0, 15))
 			src.ispowered = 0
 			stat |= NOPOWER
 			src.update_icon()
+			src.ul_SetLuminosity(0)
 
 
 /obj/machinery/newscaster/ex_act(severity)

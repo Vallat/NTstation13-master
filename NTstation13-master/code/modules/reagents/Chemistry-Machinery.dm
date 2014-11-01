@@ -1223,3 +1223,6 @@ obj/machinery/computer/pandemic/proc/replicator_cooldown(var/waittime)
 				O.reagents.trans_to(beaker, amount)
 				if(!O.reagents.total_volume)
 						remove_object(O)
+
+
+
