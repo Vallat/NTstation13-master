@@ -40,7 +40,7 @@
 	return igniting
 
 //This is the icon for fire on turfs, also helps for nurturing small fires until they are full tile
-/obj/effect/hotspot
+/obj/effect/hotspot/
 	anchored = 1
 	mouse_opacity = 0
 	unacidable = 1//So you can't melt fire with acid.
@@ -177,7 +177,20 @@
 	air_update_turf()
 	return
 
+
 /obj/effect/hotspot/Crossed(mob/living/L)
 	..()
 	if(isliving(L))
 		L.fire_act()
+
+
+/obj/effect/hotspot/Bumped(var/atom/movable/AM)
+
+	if(istype(AM, /obj))
+		var/obj/structure/table/woodentable/O = AM
+		O.loc = src
+		if(src.allowed(usr))
+			for (var/obj/structure/table/woodentable/C in world)
+				new /obj/item/weapon/table_parts/wood(src.loc)
+				playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+				qdel(C)

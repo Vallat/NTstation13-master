@@ -569,6 +569,11 @@
 		table_destroy(2, user)
 		return
 
+	if (istype(I, /obj/item/weapon/weldingtool))
+		table_destroy(2, user)
+		new /obj/effect/hotspot(src.loc)
+		return
+
 	if(isrobot(user))
 		return
 
@@ -630,6 +635,14 @@ Destroy type values:
 	icon_state = "woodtable"
 	parts = /obj/item/weapon/table_parts/wood
 
+
+/obj/structure/table/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(prob(max(0, exposed_temperature - 100)))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		new parts( src.loc )
+		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		qdel(src)
+		return
 
 /obj/structure/table/woodentable/poker //No specialties, Just a mapping object.
 	name = "gambling table"

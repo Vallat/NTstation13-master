@@ -687,4 +687,13 @@ var/const/CALL_SHUTTLE_REASON_LENGTH = 12
 	..()
 
 
+/////////////////////
+/obj/machinery/computer/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(prob(max(0, exposed_temperature - 100)))
+		qdel(src)
+		new	/obj/item/stack/sheet/metal( src.loc )
+		new /obj/structure/computerframe( src.loc )
+		new /obj/effect/effect/bad_smoke( src.loc )
+		return
+
 

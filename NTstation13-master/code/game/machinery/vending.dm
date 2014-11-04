@@ -46,6 +46,15 @@
 
 	var/obj/item/weapon/vending_refill/refill_canister = null		//The type of refill canisters used by this machine.
 
+
+/obj/machinery/vending/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(prob(max(0, exposed_temperature - 100)))
+		malfunction()
+		qdel(src)
+		new	/obj/item/stack/sheet/metal( src.loc )
+		new /obj/machinery/constructable_frame( src.loc )
+		return
+
 /obj/machinery/vending/New()
 	..()
 	wires = new(src)
