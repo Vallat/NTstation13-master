@@ -47,6 +47,14 @@
 	var/hasShocked = 0 //Prevents multiple shocks from happening
 	var/autoclose = 1
 
+/obj/machinery/door/airlock/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(prob(max(0, exposed_temperature - 100)))
+		explosion(src.loc,-1,0,2, flame_range = 2)
+		if(src)
+			qdel(src)
+
+
+
 /obj/machinery/door/airlock/command
 	icon = 'icons/obj/doors/Doorcom.dmi'
 	doortype = 1

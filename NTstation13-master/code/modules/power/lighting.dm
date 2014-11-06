@@ -216,6 +216,7 @@
 
 /obj/machinery/light/built/New()
 	status = LIGHT_EMPTY
+	src.ul_SetLuminosity(4,4,0)
 	update(0)
 	..()
 
@@ -232,10 +233,12 @@
 		switch(fitting)
 			if("tube")
 				brightness = 8
+				src.ul_SetLuminosity(4,4,0)
 				if(prob(2))
 					broken(1)
 			if("bulb")
 				brightness = 4
+				src.ul_SetLuminosity(4,4,0)
 				if(prob(5))
 					broken(1)
 		spawn(1)
@@ -253,14 +256,18 @@
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
 			icon_state = "[base_state][on]"
+			src.ul_SetLuminosity(4,4,0)
 		if(LIGHT_EMPTY)
 			icon_state = "[base_state]-empty"
+			src.ul_SetLuminosity(0)
 			on = 0
 		if(LIGHT_BURNED)
 			icon_state = "[base_state]-burned"
+			src.ul_SetLuminosity(0)
 			on = 0
 		if(LIGHT_BROKEN)
 			icon_state = "[base_state]-broken"
+			src.ul_SetLuminosity(0)
 			on = 0
 	return
 

@@ -208,13 +208,13 @@ turf
 	var/lighting_changed = 0
 
 turf/space
-	lighting_lumcount = 4		//starlight
+	lighting_lumcount = 0		//starlight
 
 turf/proc/update_lumcount(amount)
 	lighting_lumcount += amount
 	if(!lighting_changed)
 		lighting_controller.changed_turfs += src
-		lighting_changed = 1
+		lighting_changed = 0
 
 turf/proc/lighting_tag(var/level)
 	var/area/A = loc

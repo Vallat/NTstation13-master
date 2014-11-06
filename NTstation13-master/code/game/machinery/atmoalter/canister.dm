@@ -34,7 +34,7 @@
 	canister_color = "blue"
 	can_label = 0
 /obj/machinery/portable_atmospherics/canister/toxins
-	name = "canister \[Toxin (Bio)\]"
+	name = "canister \[Propane\]"
 	icon_state = "orange"
 	canister_color = "orange"
 	can_label = 0
