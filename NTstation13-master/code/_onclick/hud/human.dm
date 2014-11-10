@@ -31,7 +31,7 @@
 
 	using = new /obj/screen() //Lower hud bar
 	using.dir = EAST
-	using.screen_loc = "WEST,SOUTH:5 to EAST,SOUTH:5"
+	using.screen_loc = "WEST,SOUTH-1 to EAST,SOUTH-1"
 	using.layer = 18
 	src.adding += using
 
