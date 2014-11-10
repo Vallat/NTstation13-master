@@ -221,6 +221,11 @@
 		return
 	else
 		..()
+
+/obj/effect/effect/fakedoor
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "door"
+
 /obj/effect/effect/beerkeg
 	name = "beer keg"
 	desc = "A beer keg"
