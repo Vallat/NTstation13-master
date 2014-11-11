@@ -115,7 +115,8 @@
 	..()
 	statpanel("Status")
 
-
+	stat(src)
+	stat("Location:","[x], [y], [z]")
 	stat(null, "Intent: [a_intent]")
 	stat(null, "Move Mode: [m_intent]")
 	stat(null, "Blood type: [blood_type]")
