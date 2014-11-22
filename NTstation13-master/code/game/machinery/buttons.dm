@@ -34,6 +34,10 @@
 	idle_power_usage = 2
 	active_power_usage = 4
 
+/obj/machinery/flasher_button/console
+	name = "Station flasher control"
+	icon_state = "console"
+
 /obj/machinery/crema_switch
 	desc = "Burn baby burn!"
 	name = "crematorium igniter"

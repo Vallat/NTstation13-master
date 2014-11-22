@@ -12,7 +12,7 @@
 	var/eatverb
 	var/wrapped = 0
 	var/dried_type = null
-	var/potency = null
+	potency = null
 	var/dry = 0
 	var/filling_color = "#FFFFFF"
 

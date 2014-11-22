@@ -1,22 +1,25 @@
 .jobs
 {
-	width: 400px;
-	margin: 0 auto;
-}
+width: 400px;
 
-.jobsColumn
-{
-	float: left;
-	width: 200px;
-	text-align: center;
 }
 
 .commandPosition
 {
-	font-weight: bold;
-}
+font-weight: bold;}
 
-.otherPosition
+.civilianPosition
 {
-	
-}
+text-align: left; background-color: blue;  float: left;}
+
+.sciencePosition
+{background-color: purple; text-align: center;}
+
+.medicalPosition
+{background-color: green; text-align: right;}
+
+.securityPosition
+{
+background-color: red; text-align: left;}
+
+.engineeringPosition{background-color: grey; text-align: center;}.

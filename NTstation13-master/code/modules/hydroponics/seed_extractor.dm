@@ -6,7 +6,7 @@
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/))
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/F = O
 		while(t_amount < t_max)
-			var/obj/item/seeds/t_prod = new F.seed(O.loc, O)
+			var/obj/item/t_prod = new F.seed(O.loc, O)
 			t_prod.lifespan = F.lifespan
 			t_prod.endurance = F.endurance
 			t_prod.maturation = F.maturation

@@ -1,3 +1,5 @@
+
+
 mob
 	var //variables!
 		obj/item //typecasting the variable!

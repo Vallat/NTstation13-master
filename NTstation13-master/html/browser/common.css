@@ -2,23 +2,23 @@ body
 { 
 	padding: 0;
 	margin: 0;
-	background-color: #272727;
-	font-size: 12px;
-	color: #ffffff;
+	background-color: #8B795E;
+	font-size: 14px;
+	color: #FFDEAD;
 	line-height: 170%;
 }
 
 hr
 {
-	background-color: #40628a;
+	background-color: #8B4513;
 	height: 1px;
 }
 
 a, a:link, a:visited, a:active, .linkOn, .linkOff
 { 
-	color: #ffffff; 
+	color: #FF7F50; 
 	text-decoration: none;
-	background: #40628a;
+	background: #8B4513;
 	border: 1px solid #161616;
 	padding: 1px 4px 1px 4px;
 	margin: 0 2px 0 0;
@@ -27,15 +27,15 @@ a, a:link, a:visited, a:active, .linkOn, .linkOff
 
 a:hover 
 { 
-	color: #40628a;
-	background: #ffffff;
+	color: #8B4513;
+	background: #FF7F50;
 }
 
 a.white, a.white:link, a.white:visited, a.white:active
 { 
-	color: #40628a; 
+	color: #8B4513; 
 	text-decoration: none;
-	background: #ffffff;
+	background: #FF7F50;
 	border: 1px solid #161616;
 	padding: 1px 4px 1px 4px;
 	margin: 0 2px 0 0;
@@ -44,20 +44,20 @@ a.white, a.white:link, a.white:visited, a.white:active
 
 a.white:hover 
 { 
-	color: #ffffff;
-	background: #40628a;
+	color: #FF7F50;
+	background: #8B4513;
 }
 
 .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover
 { 
-	color: #ffffff; 
-	background: #2f943c;
-	border-color: #24722e;
+	color: #FF7F50; 
+	background: #FF0000;
+	border-color: #FF4500;
 }
 
 .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover
 { 
-	color: #ffffff; 
+	color: #FF7F50; 
 	background: #999999;
 	border-color: #666666;
 }
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6
 {
 	margin: 0;
 	padding: 16px 0 8px 0; 
-	color: #517087;
+	color: #F5DEB3;
 }
 
 h1
@@ -133,8 +133,8 @@ h4
 	clear: both;
 	padding: 6px 8px 6px 8px;
 	border-bottom: 2px solid #161616;
-	background: #383838;
-	color: #98B0C3;
+	background: #8B795E;
+	color: #FFDEAD;
 	font-size: 16px;
 }
 
@@ -210,8 +210,8 @@ div.notice
 .statusDisplay
 {
 	background: #000000;
-	color: #ffffff;
-	border: 1px solid #40628a;
+	color: #FF7F50;
+	border: 1px solid #8B4513;
 	padding: 4px;
 	margin: 3px 0;
 }
@@ -233,7 +233,7 @@ div.notice
 {
 	padding: 8px;
 	margin: 10px 4px 4px 4px;
-	border: 1px solid #40628a;
+	border: 1px solid #8B4513;
 	background-color: #202020;
 }
 
@@ -256,31 +256,31 @@ div.notice
 {
 	width: 100%;
 	height: 100%;
-	background: #40628a;
+	background: #8B4513;
 	overflow: hidden;
 }
 
 .progressFill.good
 {
-	color: #ffffff;
+	color: #FF7F50;
 	background: #00ff00;
 }
 
 .progressFill.average
 {
-	color: #ffffff;
+	color: #FF7F50;
 	background: #d09000;
 }
 
 .progressFill.bad
 {
-	color: #ffffff;
+	color: #FF7F50;
 	background: #ff0000;
 }
 
 .progressFill.highlight
 {
-	color: #ffffff;
+	color: #FF7F50;
 	background: #8BA5C4;
 }
 

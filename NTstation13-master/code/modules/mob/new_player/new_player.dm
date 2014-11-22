@@ -27,10 +27,10 @@
 			else	output += "<p><b>You are ready</b> <a href='byond://?src=\ref[src];ready=0'>Cancel</A></p>"
 
 		else
-			output += "<a href='byond://?src=\ref[src];manifest=1'>Crew Manifest</A><br><br>"
+		//	output += "<a href='byond://?src=\ref[src];manifest=1'>Crew Manifest</A><br><br>"
 			output += "<p><a href='byond://?src=\ref[src];late_join=1'>Join Game!</A></p>"
 
-		output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+		//output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 		if(!IsGuestKey(src.key))
 			establish_db_connection()
@@ -298,23 +298,57 @@
 			if(emergency_shuttle.direction == 1 && emergency_shuttle.timeleft() < 300) //Shuttle is past the point of no recall
 				dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
 
-		var/available_job_count = 0
-		for(var/datum/job/job in job_master.occupations)
-			if(job && IsJobAvailable(job.title))
-				available_job_count++;
+	//	for(var/datum/job/job in job_master.occupations)
+	//		if(job && IsJobAvailable(job.title))
 
-		dat += "<div class='clearBoth'>Choose from the following open positions:</div><br>"
-		dat += "<div class='jobs'><div class='jobsColumn'>"
-		var/job_count = 0
+		dat += "<div class='clearBoth'>Which job would you like?</div><br>"
+		//dat += "<div class='jobs'><div class='jobsColumn'</div><br>"
+	//	dat += "<div class='jobs'><div class='CIVILIAN'>"
+	//	dat += "<div class='jobs'><div class='MEDSCI'>"
+	//	dat += "<div class='jobs'><div class='ENGSEC'>"
+
 		for(var/datum/job/job in job_master.occupations)
 			if(job && IsJobAvailable(job.title))
-				job_count++;
-				if (job_count > round(available_job_count / 2))
-					dat += "</div><div class='jobsColumn'>"
+				/*
+				if (job.title in civilian_positions)
+					//dat += "</div><div class='jobsColumn'>"
+					dat += "</div><div class='jobs'><div class='CIVILIAN'</div><br>"
+				if (job.title in science_positions)
+					dat += "</div><div class='jobs'><div class='SCI'></div>"
+				if (job.title in medical_positions)
+					dat += "</div><div class='jobs'><div class='MED'></div>"
+				if (job.title in security_positions)
+					dat += "</div><div class='jobs'><div class='ENGSEC'></div>"
+
+					*/
+
 				var/position_class = "otherPosition"
+				var/CLASS = ""
 				if (job.title in command_positions)
 					position_class = "commandPosition"
-				dat += "<a class='[position_class]' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+				if (job.title in civilian_positions)
+					position_class = "civilianPosition"
+				if (job.title in science_positions)
+					position_class = "sciencePosition"
+				if (job.title in medical_positions)
+					position_class = "medicalPosition"
+				if (job.title in security_positions)
+					position_class = "securityPosition"
+				if (job.title in engineering_positions)
+					position_class = "engineeringPosition"
+
+				if (position_class == "civilianPosition")
+					CLASS = "civilian #"
+				if (position_class == "sciencePosition")
+					CLASS = "science *"
+				if (position_class == "medicalPosition")
+					CLASS = "medical @"
+				if (position_class == "security_positions")
+					CLASS = "security ^"
+				if (position_class == "engineering_positions")
+					CLASS = "engineering !"
+
+				dat += "<a class='[position_class]//[CLASS]' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 		dat += "</div></div>"
 
 		// Removing the old window method but leaving it here for reference

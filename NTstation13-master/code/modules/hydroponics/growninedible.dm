@@ -2,21 +2,11 @@
 // Other harvested materials from plants (that are not food)
 // **********************
 
-/obj/item/weapon/grown // Grown weapons
-	name = "grown_weapon"
-	icon = 'icons/obj/weapons.dmi'
+/obj/item/ // Grown weapons
 	var/seed = ""
-	var/plantname = ""
-	var/product	//a type path
-	var/lifespan = 20
-	var/endurance = 15
-	var/maturation = 7
-	var/production = 7
-	var/yield = 2
-	var/potency = 20
-	var/plant_type = 0
+	product	//a type path
 
-/obj/item/weapon/grown/New(newloc, potency = 50)
+/obj/item/New(newloc, potency = 50)
 	..()
 	src.potency = potency
 	pixel_x = rand(-5, 5)
@@ -26,11 +16,11 @@
 
 	create_reagents(50)
 
-/obj/item/weapon/grown/proc/changePotency(newValue) //-QualityVan
+/obj/item/proc/changePotency(newValue) //-QualityVan
 	potency = newValue
 	transform *= TransformUsingVariable(potency, 100, 0.5) //Makes the resulting produce's sprite larger or smaller based on potency!
 
-/obj/item/weapon/grown/log
+/obj/item/log
 	name = "tower-cap log"
 	desc = "It's better than bad, it's good!"
 	icon = 'icons/obj/harvest.dmi'
@@ -53,10 +43,10 @@
 	/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
 	/obj/item/weapon/reagent_containers/food/snacks/grown/wheat)
 
-/obj/item/weapon/grown/log/New(var/loc, var/potency = 10)
+/obj/item/log/New(var/loc, var/potency = 10)
 	..()
 
-/obj/item/weapon/grown/log/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/log/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
 	if(istype(W, /obj/item/weapon/circular_saw) || istype(W, /obj/item/weapon/hatchet) || (istype(W, /obj/item/weapon/twohanded/fireaxe) && W:wielded) || istype(W, /obj/item/weapon/melee/energy))
 		user.show_message("<span class='notice'>You make planks out of the [src]!</span>", 1)
@@ -84,7 +74,7 @@
 		else
 			usr << "\red You must dry this first."
 
-/obj/item/weapon/grown/sunflower // FLOWER POWER!
+/obj/item/sunflower // FLOWER POWER!
 	name = "sunflower"
 	desc = "It's beautiful! A certain person might beat you to death if you trample these."
 	icon = 'icons/obj/harvest.dmi'
@@ -99,10 +89,10 @@
 	plant_type = 0
 	seed = "/obj/item/seeds/sunflowerseed"
 
-/obj/item/weapon/grown/sunflower/New(var/loc, var/potency = 10)
+/obj/item/sunflower/New(var/loc, var/potency = 10)
 	..()
 
-/obj/item/weapon/grown/novaflower
+/obj/item/novaflower
 	name = "novaflower"
 	desc = "These beautiful flowers have a crisp smokey scent, like a summer bonfire."
 	icon = 'icons/obj/harvest.dmi'
@@ -117,14 +107,14 @@
 	plant_type = 0
 	seed = "/obj/item/seeds/novaflowerseed"
 	attack_verb = list("seared", "heated", "whacked", "steamed")
-/obj/item/weapon/grown/novaflower/New(var/loc, var/potency = 10)
+/obj/item/novaflower/New(var/loc, var/potency = 10)
 	..()
 	if(reagents)
 		reagents.add_reagent("nutriment", 1)
 		reagents.add_reagent("capsaicin", round(potency, 1))
 	force = round((5+potency/5), 1)
 
-/obj/item/weapon/grown/nettle // -- Skie
+/obj/item/nettle // -- Skie
 	desc = "It's probably <B>not</B> wise to touch it with bare hands..."
 	icon = 'icons/obj/weapons.dmi'
 	name = "nettle"
@@ -139,14 +129,14 @@
 	plant_type = 1
 	origin_tech = "combat=1"
 	seed = "/obj/item/seeds/nettleseed"
-/obj/item/weapon/grown/nettle/New(var/loc, var/potency = 10)
+/obj/item/nettle/New(var/loc, var/potency = 10)
 	..()
 	if(reagents)
 		reagents.add_reagent("nutriment", 1)
 		reagents.add_reagent("sacid", round(potency, 1))
 	force = round((5+potency/5), 1)
 
-/obj/item/weapon/grown/deathnettle // -- Skie
+/obj/item/deathnettle // -- Skie
 	desc = "The \red glowing \black nettle incites \red<B> rage</B>\black in you just from looking at it!"
 	icon = 'icons/obj/weapons.dmi'
 	name = "deathnettle"
@@ -162,18 +152,18 @@
 	seed = "/obj/item/seeds/deathnettleseed"
 	origin_tech = "combat=3"
 	attack_verb = list("stung")
-/obj/item/weapon/grown/deathnettle/New(var/loc, var/potency = 10)
+/obj/item/deathnettle/New(var/loc, var/potency = 10)
 	..()
 	if(reagents)
 		reagents.add_reagent("nutriment", 1)
 		reagents.add_reagent("pacid", round(potency, 1))
 	force = round((5+potency/2.5), 1)
 
-/obj/item/weapon/grown/deathnettle/suicide_act(mob/user)
+/obj/item/deathnettle/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is eating some of the [src.name]! It looks like \he's trying to commit suicide.</span>")
 	return (BRUTELOSS|TOXLOSS)
 
-/obj/item/weapon/grown/bananapeel
+/obj/item/bananapeel
 	name = "banana peel"
 	desc = "A peel from a banana."
 	icon = 'icons/obj/items.dmi'
@@ -183,10 +173,10 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
-/obj/item/weapon/grown/bananapeel/New(var/loc, var/potency = 10)
+/obj/item/bananapeel/New(var/loc, var/potency = 10)
 	..()
 
-/obj/item/weapon/grown/corncob
+/obj/item/corncob
 	name = "corn cob"
 	desc = "A reminder of meals gone by."
 	icon = 'icons/obj/harvest.dmi'
@@ -196,10 +186,10 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
-/obj/item/weapon/grown/corncob/New(var/loc, var/potency = 10)
+/obj/item/corncob/New(var/loc, var/potency = 10)
 	..()
 
-/obj/item/weapon/grown/spiderpod
+/obj/item/spiderpod
 	name = "spiderplant pod"
 	desc = "A very strange looking plant. It is said to sometimes produce moving, thoughtless beings."
 	icon = 'icons/obj/harvest.dmi'
@@ -210,7 +200,7 @@
 	throw_range = 7
 	seed = "/obj/item/seeds/spiderplantseed"
 
-/obj/item/weapon/grown/spiderpod/New(var/loc, var/potency = 10)
+/obj/item/spiderpod/New(var/loc, var/potency = 10)
 	..()
 	if(reagents)
 		reagents.add_reagent("nutriment", 1)

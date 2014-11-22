@@ -93,3 +93,16 @@
 	// should be overloaded for all mobs whose "ear" is separate from their "mob"
 
 	return get_turf(src)
+
+////?///
+////////////////////////
+///////////////
+///////
+////////////////////
+
+mob/verb/emote_alpha()
+	set name = "Hello"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Поднимает руку к груди и затем резким движением вверх с воплем *Зиг хайль*")

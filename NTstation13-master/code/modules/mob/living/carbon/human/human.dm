@@ -613,3 +613,4 @@
 		threatcount -= 2
 
 	return threatcount
+

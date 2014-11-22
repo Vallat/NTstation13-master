@@ -752,7 +752,7 @@
 	icon_state = "seeds"
 	products = list(/obj/item/seeds/ambrosiavulgarisseed = 3,/obj/item/seeds/appleseed = 3,/obj/item/seeds/bananaseed = 3,/obj/item/seeds/berryseed = 3,
 						/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/carrotseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/chantermycelium = 3,
-						/obj/item/seeds/chiliseed = 3,/obj/item/seeds/cocoapodseed = 3,/obj/item/seeds/coffee_arabica_seed = 3,/obj/item/seeds/cornseed = 3,
+						/obj/item/chiliseed = 3,/obj/item/seeds/cocoapodseed = 3,/obj/item/seeds/coffee_arabica_seed = 3,/obj/item/seeds/cornseed = 3,
 						/obj/item/seeds/eggplantseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/grassseed = 3,/obj/item/seeds/lemonseed = 3,
 						/obj/item/seeds/limeseed = 3,/obj/item/seeds/orangeseed = 3,/obj/item/seeds/potatoseed = 3,/obj/item/seeds/poppyseed = 3,
 						/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/replicapod = 3,/obj/item/seeds/soyaseed = 3,/obj/item/seeds/sunflowerseed = 3,
@@ -908,3 +908,41 @@
 					/obj/item/weapon/stock_parts/cell/high = 12, /obj/item/device/assembly/prox_sensor = 3,/obj/item/device/assembly/signaler = 3,/obj/item/device/healthanalyzer = 3,
 					/obj/item/weapon/scalpel = 2,/obj/item/weapon/circular_saw = 2,/obj/item/weapon/tank/anesthetic = 2,/obj/item/clothing/mask/breath/medical = 5,
 					/obj/item/weapon/screwdriver = 5,/obj/item/weapon/crowbar = 5)
+
+
+///HUITA HUITA HUITA///
+// OH MY DERVEN
+// BEST OF THE BEST, EPTA
+
+/obj/machinery/vending/swords
+	name = "Swords and weapons"
+	desc = "Nothing special"
+	icon_state = "engivend"
+	icon_deny = "engivend-deny"
+	req_access_txt = "11" //Engineering Equipment access
+	products = list(/obj/item/weapon/claymore = 6,/obj/item/weapon/kitchenknife = 10,/obj/item/weapon/pickaxe = 10,/obj/item/weapon/screwdriver/dagger = 10,/obj/item/weapon/twohanded/fireaxe = 10, /obj/item/weapon/hatchet = 8, /obj/item/weapon/butch = 9, /obj/item/weapon/kitchen/dabadee/hammer = 10, /obj/item/weapon/kitchen/dabadee/bambam = 3, /obj/item/weapon/katana = 3, /obj/item/weapon/twohanded/spear = 6)
+	contraband = list(/obj/item/weapon/stock_parts/cell/potato = 3)
+	premium = list(/obj/item/weapon/storage/belt/utility = 3)
+
+
+/obj/machinery/vending/sad_mother_machine
+	name = "sad mother machine"
+	desc = "Tools for tools."
+	icon_state = "tool"
+	icon_deny = "tool-deny"
+	//req_access_txt = "12" //Maintenance access
+	products = list(/obj/item/weapon/bikehorn/rubberducky = 7,/obj/item/weapon/surgicaldrill = 5,/obj/item/weapon/storage/firstaid/regular = 3,/obj/item/weapon/wirecutters = 5,
+					/obj/item/weapon/weldingtool/emergency = 5,/obj/item/weapon/butch = 5,/obj/item/bodybag = 5,/obj/item/weapon/screwdriver = 5)
+	contraband = list(/obj/item/weapon/weldingtool/hugetank = 2,/obj/item/clothing/gloves/fyellow = 2)
+	premium = list(/obj/item/clothing/gloves/yellow = 1)
+
+/obj/machinery/vending/soap_and_shit
+	name = "ultra power clean soap machine 78975"
+	desc = "A magic vending machine."
+	icon_state = "MagiVend"
+	product_slogans = "Oh shit!; Soap for the imperor!"
+	vend_delay = 15
+	vend_reply = "Have an enchanted evening!"
+	product_ads = "FJKLFJSD;AJKFLBJAKL;1234 LOONIES LOL!;>MFW;Kill them fuckers!;GET DAT FUKKEN DISK;HONK!;EI NATH;Destroy the station!;Admin conspiracies since forever!;Space-time bending hardware!"
+	products = list(/obj/item/weapon/soap = 5,/obj/item/weapon/soap/deluxe = 5,/obj/item/weapon/soap/nanotrasen = 5,/obj/item/weapon/soap/syndie = 5)
+	contraband = list(/obj/item/weapon/reagent_containers/glass/bottle/wizarditis = 1)	//No one can get to the machine to hack it anyways; for the lulz - Microwave

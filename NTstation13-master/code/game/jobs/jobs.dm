@@ -63,18 +63,18 @@ var/list/command_positions = list(
 
 
 var/list/engineering_positions = list(
-	"Chief Engineer",
-	"Station Engineer",
-	"Atmospheric Technician",
+	"CE",
+	"Steam Engineer",
+	"Steam and energy master",
 )
 
 
 var/list/medical_positions = list(
-	"Chief Medical Officer",
-	"Medical Doctor",
+	"CMO",
+	"Doctor",
 	"Geneticist",	//Part of both medical and science
 	"Virologist",
-	"Chemist"
+	"Alchemist"
 )
 
 
@@ -87,28 +87,28 @@ var/list/science_positions = list(
 
 
 var/list/civilian_positions = list(
-	"Head of Personnel",
-	"Bartender",
-	"Botanist",
-	"Chef",
+	"Gouverner",
+	"bartender",
+	"botanist",
+	"chef",
 	"Janitor",
 	"Librarian",
-	"Quartermaster",
-	"Cargo Technician",
-	"Shaft Miner",
+	"Trader",
+	"Trade Worker",
+	"Shaft miner",
 	"Lawyer",
 	"Chaplain",
 	"Clown",
 	"Mime",
-	"Assistant"
+	"Worker"
 )
 
 
 var/list/security_positions = list(
-	"Head of Security",
+	"Head of Police",
 	"Warden",
 	"Detective",
-	"Security Officer"
+	"Officer"
 )
 
 

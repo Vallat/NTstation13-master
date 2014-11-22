@@ -2,10 +2,7 @@
 // Here's all the seeds (plants) that can be used in hydro
 // ********************************************************
 
-/obj/item/seeds
-	name = "pack of seeds"
-	icon = 'icons/obj/seeds.dmi'
-	icon_state = "seed"				//Unknown plant seed - these shouldn't exist in-game.
+/obj/item			//Unknown plant seed - these shouldn't exist in-game.
 	w_class = 1						//Pocketable.
 	var/plantname = "Plants"		//Name of plant when planted.
 	var/product						//A type path. The thing that is created when the plant is harvested.
@@ -22,12 +19,17 @@
 	var/rarity = 0					//How rare the plant is. Used for giving points to cargo when shipping off to Centcom.
 	var/list/mutatelist = list()	//The type of plants that this plant can mutate into.
 
-/obj/item/seeds/New(loc, parent)
+/obj/item/New(loc, parent)
 	..()
 	pixel_x = rand(-8, 8)
 	pixel_y = rand(-8, 8)
 
-/obj/item/seeds/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/item/seeds
+	icon = 'seeds.dmi'
+
+
+
+/obj/item/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if (istype(O, /obj/item/device/analyzer/plant_analyzer))
 		user << "*** <B>[plantname]</B> ***"
 		user << "-Plant Endurance: <span class='notice'> [endurance]</span>"
@@ -41,7 +43,7 @@
 		return
 	..() // Fallthrough to item/attackby() so that bags can pick seeds up
 
-/obj/item/seeds/chiliseed
+/obj/item/chiliseed
 	name = "pack of chili seeds"
 	desc = "These seeds grow into chili plants. HOT! HOT! HOT!"
 	icon_state = "seed-chili"
@@ -58,6 +60,8 @@
 	growthstages = 6
 	rarity = 0 // CentComm knows about this species already, it's in exotic seeds crates.
 	mutatelist = list(/obj/item/seeds/icepepperseed, /obj/item/seeds/chillighost)
+
+
 
 /obj/item/seeds/replicapod
 	name = "pack of replica pod seeds"
@@ -532,7 +536,7 @@
 	icon_state = "mycelium-tower"
 	species = "towercap"
 	plantname = "Tower Caps"
-	product = /obj/item/weapon/grown/log
+	product = /obj/item/log
 	lifespan = 80
 	endurance = 50
 	maturation = 15

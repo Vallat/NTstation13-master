@@ -8,15 +8,15 @@
 //Grown foods
 //Subclass so we can pass on values
 /obj/item/weapon/reagent_containers/food/snacks/grown/
-	var/seed = ""
-	var/plantname = ""
-	var/product	//a type path
-	var/lifespan = 0
-	var/endurance = 0
-	var/maturation = 0
-	var/production = 0
-	var/yield = 0
-	var/plant_type = 0
+	seed = ""
+	plantname = ""
+	product	//a type path
+	lifespan = 0
+	endurance = 0
+	maturation = 0
+	production = 0
+	yield = 0
+	plant_type = 0
 	icon = 'icons/obj/harvest.dmi'
 	potency = -1
 

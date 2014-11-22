@@ -360,6 +360,11 @@
 				message = "<B>[src]</B> yawns."
 				m_type = 2
 
+		if ("Hello")
+			if (!muzzled)
+				message = "<B>[src]</B> поднимает руку к груди и затем резким движением вверх с воплем *Зиг хайль*."
+				m_type = 2
+
 		if ("help") //This can stay at the bottom.
 			src << "Help for human emotes. You can use these emotes with say \"*emote\":\n\naflap, airguitar, blink, blink_r, blush, bow-(none)/mob, burp, choke, chuckle, clap, collapse, cough, cry, custom, dance, dap, deathgasp, drool, eyebrow, faint, frown, flap, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hug-(none)/mob, johnny, jump, laugh, look-(none)/mob, me, moan, mumble, nod, pale, point-(atom), raise, salute, scream, shake, shiver, shrug, sigh, signal-#1-10, smile, sneeze, sniff, snore, stare-(none)/mob, tremble, twitch, twitch_s, wave, whimper, wink, yawn"
 
@@ -368,7 +373,6 @@
 
 	if(miming)
 		m_type = 1
-
 
 
 	if (message)
