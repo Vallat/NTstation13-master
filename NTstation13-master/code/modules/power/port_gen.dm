@@ -105,6 +105,18 @@ display round(lastgen) and plasmatank amount
 	var/time_per_sheet = 260
 	var/heat = 0
 
+/obj/machinery/power/port_gen/pacman/flame
+	name = "Heater"
+	icon = 'icons/obj/machines/lasers.dmi'
+	sheets = 0
+	max_sheets = 200
+	sheet_name = ""
+	sheet_path = /obj/item/stack/sheet/mineral/wood
+	board_path = "/obj/item/weapon/circuitboard/pacman"
+	sheet_left = 0 // How much is left of the sheet
+	time_per_sheet = 260
+	heat = 0
+
 /obj/machinery/power/port_gen/pacman/initialize()
 	..()
 	if(anchored)

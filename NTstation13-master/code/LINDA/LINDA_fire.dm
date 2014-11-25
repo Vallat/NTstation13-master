@@ -49,7 +49,7 @@
 	layer = TURF_LAYER
 	luminosity = 3
 	var/volume = 125
-	var/temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
 	var/just_spawned = 1
 	var/bypassing = 0
 

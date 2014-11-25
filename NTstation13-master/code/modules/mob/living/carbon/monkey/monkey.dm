@@ -110,7 +110,7 @@
 			if (prob(75))
 				for(var/mob/O in viewers(src, null))
 					if ((O.client && !( O.blinded )))
-						O.show_message(text("<span class='danger'>[] has punched [name]!</span>", M), 1)
+						O.show_message(text("<span class='danger'>[] влепил [name]!</span>", M), 1)
 
 				playsound(loc, "punch", 25, 1, -1)
 				var/damage = rand(5, 10)
@@ -159,7 +159,7 @@
 							playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 							for(var/mob/O in viewers(src, null))
 								if ((O.client && !( O.blinded )))
-									O.show_message(text("<span class='danger'>[] has disarmed [name]!</span>", M), 1)
+									O.show_message(text("<span class='danger'>[] пытается обезоружить [name]!</span>", M), 1)
 	return
 
 /mob/living/carbon/monkey/attack_alien(mob/living/carbon/alien/humanoid/M as mob)

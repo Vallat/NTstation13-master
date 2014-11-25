@@ -415,7 +415,7 @@
 					src << "\red You feel your face freezing and an icicle forming in your lungs!"
 			else if(breath.temperature > 360.15)
 				if(prob(20))
-					src << "\red You feel your face burning and a searing heat in your lungs!"
+					src << "\red “ы чувствуешь, как твое лицо горит и горячий воздух попадает в твои легкие!"
 
 			switch(breath.temperature)
 				if(-INFINITY to 120)

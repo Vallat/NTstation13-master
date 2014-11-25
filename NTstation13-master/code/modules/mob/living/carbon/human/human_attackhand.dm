@@ -20,15 +20,15 @@
 
 			//CPR
 			if((M.head && (M.head.flags & HEADCOVERSMOUTH)) || (M.wear_mask && (M.wear_mask.flags & MASKCOVERSMOUTH)))
-				M << "<span class='notice'>Remove your mask!</span>"
+				M << "<span class='notice'>—нимите маску!</span>"
 				return 0
 			if((head && (head.flags & HEADCOVERSMOUTH)) || (wear_mask && (wear_mask.flags & MASKCOVERSMOUTH)))
-				M << "<span class='notice'>Remove their mask!</span>"
+				M << "<span class='notice'>—нимите маску!</span>"
 				return 0
 
 			if(cpr_time < world.time + 30)
 				add_logs(src, M, "CPRed")
-				visible_message("<span class='notice'>[M] is trying to perform CPR on [src]!</span>")
+				visible_message("<span class='notice'>[M] проводит реанимацию [src]!</span>")
 				if(!do_mob(M, src))
 					return 0
 				if((health >= -99 && health <= 0))
@@ -36,8 +36,8 @@
 					var/suff = min(getOxyLoss(), 7)
 					adjustOxyLoss(-suff)
 					updatehealth()
-					M.visible_message("[M] performs CPR on [src]!")
-					src << "<span class='unconscious'>You feel a breath of fresh air enter your lungs. It feels good.</span>"
+					M.visible_message("[M] проводит реанимацию [src]!")
+					src << "<span class='unconscious'>“ы чувствуешь чье-то дыхание. “ебе немного лучше.</span>"
 
 		if("grab")
 			if(M == src || anchored)
@@ -50,7 +50,7 @@
 
 			var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
 			if(buckled)
-				M << "<span class='notice'>You cannot grab [src], \he is buckled in!</span>"
+				M << "<span class='notice'>“ы не можешь схватить [src], он/она пристегнут/а!</span>"
 			if(!G)	//the grab will delete itself in New if affecting is anchored
 				return
 			M.put_in_active_hand(G)
@@ -58,15 +58,15 @@
 			LAssailant = M
 
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-			visible_message("<span class='warning'>[M] has grabbed [src] passively!</span>")
+			visible_message("<span class='warning'>[M] хвтает [src] одной рукой!</span>")
 			return 1
 
 		if("harm")
 			add_logs(M, src, "punched")
 
-			var/attack_verb = "punch"
+			var/attack_verb = "бьет"
 			if(lying)
-				attack_verb = "kick"
+				attack_verb = "пинает"
 			else if(M.dna)
 				switch(M.dna.mutantrace)
 					if("lizard")
@@ -98,13 +98,13 @@
 				else
 					playsound(loc, "punch", 25, 1, -1)
 
-			visible_message("<span class='danger'>[M] has [attack_verb]ed [src]!</span>", \
-							"<span class='userdanger'>[M] has [attack_verb]ed [src]!</span>")
+			visible_message("<span class='danger'>[M] [attack_verb] [src]!</span>", \
+							"<span class='userdanger'>[M] [attack_verb] [src]!</span>")
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
 			if((stat != DEAD) && damage >= 9)
-				visible_message("<span class='danger'>[M] has weakened [src]!</span>", \
-								"<span class='userdanger'>[M] has weakened [src]!</span>")
+				visible_message("<span class='danger'>[M] наносит сильный удар [src]!</span>", \
+								"<span class='userdanger'>[M] наносит сильный удар [src]!</span>")
 				apply_effect(4, WEAKEN, armor_block)
 				forcesay(hit_appends)
 			else if(lying)
@@ -120,8 +120,8 @@
 			if(randn <= 25)
 				apply_effect(2, WEAKEN, run_armor_check(affecting, "melee"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-				visible_message("<span class='danger'>[M] has pushed [src]!</span>",
-								"<span class='userdanger'>[M] has pushed [src]!</span>")
+				visible_message("<span class='danger'>[M] рон€ет [src]!</span>",
+								"<span class='userdanger'>[M] рон€ет [src]!</span>")
 				forcesay(hit_appends)
 				return
 
@@ -153,15 +153,15 @@
 
 				if(!talked)	//BubbleWrap
 					if(drop_item())
-						visible_message("<span class='danger'>[M] has disarmed [src]!</span>", \
-										"<span class='userdanger'>[M] has disarmed [src]!</span>")
+						visible_message("<span class='danger'>[M] пытается уронить [src]!</span>", \
+										"<span class='userdanger'>[M] пытается уронить [src]!</span>")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				return
 
 
 			playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-			visible_message("<span class='danger'>[M] attempted to disarm [src]!</span>", \
-							"<span class='userdanger'>[M] attemped to disarm [src]!</span>")
+			visible_message("<span class='danger'>[M] пытается уронить [src]!</span>", \
+							"<span class='userdanger'>[M] пытается уронить [src]!</span>")
 	return
 
 /mob/living/carbon/human/proc/afterattack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, inrange, params)

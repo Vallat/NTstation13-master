@@ -153,15 +153,15 @@
 		icon_state = "cutters-y"
 		item_state = "cutters_yellow"
 
-/obj/item/weapon/wirecutters/attack(mob/living/carbon/C, mob/user)
+/obj/item/weapon/wirecutters/attack(mob/living/carbon/human/H, mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/weapon/handcuffs/cable))
 		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
 		C.handcuffed.loc = null	//garbage collector awaaaaay
 		C.handcuffed = null
 		C.update_inv_handcuffed(0)
 		return
-	else
-		..()
+	if(!istype(H))
+		return ..()
 
 /*
  * Welding Tool

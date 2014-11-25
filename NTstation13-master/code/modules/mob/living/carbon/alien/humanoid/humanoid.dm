@@ -247,7 +247,7 @@
 				playsound(loc, "punch", 25, 1, -1)
 				for(var/mob/O in viewers(src, null))
 					if ((O.client && !( O.blinded )))
-						O.show_message(text("\red <B>[] has punched []!</B>", M, src), 1)
+						O.show_message(text("\red <B>[] влепил []!</B>", M, src), 1)
 				if ((stat != DEAD) && (damage > 9||prob(5)))//Regular humans have a very small chance of weakening an alien.
 					Weaken(1,5)
 					for(var/mob/O in viewers(M, null))
@@ -275,12 +275,12 @@
 						playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 						for(var/mob/O in viewers(src, null))
 							if ((O.client && !( O.blinded )))
-								O.show_message(text("\red <B>[] has disarmed []!</B>", M, src), 1)
+								O.show_message(text("\red <B>[] пытается уронить []!</B>", M, src), 1)
 					else
 						playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 						for(var/mob/O in viewers(src, null))
 							if ((O.client && !( O.blinded )))
-								O.show_message(text("\red <B>[] has attempted to disarm []!</B>", M, src), 1)
+								O.show_message(text("\red <B>[] пытается уронить []!</B>", M, src), 1)
 	return
 
 /*Code for aliens attacking aliens. Because aliens act on a hivemind, I don't see them as very aggressive with each other.

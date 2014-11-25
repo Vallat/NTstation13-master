@@ -30,46 +30,46 @@
 
 		if ("choke")
 			if (miming)
-				message = "<B>[src]</B> clutches \his throat desperately!"
+				message = "<B>[src]</B> схватилс€ за горло!"
 			else
 				..(act)
 
 		if ("chuckle")
 			if(miming)
-				message = "<B>[src]</B> appears to chuckle."
+				message = "<B>[src]</B> хихикает."
 			else
 				..(act)
 
 		if ("clap")
 			if (!src.restrained())
-				message = "<B>[src]</B> claps."
+				message = "<B>[src]</B> апплодирует."
 				m_type = 2
 
 		if ("collapse")
 			Paralyse(2)
-			message = "<B>[src]</B> collapses!"
+			message = "<B>[src]</B> падает без сил!"
 			m_type = 2
 
 		if ("cough")
 			if (miming)
-				message = "<B>[src]</B> appears to cough!"
+				message = "<B>[src]</B> кашл€ет!"
 			else
 				if (!muzzled)
-					message = "<B>[src]</B> coughs!"
+					message = "<B>[src]</B> кашл€ет!"
 					m_type = 2
 				else
-					message = "<B>[src]</B> makes a strong noise."
+					message = "<B>[src]</B> издает непри€тные звуки."
 					m_type = 2
 
 		if ("cry")
 			if (miming)
-				message = "<B>[src]</B> cries."
+				message = "<B>[src]</B> плачет."
 			else
 				if (!muzzled)
-					message = "<B>[src]</B> cries."
+					message = "<B>[src]</B> плачет."
 					m_type = 2
 				else
-					message = "<B>[src]</B> makes a weak noise. \He frowns."
+					message = "<B>[src]</B> хныкает."
 					m_type = 2
 
 		if ("custom")
@@ -123,15 +123,11 @@
 
 		if ("gasp")
 			if (miming)
-				message = "<B>[src]</B> appears to be gasping!"
-			else
-				..(act)
+				message = "<B>[src]</B> задыхаетс€!"
 
 		if ("giggle")
 			if (miming)
 				message = "<B>[src]</B> giggles silently!"
-			else
-				..(act)
 
 		if ("groan")
 			if (miming)
@@ -224,9 +220,9 @@
 
 		if ("moan")
 			if(miming)
-				message = "<B>[src]</B> appears to moan!"
+				message = "<B>[src]</B> стонет!"
 			else
-				message = "<B>[src]</B> moans!"
+				message = "<B>[src]</B> стонет!"
 				m_type = 2
 
 		if ("mumble")
@@ -253,74 +249,74 @@
 				if (!M)
 					param = null
 				if (param)
-					message = "<B>[src]</B> salutes to [param]."
+					message = "<B>[src]</B> приветствует [param]."
 				else
-					message = "<B>[src]</b> salutes."
+					message = "<B>[src]</b> приветствует."
 			m_type = 1
 
 		if ("scream")
 			if (miming)
-				message = "<B>[src]</B> acts out a scream!"
+				message = "<B>[src]</B> кричит!"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<B>[src]</B> screams!"
+					message = "<B>[src]</B> кричит!"
 					m_type = 2
 					call_sound_emote("scream")
 				else
-					message = "<B>[src]</B> makes a very loud noise."
+					message = "<B>[src]</B> издает громкие звуки."
 					m_type = 2
 
 		if ("shiver")
-			message = "<B>[src]</B> shivers."
+			message = "<B>[src]</B> дрожит."
 			m_type = 1
 
 		if ("shrug")
-			message = "<B>[src]</B> shrugs."
+			message = "<B>[src]</B> пожимает плечами."
 			m_type = 1
 
 		if ("sigh")
 			if(miming)
-				message = "<B>[src]</B> sighs."
+				message = "<B>[src]</B> вздыхает."
 			else
 				..(act)
 
 		if ("laugh")
 			if(miming)
-				message = "<B>[src]</B> acts out a laugh."
+				message = "<B>[src]</B> смеетс€."
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<B>[src]</B> laughs."
+					message = "<B>[src]</B> смеетс€."
 					m_type = 2
 					call_sound_emote("laugh")
 				else
-					message = "<B>[src]</B> makes a noise."
+					message = "<B>[src]</B> создает шум."
 					m_type = 2
 
 		if("elaugh")
 			if(miming)
-				message = "<B>[src]</B> acts out a laugh."
+				message = "<B>[src]</B> злобно смеетс€."
 				m_type = 1
 			else if (mind.special_role)
 				if (!ready_to_elaugh())
 					if (world.time % 3)
-						usr << "<span class='warning'>You not ready to laugh again!"
+						usr << "<span class='warning'>¬ы не готовы слушать это больше!"
 				else
-					message = "<B>[src]</B> laugh like a true evil! Mu-ha-ha!"
+					message = "<B>[src]</B> очень злобно смеетс€! Mu-ha-ha!"
 					m_type = 2
 					call_sound_emote("elaugh")
 			else
 				if (!muzzled)
 					if (!ready_to_emote())
 						if (world.time % 3)
-							usr << "<span class='warning'>You not ready to laugh again!"
+							usr << "<span class='warning'>¬ы не готовы слушать это больше!"
 					else
-						message = "<B>[src]</B> laughs."
+						message = "<B>[src]</B> злобно смеетс€."
 						m_type = 2
 						call_sound_emote("laugh")
 				else
-					message = "<B>[src]</B> makes a noise."
+					message = "<B>[src]</B> создает шум."
 					m_type = 2
 
 		if ("signal")
@@ -335,35 +331,71 @@
 
 		if ("sneeze")
 			if (miming)
-				message = "<B>[src]</B> sneezes."
+				message = "<B>[src]</B> чихает."
 			else
 				..(act)
 
 		if ("sniff")
-			message = "<B>[src]</B> sniffs."
+			message = "<B>[src]</B> шмыгает носом."
 			m_type = 2
 
 		if ("snore")
 			if (miming)
-				message = "<B>[src]</B> sleeps soundly."
+				message = "<B>[src]</B> храпит."
 			else
 				..(act)
 
 		if ("whimper")
 			if (miming)
-				message = "<B>[src]</B> appears hurt."
+				message = "<B>[src]</B> скулит."
 			else
 				..(act)
 
 		if ("yawn")
 			if (!muzzled)
-				message = "<B>[src]</B> yawns."
+				message = "<B>[src]</B> зевает."
 				m_type = 2
 
 		if ("Hello")
 			if (!muzzled)
 				message = "<B>[src]</B> поднимает руку к груди и затем резким движением вверх с воплем *«иг хайль*."
 				m_type = 2
+
+		if ("Fuck")
+			if (!muzzled)
+				message = "<B>[src]</B> демонстрирует ровно и аккуратно подстриженный ноготь на среднем пальцем."
+				m_type = 2
+
+		if ("Dance")
+			if (!muzzled)
+				message = "<B>[src]</B> танцует казачка."
+				m_type = 2
+
+		if ("Dog")
+			if (!muzzled)
+				message = "<B>[src]</B> лает."
+				m_type = 2
+
+		if ("Wolf")
+			if (!muzzled)
+				message = "<B>[src]</B> воет."
+				m_type = 2
+
+		if ("Danger")
+			if (!muzzled)
+				message = "<B>[src]</B> рычит."
+				m_type = 2
+
+		if ("Cat")
+			if (!muzzled)
+				message = "<B>[src]</B> мурлыкает."
+				m_type = 2
+
+		if ("Ear")
+			if (!muzzled)
+				message = "<B>[src]</B> ковыр€етс€ в ухе."
+				m_type = 2
+
 
 		if ("help") //This can stay at the bottom.
 			src << "Help for human emotes. You can use these emotes with say \"*emote\":\n\naflap, airguitar, blink, blink_r, blush, bow-(none)/mob, burp, choke, chuckle, clap, collapse, cough, cry, custom, dance, dap, deathgasp, drool, eyebrow, faint, frown, flap, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hug-(none)/mob, johnny, jump, laugh, look-(none)/mob, me, moan, mumble, nod, pale, point-(atom), raise, salute, scream, shake, shiver, shrug, sigh, signal-#1-10, smile, sneeze, sniff, snore, stare-(none)/mob, tremble, twitch, twitch_s, wave, whimper, wink, yawn"

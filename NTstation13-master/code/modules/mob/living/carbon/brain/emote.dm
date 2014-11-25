@@ -24,7 +24,7 @@
 
 		if ("beep")
 			src << "You beep."
-			message = "<B>[src]</B> beeps."
+			message = "<B>[src]</B> бибикает."
 			m_type = 2
 
 		if ("blink")
@@ -33,7 +33,7 @@
 
 		if ("boop")
 			src << "You boop."
-			message = "<B>[src]</B> boops."
+			message = "<B>[src]</B> Бобокает."
 			m_type = 2
 
 		if ("flash")

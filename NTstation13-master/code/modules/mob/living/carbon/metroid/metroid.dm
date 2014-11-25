@@ -427,7 +427,7 @@
 				playsound(loc, "punch", 25, 1, -1)
 				for(var/mob/O in viewers(src, null))
 					if ((O.client && !( O.blinded )))
-						O.show_message(text("<span class='warning'> <B>[] has punched []!</B></span>", M, src), 1)
+						O.show_message(text("<span class='warning'> <B>[] has влепил []!</B></span>", M, src), 1)
 
 				adjustBruteLoss(damage)
 				updatehealth()

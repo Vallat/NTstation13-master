@@ -10,9 +10,39 @@
 	var/throwforce = 0
 	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
-
 	var/damtype = "brute"
 	var/force = 0
+	var/temperature_hot = 0
+	var/temperature
+	var/hot = 0
+	var/burned = 0
+
+
+obj/proc/hot(datum/gas_mixture/air, exposed_temperature, exposed_volume, turf/simulated)
+		hot = 1
+		temperature_hot = temperature
+
+/obj/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(prob(max(0, exposed_temperature - 100)))
+		hot()
+	..()
+
+
+/obj/attack_hand(mob/user as mob)
+	if(hot == 1)
+		var/mob/living/carbon/human/H = user
+		user.say(pick(";RAAAAAAAARGH!", ";OH GOOOD!", ";GWAAAAAAAARRRHHH!", "HOT!", ";Mother Fucker!!"))
+		user.visible_message("<span class='danger'>you burn your hand on it!</span>")
+		var/obj/item/organ/limb/affecting = H.get_organ("[user.hand ? "l" : "r" ]_arm")
+		if(affecting.take_damage( 0, 5 ))		// 5 burn damage
+			H.update_damage_overlays(0)
+			H.bodytemperature = H.bodytemperature + temperature/2
+			H.updatehealth()
+
+
+/obj/attack_paw(mob/user as mob)
+	return attack_hand(user)
+
 
 /obj/proc/process()
 	processing_objects.Remove(src)
@@ -144,4 +174,3 @@
 	if(isobj(loc))
 		var/obj/Loc=loc
 		Loc.on_log()
-

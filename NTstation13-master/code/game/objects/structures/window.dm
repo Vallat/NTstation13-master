@@ -109,7 +109,7 @@
 		qdel(src)
 	else
 		user.changeNext_move(8)
-		user.visible_message("<span class='notice'>[user] knocks on [src].</span>")
+		user.visible_message("<span class='notice'>[user] стучит по [src].</span>")
 		add_fingerprint(user)
 		playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
 

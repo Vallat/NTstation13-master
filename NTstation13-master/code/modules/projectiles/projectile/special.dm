@@ -33,7 +33,7 @@
 	nodamage = 1
 	flag = "energy"
 	trace_residue = null
-	var/temperature = 100
+	temperature = 100
 
 
 	on_hit(var/atom/target, var/blocked = 0)//These two could likely check temp protection on the mob

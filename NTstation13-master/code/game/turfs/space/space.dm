@@ -2,7 +2,6 @@
 	icon = 'icons/turf/space.dmi'
 	name = "sand"
 	icon_state = "0"
-
 	temperature = PLASMA_MINIMUM_BURN_TEMPERATURE
 	thermal_conductivity = 0.040
 	heat_capacity = 10000

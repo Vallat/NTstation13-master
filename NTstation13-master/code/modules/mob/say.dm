@@ -76,12 +76,12 @@
 		if (L.getBrainLoss() >= 60)
 			return "gibbers, \"[text]\"";
 	if (ending == "?")
-		return "asks, \"[text]\"";
+		return "спрашивает, \"[text]\"";
 	if (ending == "!")
-		return "exclaims, \"[text]\"";
+		return "восклицает, \"[text]\"";
 	if(isdeadsay)
 		return "[pick("moans","complains","cries","whines")], \"[text]\"";
-	return "says, \"[text]\"";
+	return "молвит, \"[text]\"";
 
 /mob/proc/emote(var/act)
 	return
@@ -105,4 +105,162 @@ mob/verb/emote_alpha()
 	set category = "Emote"
 
 	if(ishuman(src) || isrobot(src))
-		usr.emote("Поднимает руку к груди и затем резким движением вверх с воплем *Зиг хайль*")
+		usr.emote("Hello")
+
+mob/verb/emote_alpha_b()
+	set name = "Fuck"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Fuck")
+
+mob/verb/emote_alpha_c()
+	set name = "Dance"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Dance")
+
+mob/verb/emote_alpha_d()
+	set name = "Dog"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Dog")
+
+mob/verb/emote_alpha_dc()
+	set name = "Wolf"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Wolf")
+
+mob/verb/emote_alpha_ddaac()
+	set name = "Cat"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Cat")
+
+mob/verb/emote_alpha_dsdzzsdsac()
+	set name = "Ear"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("Ear")
+
+
+mob/verb/emote_alpha_dsxzxxzzzzxzdc()
+	set name = "sneeze"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("sneeze")
+
+
+mob/verb/emote_alpha_dsssczxxdc()
+	set name = "sniff"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("sniff")
+
+
+mob/verb/emote_alpha_dsdxxcc()
+	set name = "snore"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("snore")
+
+
+mob/verb/emote_alpha_dsdbnc()
+	set name = "whimper"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("whimper")
+
+
+mob/verb/emote_alpha_dsdggc()
+	set name = "yawn"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("yawn")
+
+
+mob/verb/emote_alpha_dsdwefffgc()
+	set name = "elaugh"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("elaugh")
+
+
+mob/verb/emote_alpha_dsdwdwqc()
+	set name = "laugh"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("laugh")
+
+mob/verb/emote_alpha_dsdqqqwqwqc()
+	set name = "sigh"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("sigh")
+
+mob/verb/emote_alpha_dsewwwedwddc()
+	set name = "shrug"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("shrug")
+
+
+mob/verb/emote_alpha_dseerdc()
+	set name = "shiver"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("shiver")
+
+
+
+mob/verb/emote_alpha_dswwedc()
+	set name = "scream"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("scream")
+
+mob/verb/emote_alpha_dsddddfsec()
+	set name = "salute"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("salute")
+
+mob/verb/emote_alpha_dsddfdc()
+	set name = "moan"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("moan")
+
+
+mob/verb/emote_alpha_dddfsdc()
+	set name = "gasp"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("gasp")
+
+mob/verb/emote_alpha_dsdccc()
+	set name = "cry"
+	set category = "Emote"
+
+	if(ishuman(src) || isrobot(src))
+		usr.emote("cry")

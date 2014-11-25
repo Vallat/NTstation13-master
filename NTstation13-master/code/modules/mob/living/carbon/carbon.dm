@@ -170,7 +170,7 @@
 			var/mob/living/carbon/human/H = src
 			visible_message( \
 				"<span class='notice'>[src] examines \himself.", \
-				"<span class='notice'>You check yourself for injuries.</span>")
+				"<span class='notice'>“ы осматриваешь себя.</span>")
 
 			for(var/obj/item/organ/limb/org in H.organs)
 				var/status = ""
@@ -183,23 +183,23 @@
 						burndamage += rand(30,40)
 
 				if(brutedamage > 0)
-					status = "bruised"
+					status = " - легкие повреждения"
 				if(brutedamage > 20)
-					status = "bleeding"
+					status = "- кровопотеря"
 				if(brutedamage > 40)
-					status = "mangled"
+					status = "- сильные повреждения"
 				if(brutedamage > 0 && burndamage > 0)
-					status += " and "
+					status += " и "
 				if(burndamage > 40)
-					status += "peeling away"
+					status += "- сильный ожог"
 
 				else if(burndamage > 10)
-					status += "blistered"
+					status += "- средний ожог"
 				else if(burndamage > 0)
-					status += "numb"
+					status += " слабый ожог"
 				if(status == "")
 					status = "OK"
-				src << "\t [status == "OK" ? "\blue" : "\red"] My [org.getDisplayName()] is [status]."
+				src << "\t § [status == "OK" ? "\blue" : "\red"] [org.getDisplayName()] [status]."
 			if(staminaloss)
 				if(staminaloss > 30)
 					src << "<span class='info'>You're completely exhausted.</span>"
@@ -308,7 +308,7 @@
 	//actually throw it!
 	if(item)
 		item.layer = initial(item.layer)
-		src.visible_message("\red [src] has thrown [item].")
+		src.visible_message("\red [src] бросает [item].")
 
 		if(!src.lastarea)
 			src.lastarea = get_area(src.loc)

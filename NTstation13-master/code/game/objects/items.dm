@@ -79,7 +79,6 @@ obj
 	icon = 'icons/obj/items.dmi'
 	var/item_state = null
 	var/item_state_icon = null
-
 	var/hitsound = null
 	var/throwhitsound = null
 	var/w_class = 3.0
