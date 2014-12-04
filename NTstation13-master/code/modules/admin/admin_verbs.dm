@@ -81,7 +81,8 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/make_sound,
 	/client/proc/toggle_random_events,
-	/client/proc/set_ooc
+	/client/proc/set_ooc,
+	/client/proc/splash
 	)
 var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_atom,		/*allows us to spawn instances*/
@@ -94,6 +95,7 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
+	/client/proc/splash,
 	/client/proc/toggle_log_hrefs,
 	/datum/admins/proc/immreboot,
 	/client/proc/everyone_random,
@@ -114,6 +116,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/cmd_debug_del_all,
 	/client/proc/restart_controller,
 	/client/proc/enable_debug_verbs,
+	/client/proc/splash,
 	/client/proc/callproc
 	)
 var/list/admin_verbs_possess = list(
@@ -144,6 +147,7 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/toggleguests,
 	/datum/admins/proc/announce,
 	/datum/admins/proc/set_admin_notice,
+	/client/proc/splash,
 	/client/proc/admin_ghost,
 	/client/proc/toggle_view_range,
 	/datum/admins/proc/view_txt_log,
@@ -350,6 +354,7 @@ var/list/admin_verbs_hideable = list(
 	feedback_add_details("admin_verb","CHA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+
 /client/proc/jobbans()
 	set name = "Display Job bans"
 	set category = "Admin"
@@ -379,6 +384,11 @@ var/list/admin_verbs_hideable = list(
 		holder.Game()
 	feedback_add_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
+
+/client/proc/splash()
+	set category = "Special Verbs"
+	set name = "Splash"
+	set desc = "Splash simulation."
 
 /client/proc/secrets()
 	set name = "Secrets"

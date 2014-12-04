@@ -90,7 +90,6 @@ var/global/list/uneatable = list(
 	check_energy()
 
 	if(current_size >= 3)
-		move()
 		pulse()
 		if(prob(event_chance))//Chance for it to run a special event TODO:Come up with one or two more that fit
 			event()
@@ -145,29 +144,27 @@ var/global/list/uneatable = list(
 			dissipate_track = 0
 			dissipate_strength = 5
 		if(5)
-			if((check_turfs_in(1,2))&&(check_turfs_in(2,2))&&(check_turfs_in(4,2))&&(check_turfs_in(8,2)))
-				current_size = 5
-				icon = 'icons/effects/160x160.dmi'
-				icon_state = "singularity_s5"
-				pixel_x = -64
-				pixel_y = -64
-				grav_pull = 8
-				consume_range = 2
-				dissipate_delay = 4
-				dissipate_track = 0
-				dissipate_strength = 20
+			current_size = 5
+			icon = 'icons/effects/160x160.dmi'
+			icon_state = "singularity_s5"
+			pixel_x = -64
+			pixel_y = -64
+			grav_pull = 8
+			consume_range = 2
+			dissipate_delay = 4
+			dissipate_track = 0
+			dissipate_strength = 20
 		if(7)
-			if((check_turfs_in(1,3))&&(check_turfs_in(2,3))&&(check_turfs_in(4,3))&&(check_turfs_in(8,3)))
-				current_size = 7
-				icon = 'icons/effects/224x224.dmi'
-				icon_state = "singularity_s7"
-				pixel_x = -96
-				pixel_y = -96
-				grav_pull = 10
-				consume_range = 3
-				dissipate_delay = 10
-				dissipate_track = 0
-				dissipate_strength = 10
+			current_size = 7
+			icon = 'icons/effects/224x224.dmi'
+			icon_state = "singularity_s7"
+			pixel_x = -96
+			pixel_y = -96
+			grav_pull = 10
+			consume_range = 3
+			dissipate_delay = 10
+			dissipate_track = 0
+			dissipate_strength = 10
 		if(9)//this one also lacks a check for gens because it eats everything
 			current_size = 9
 			icon = 'icons/effects/288x288.dmi'
@@ -305,8 +302,10 @@ var/global/list/uneatable = list(
 	src.energy += gain
 	return
 
+/*
 
 /obj/machinery/singularity/proc/move(var/force_move = 0)
+
 	if(!move_self)
 		return 0
 
@@ -333,6 +332,10 @@ var/global/list/uneatable = list(
 		last_failed_movement = movement_dir
 	return 0
 
+
+*/
+
+/*
 
 /obj/machinery/singularity/proc/check_turfs_in(var/direction = 0, var/step = 0)
 	if(!direction)
@@ -387,6 +390,10 @@ var/global/list/uneatable = list(
 	return 1
 
 
+*/
+
+/*
+
 /obj/machinery/singularity/proc/can_move(var/turf/T)
 	if(!T)
 		return 0
@@ -401,6 +408,8 @@ var/global/list/uneatable = list(
 		if(S && S.active)
 			return 0
 	return 1
+
+*/
 
 
 /obj/machinery/singularity/proc/event()
@@ -513,9 +522,6 @@ var/global/list/uneatable = list(
 	eat()
 	if(!target || prob(5))
 		pickcultist()
-	move()
-	if(prob(25))
-		mezzer()
 
 
 /obj/machinery/singularity/narsie/Bump(atom/A)//you dare stand before a god?!
