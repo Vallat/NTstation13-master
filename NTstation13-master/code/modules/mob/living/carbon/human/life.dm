@@ -31,7 +31,7 @@
 	var/pressure_alert = 0
 	var/temperature_alert = 0
 	var/tinttotal = 0				// Total level of visualy impairing items
-
+	var/pulse
 
 
 /mob/living/carbon/human/Life()

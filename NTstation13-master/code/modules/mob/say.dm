@@ -81,7 +81,7 @@
 		return "восклицает, \"[text]\"";
 	if(isdeadsay)
 		return "[pick("moans","complains","cries","whines")], \"[text]\"";
-	return "молвит, \"[text]\"";
+	return " *[gender]* [pick("молвит","говорит")], \"[text]\"";
 
 /mob/proc/emote(var/act)
 	return

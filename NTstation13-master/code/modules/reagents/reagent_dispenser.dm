@@ -80,7 +80,21 @@
 	amount_per_transfer_from_this = 10
 	New()
 		..()
-		reagents.add_reagent("fuel",10000)
+		reagents.add_reagent("water",10000)
+
+
+/obj/effect/effect/watertankB
+	name = "watertank"
+	desc = "A watertank"
+	icon = 'icons/obj/machines/implantchair.dmi'
+	icon_state = "tanker_head"
+	density = 1
+	anchored = 1
+	amount_per_transfer_from_this = 10
+	New()
+		..()
+		reagents.add_reagent("water",100000)
+
 
 /obj/effect/effect/watertank/ex_act(severity)
 	switch(severity)

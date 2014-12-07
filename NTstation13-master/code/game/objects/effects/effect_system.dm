@@ -34,6 +34,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 
 /obj/effect/effect/goodwater
 	name = "water"
+	temperature = 50
 	icon = 'icons/effects/water.dmi'
 	icon_state = "water"
 	var/life = 15.0
@@ -42,6 +43,36 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	New()
 		..()
 		reagents.add_reagent("water",1000)
+
+
+/obj/effect/effect/goodwater/New(loc, var/ismetal=0)
+	..(loc)
+	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	spawn(3)
+		process()
+	spawn(120)
+		processing_objects.Remove(src)
+		sleep(30)
+	return
+
+
+/obj/effect/effect/goodwater/process()
+
+	for(var/direction in cardinal)
+
+
+		var/turf/T = get_step(src,direction)
+		if(!T)
+			continue
+
+		if(!T.Enter(src))
+			continue
+
+		var/obj/effect/effect/goodwater/F = locate() in T
+		if(F)
+			continue
+
+		F = new(T)
 
 /obj/effect/effect/radwater
 	name = "water"
@@ -1191,3 +1222,13 @@ steam.start() -- spawns the effect
 				M << "\red The solution violently explodes."
 
 			explosion(location, devastation, heavy, light, flash)
+
+
+
+// WATER PIPE AND PUMP
+// BY DERVEN
+// EPTA
+
+/obj/machinery/water_pump
+	icon = 'obj/machines/gravity_generator.dmi'
+	icon_state = "pump"

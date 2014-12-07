@@ -122,6 +122,10 @@
 	stat(null, "Blood type: [blood_type]")
 	stat(null, "Age: [age]")
 	stat(null, "Gender: [gender]")
+
+	statpanel("Internal organs")
+	stat(internal_organs)
+
 	if(ticker && ticker.mode && ticker.mode.name == "AI malfunction")
 		if(ticker.mode:malf_mode_declared)
 			stat(null, "Time left: [max(ticker.mode:AI_win_timeleft/(ticker.mode:apcs/3), 0)]")

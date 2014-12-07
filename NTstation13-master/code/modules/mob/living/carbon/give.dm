@@ -43,7 +43,7 @@
 					if(src.r_hand == null && affecting.state != ORGAN_REMOVED)
 						r_hand = I
 						usr.drop_item()
-					else	
+					else
 						affecting = getlimb(/obj/item/organ/limb/l_arm)
 						if(l_hand == null && affecting.state != ORGAN_REMOVED)
 							l_hand = I
@@ -63,3 +63,5 @@
 				src.visible_message("<span class='warning'>[usr.name] tried to hand [I.name] to [src.name] but [src.name] didn't want it.</span>")
 	else
 		usr << "<span class='warning'>[src.name]'s hands are full.</span>"
+
+

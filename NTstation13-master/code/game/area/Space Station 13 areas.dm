@@ -15,6 +15,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 
 /area
+
 	var/fire = null
 	var/atmos = 1
 	var/atmosalm = 0
@@ -53,7 +54,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /*Adding a wizard area teleport list because motherfucking lag -- Urist*/
 /*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
 var/list/teleportlocs = list()
-
 proc/process_teleport_locs()
 	for(var/area/AR in world)
 		if(istype(AR, /area/shuttle) || istype(AR, /area/syndicate_station) || istype(AR, /area/wizard_station)) continue
