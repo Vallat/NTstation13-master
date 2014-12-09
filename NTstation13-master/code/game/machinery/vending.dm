@@ -423,16 +423,13 @@
 /obj/machinery/vending/power_change()
 	if(stat & BROKEN)
 		icon_state = "[initial(icon_state)]-broken"
-		src.ul_SetLuminosity(0)
 	else
 		if(powered())
 			icon_state = initial(icon_state)
 			stat &= ~NOPOWER
-			src.ul_SetLuminosity(3, 0, 1)
 		else
 			icon_state = "[initial(icon_state)]-off"
 			stat |= NOPOWER
-			src.ul_SetLuminosity(0)
 
 
 //Oh no we're malfunctioning!  Dump out some product and break.

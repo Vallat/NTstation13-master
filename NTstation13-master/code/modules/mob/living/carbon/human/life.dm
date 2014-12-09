@@ -32,6 +32,10 @@
 	var/temperature_alert = 0
 	var/tinttotal = 0				// Total level of visualy impairing items
 	var/pulse
+	var/adrenaline
+	var/need_sleep
+	var/need_pee
+	var/need_poo
 
 
 /mob/living/carbon/human/Life()
@@ -85,6 +89,9 @@
 
 	//Check if we're on fire
 	handle_fire()
+
+	//Спатеньки
+	handle_need_sleep()
 
 	//stuff in the stomach
 	handle_stomach()

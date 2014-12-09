@@ -11,6 +11,13 @@
 
 	volume = 1000
 
+
+/obj/machinery/portable_atmospherics/pump/water
+
+/obj/machinery/portable_atmospherics/pump/water/attack_hand(mob/user as mob)
+
+
+
 /obj/machinery/portable_atmospherics/pump/update_icon()
 	src.overlays = 0
 

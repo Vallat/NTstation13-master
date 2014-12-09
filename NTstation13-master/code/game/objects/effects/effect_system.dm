@@ -86,6 +86,38 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		..()
 		reagents.add_reagent("mutagen", 1000)
 
+
+/obj/effect/effect/radwater/New(loc, var/ismetal=0)
+	..(loc)
+	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	spawn(3)
+		process()
+	spawn(120)
+		processing_objects.Remove(src)
+		sleep(30)
+	return
+
+
+/obj/effect/effect/radwater/process()
+
+	for(var/direction in cardinal)
+
+
+		var/turf/T = get_step(src,direction)
+		if(!T)
+			continue
+
+		if(!T.Enter(src))
+			continue
+
+		var/obj/effect/effect/goodwater/F = locate() in T
+		if(F)
+			continue
+
+		F = new(T)
+
+
+
 /obj/effect/effect/fuelwater
 	name = "water"
 	icon = 'icons/effects/water.dmi'
@@ -97,6 +129,37 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	New()
 		..()
 		reagents.add_reagent("fuel", 1000)
+
+
+/obj/effect/effect/fuelwater/New(loc, var/ismetal=0)
+	..(loc)
+	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	spawn(3)
+		process()
+	spawn(120)
+		processing_objects.Remove(src)
+		sleep(30)
+	return
+
+
+/obj/effect/effect/fuelwater/process()
+
+	for(var/direction in cardinal)
+
+
+		var/turf/T = get_step(src,direction)
+		if(!T)
+			continue
+
+		if(!T.Enter(src))
+			continue
+
+		var/obj/effect/effect/goodwater/F = locate() in T
+		if(F)
+			continue
+
+		F = new(T)
+
 
 /obj/effect/effect/radwater/two
 	name = "water"
@@ -123,6 +186,36 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		reagents.add_reagent("capsaicin", 1000)
 
 
+/obj/effect/effect/capsaicinwater/New(loc, var/ismetal=0)
+	..(loc)
+	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	spawn(3)
+		process()
+	spawn(120)
+		processing_objects.Remove(src)
+		sleep(30)
+	return
+
+
+/obj/effect/effect/capsaicinwater/process()
+
+	for(var/direction in cardinal)
+
+
+		var/turf/T = get_step(src,direction)
+		if(!T)
+			continue
+
+		if(!T.Enter(src))
+			continue
+
+		var/obj/effect/effect/goodwater/F = locate() in T
+		if(F)
+			continue
+
+		F = new(T)
+
+
 /obj/effect/effect/tripwater
 	name = "water"
 	icon = 'icons/effects/water.dmi'
@@ -135,34 +228,83 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		..()
 		reagents.add_reagent("space_drugs", 1000)
 
-/obj/effect/effect/goodwater/Crossed(mob/living/carbon/M as mob )
+/obj/effect/effect/tripwater/New(loc, var/ismetal=0)
+	..(loc)
+	playsound(src, 'sound/effects/bubbles2.ogg', 80, 1, -3)
+	spawn(3)
+		process()
+	spawn(120)
+		processing_objects.Remove(src)
+		sleep(30)
+	return
+
+
+/obj/effect/effect/tripwater/process()
+
+	for(var/direction in cardinal)
+
+
+		var/turf/T = get_step(src,direction)
+		if(!T)
+			continue
+
+		if(!T.Enter(src))
+			continue
+
+		var/obj/effect/effect/goodwater/F = locate() in T
+		if(F)
+			continue
+
+		F = new(T)
+
+
+/obj/effect/effect/goodwater/Crossed(mob/living/carbon/human/M as mob )
 	..()
 	reagents.reaction(M)
-
-	return
+	M.adjustOxyLoss(8)
+	M.bodytemperature -= 5
+	M.losebreath += 1
+	sleep(60)
+	M << "\red Тебе нужно на поверхность"
 
 /obj/effect/effect/radwater/Crossed(mob/living/carbon/M as mob )
 	..()
 	reagents.reaction(M)
-
+	M.adjustOxyLoss(8)
+	M.bodytemperature -= 5
+	M.losebreath += 1
+	sleep(60)
+	M << "\red Тебе нужно на поверхность"
 	return
 
 /obj/effect/effect/capsaicinwater/Crossed(mob/living/carbon/M as mob )
 	..()
 	reagents.reaction(M)
-
+	M.adjustOxyLoss(8)
+	M.bodytemperature -= 5
+	M.losebreath += 1
+	sleep(60)
+	M << "\red Тебе нужно на поверхность"
 	return
 
 /obj/effect/effect/fuelwater/Crossed(mob/living/carbon/M as mob )
 	..()
 	reagents.reaction(M)
-
+	M.adjustOxyLoss(8)
+	M.bodytemperature -= 5
+	M.losebreath += 1
+	sleep(60)
+	M << "\red Тебе нужно на поверхность"
 	return
 
 /obj/effect/effect/tripwater/Crossed(mob/living/carbon/M as mob )
 	..()
 	reagents.reaction(M)
-
+	M.adjustOxyLoss(8)
+	M.bodytemperature -= 5
+	M.losebreath += 1
+	sleep(60)
+	M << "\red Тебе нужно на поверхность"
 	return
 
 //obj/effect/effect/radwater/Crossed(var/atom/movable/AM)
@@ -1232,3 +1374,12 @@ steam.start() -- spawns the effect
 /obj/machinery/water_pump
 	icon = 'obj/machines/gravity_generator.dmi'
 	icon_state = "pump"
+	density = 1
+	opacity = 1
+
+
+/obj/machinery/water_wall
+	icon = 'obj/machines/heavy_lathe.dmi'
+	icon_state = "water_wall"
+	density = 1
+	opacity = 1

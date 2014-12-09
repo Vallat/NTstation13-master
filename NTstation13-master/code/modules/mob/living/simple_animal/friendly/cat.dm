@@ -20,6 +20,27 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
 
+/mob/living/simple_animal/cat/steamcat
+	name = "steam_cat"
+	desc = "Kitty and steam technology!!"
+	icon_state = "cat2_steam"
+	icon_living = "cat2_steam"
+	icon_dead = "cat2_steam_dead"
+	gender = MALE
+	speak = list("Meow! pssss... *hoooonk*", "*Bzzzzz-pssssss* MEOW!", "Hello, buddy", "HSSSSS *hooonk*")
+	speak_emote = list("purrs", "meows")
+	emote_hear = list("meows", "mews")
+	emote_see = list("shakes its head", "shivers")
+	speak_chance = 5
+	turns_per_move = 0.0001
+	see_in_dark = 6
+	species = /mob/living/simple_animal/cat
+	childtype = /mob/living/simple_animal/cat/kitten
+	meat_type = list(/obj/item/weapon/reagent_containers/food/snacks/meat)
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+
 //RUNTIME IS ALIVE! SQUEEEEEEEE~
 /mob/living/simple_animal/cat/Runtime
 	name = "Runtime"

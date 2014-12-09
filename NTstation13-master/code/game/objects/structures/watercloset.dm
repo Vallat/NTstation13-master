@@ -141,6 +141,11 @@
 	var/mobpresent = 0		//true if there is a mob on the shower's loc, this is to ease process()
 
 
+/obj/machinery/shower/special
+
+/obj/machinery/shower/special/attack_hand(mob/user as mob)
+	new /obj/effect/effect/goodwater (src.loc)
+
 /obj/effect/mist
 	name = "mist"
 	icon = 'icons/obj/watercloset.dmi'

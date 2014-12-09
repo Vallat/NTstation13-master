@@ -102,6 +102,10 @@
 			modifier_knockout = 1.5
 			modifier_weaken = 1.2
 			modifier_knockdown = 0.0
+		if("heart")
+			modifier_stun = 2.0
+			modifier_weaken = 1.2
+			modifier_knockdown = 0.0
 		if("chest")
 		if("right arm","r_arm")
 		if("left arm","l_arm")
@@ -184,6 +188,14 @@
 			switch(percentage)
 				if(1 to 60)
 					resultloc = "right leg"
+				if(61 to 70)
+					resultloc = "groin"
+				if(71 to 100)
+					resultloc = "chest"
+		if("heart")
+			switch(percentage)
+				if(1 to 60)
+					resultloc = "heart"
 				if(61 to 70)
 					resultloc = "groin"
 				if(71 to 100)

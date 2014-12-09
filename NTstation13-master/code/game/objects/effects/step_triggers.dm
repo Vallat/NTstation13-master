@@ -17,6 +17,39 @@
 		return
 	Trigger(H)
 
+//ƒервеновские лестницы такие дервеновские
+
+/obj/effect/attack_trigger
+	var/affect_ghosts = 0
+	var/stopper = 1 // stops throwers //
+	anchored = 1
+
+/obj/effect/attack_trigger/proc/Trigger(var/atom/movable/A)
+	return 0
+
+/obj/effect/attack_trigger/attack_hand(H as mob|obj)
+	..()
+	if(!H)
+		return
+	if(istype(H, /mob/dead/observer) && !affect_ghosts)
+		return
+	Trigger(H)
+
+/obj/effect/attack_trigger/teleporter
+	var/teleport_x = 0	// teleportation coordinates (if one is null, then no teleport!)
+	var/teleport_y = 0
+	var/teleport_z = 0
+	icon = 'objects.dmi'
+	icon_state = "up"
+	name = "Up"
+
+	Trigger(var/atom/movable/A)
+		if(teleport_x && teleport_y && teleport_z)
+
+			A.x = teleport_x
+			A.y = teleport_y
+			A.z = teleport_z
+
 
 
 /* Tosses things in a certain direction */
@@ -99,6 +132,8 @@
 			A.x = teleport_x
 			A.y = teleport_y
 			A.z = teleport_z
+
+
 
 /* Random teleporter, teleports atoms to locations ranging from teleport_x - teleport_x_offset, etc */
 

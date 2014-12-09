@@ -133,6 +133,9 @@
 					selecting = "r_arm"
 				if(12 to 20)
 					selecting = "chest"
+					switch(icon_y)
+						if(12 to 17)
+							selecting = "heart"
 				if(21 to 24)
 					selecting = "l_arm"
 				else

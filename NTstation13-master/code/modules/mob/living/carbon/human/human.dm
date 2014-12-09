@@ -618,3 +618,35 @@
 
 	return threatcount
 
+
+
+/mob/living/carbon/human/proc/handle_need_sleep()
+	if (need_sleep)
+		if (need_sleep > 100)
+			need_sleep = 100
+
+		if (need_sleep < 0)
+			need_sleep = 0
+
+		switch(need_sleep)
+			if(1 to 49)
+				need_sleep--
+				usr << "“ы чувствуешь усталость"
+				emote("yawn")
+
+			if(50 to 74)
+				need_sleep--
+				usr << "“ы чувствуешь сильную усталость"
+				emote("yawn")
+
+			if(75 to 100)
+				need_sleep--
+				usr << "“ы чувствуешь сильную усталость и падаешь без сил"
+				emote("yawn")
+				sleeping = max(sleeping+2, 10)
+
+
+
+	if(organic_effects.len)
+		for(var/datum/organic_effect/OE in organic_effects)
+			OE.trigger()

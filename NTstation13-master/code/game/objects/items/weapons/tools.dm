@@ -129,9 +129,13 @@
 		M = user
 	return eyestab(M,user)
 
-/*
- * Wirecutters
- */
+	if(user.zone_sel.selecting != "heart" && user.zone_sel.selecting != "chest")
+		return ..()
+	M = user
+	return heartstab(M,user)
+
+ // Wirecutters
+
 /obj/item/weapon/wirecutters
 	name = "wirecutters"
 	desc = "This cuts wires."

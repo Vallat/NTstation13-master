@@ -449,6 +449,25 @@ obj
 			M.sdisabilities |= BLIND
 	return
 
+
+/obj/item/proc/heartstab(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+
+	var/mob/living/carbon/human/H = M
+	var/random
+	if(H != user)
+		for(var/mob/O in (viewers(H) - user - H))
+			O.show_message("\red ¬ сердце [H] [user] пытается вонзить [src].", 1)
+		H << "\red [user] пытаетс€ вонзить в твое сердце [src]!"
+		user << "\red “ы пытаешься вонзить [src] в сердце [H]!"
+	if(istype(H, /mob/living/carbon/human))
+		random = pick(1,0,0,0,0)
+		if(random == 1)
+			H.adjustOxyLoss(60)
+			H.failed_last_breath = 1
+		if(random == 0)
+			return
+
+
 /obj/item/clean_blood()
 	. = ..()
 	if(.)

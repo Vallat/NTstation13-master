@@ -816,7 +816,7 @@ client
 			if(!istype(H))
 				usr << "This can only be done to instances of type /mob/living/carbon/human"
 				return
-			var/limb = input("Please choose a limb to change","Change Limb",null) as null|anything in list("All","Head","Chest","Right arm","Left arm","Right leg","Left leg")
+			var/limb = input("Please choose a limb to change","Change Limb",null) as null|anything in list("All","Head","Chest","Right arm","Heart","Left arm","Right leg","Left leg")
 			if(!limb)
 				return
 
