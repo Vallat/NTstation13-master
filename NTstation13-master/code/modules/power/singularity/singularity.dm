@@ -144,7 +144,6 @@ var/global/list/uneatable = list(
 			dissipate_track = 0
 			dissipate_strength = 5
 		if(5)
-			current_size = 5
 			icon = 'icons/effects/160x160.dmi'
 			icon_state = "singularity_s5"
 			pixel_x = -64
@@ -155,7 +154,6 @@ var/global/list/uneatable = list(
 			dissipate_track = 0
 			dissipate_strength = 20
 		if(7)
-			current_size = 7
 			icon = 'icons/effects/224x224.dmi'
 			icon_state = "singularity_s7"
 			pixel_x = -96
@@ -166,7 +164,6 @@ var/global/list/uneatable = list(
 			dissipate_track = 0
 			dissipate_strength = 10
 		if(9)//this one also lacks a check for gens because it eats everything
-			current_size = 9
 			icon = 'icons/effects/288x288.dmi'
 			icon_state = "singularity_s9"
 			pixel_x = -128

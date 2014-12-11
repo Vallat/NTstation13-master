@@ -255,15 +255,12 @@
 			icon_state = "[base_state][on]"
 		if(LIGHT_EMPTY)
 			icon_state = "[base_state]-empty"
-			src.ul_SetLuminosity(0)
 			on = 0
 		if(LIGHT_BURNED)
 			icon_state = "[base_state]-burned"
-			src.ul_SetLuminosity(0)
 			on = 0
 		if(LIGHT_BROKEN)
 			icon_state = "[base_state]-broken"
-			src.ul_SetLuminosity(0)
 			on = 0
 	return
 

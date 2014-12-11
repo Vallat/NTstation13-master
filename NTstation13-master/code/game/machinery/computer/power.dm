@@ -103,8 +103,6 @@
 /obj/machinery/computer/power_change()
 	if (powered() && anchored)
 		stat &= ~NOPOWER
-		src.ul_SetLuminosity(3,2,5)
 
 	else
 		stat |= ~NOPOWER
-		src.ul_SetLuminosity(0)

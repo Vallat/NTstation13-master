@@ -55,7 +55,6 @@
 
 /obj/effect/hotspot/New()
 	..()
-	src.ul_SetLuminosity(11,9,0)
 	air_master.hotspots += src
 	perform_exposure()
 
@@ -85,7 +84,6 @@
 
 
 /obj/effect/hotspot/process()
-	src.ul_SetLuminosity(11,9,0)
 	if(just_spawned)
 		just_spawned = 0
 		return 0
@@ -171,7 +169,6 @@
 				T.max_fire_temperature_sustained = 0
 
 /obj/effect/hotspot/New()
-	src.ul_SetLuminosity(11,9,0)
 	..()
 	dir = pick(cardinal)
 	air_update_turf()

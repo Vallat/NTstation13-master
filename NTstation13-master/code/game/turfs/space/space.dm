@@ -1,12 +1,14 @@
 /turf/space
 	icon = 'icons/turf/space.dmi'
 	name = "sand"
-	icon_state = "0"
+	icon_state = "1"
 	temperature = PLASMA_MINIMUM_BURN_TEMPERATURE
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
 	oxygen = MOLES_O2STANDARD
 	nitrogen = MOLES_N2STANDARD
+
+
 
 turf/space/New()
 	if(!istype(src, /turf/space/transit))
@@ -253,3 +255,42 @@ turf/space/attackby(obj/item/C as obj, mob/user as mob)
 	return
 
 	*/
+/turf/space/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/weapon/shovel))
+		new /obj/effect/yamaept(src.loc)
+		new /obj/item/weapon/ore/glass(src.loc)
+		return
+
+/obj/effect/yamaept
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "yamaept"
+	name = "pit"
+
+
+/obj/effect/yamaept/attackby(obj/item/I, mob/user)
+	if (istype(I, /obj/item/weapon/grab))
+		if(get_dist(src, user) < 2)
+			var/obj/item/weapon/grab/G = I
+			if(G.affecting.buckled)
+				user << "<span class='notice'>[G.affecting] прикован к [G.affecting.buckled]!</span>"
+				return
+			if(G.state < GRAB_AGGRESSIVE)
+				user << "<span class='notice'>“ебе нужно схватить его сильнее!</span>"
+				return
+			if(!G.confirm())
+				return
+			G.affecting.loc = src.loc
+			G.affecting.Weaken(5)
+			new /obj/effect/yamazakopat(src.loc)
+			del(src)
+			G.affecting.abandon_mob()
+			del(G.affecting)
+		qdel(I)
+		return
+
+
+
+/obj/effect/yamazakopat
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "yamaept2"
+	name = "mound"

@@ -24,6 +24,7 @@ turf/simulated/ladder_wall
 	icon_state = "ladder_wall"
 	icon = 'icons/turf/walls.dmi'
 	density = 1
+	opacity = 1
 
 
 turf/simulated/illuminator_wall
