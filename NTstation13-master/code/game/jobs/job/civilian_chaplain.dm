@@ -29,27 +29,6 @@ Chaplain
 			if(B.icon_state == "honk1")
 				H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/clown_hat(H), slot_wear_mask)
 
-		if("bible")
-			for(var/area/chapel/main/A in world)
-				for(var/turf/T in A.contents)
-					if(T.icon_state == "carpetsymbol")
-						T.dir = 2
-		if("koran")
-			for(var/area/chapel/main/A in world)
-				for(var/turf/T in A.contents)
-					if(T.icon_state == "carpetsymbol")
-						T.dir = 4
-		if("scientology")
-			for(var/area/chapel/main/A in world)
-				for(var/turf/T in A.contents)
-					if(T.icon_state == "carpetsymbol")
-						T.dir = 8
-		if("athiest")
-			for(var/area/chapel/main/A in world)
-				for(var/turf/T in A.contents)
-					if(T.icon_state == "carpetsymbol")
-						T.dir = 10
-
 /datum/job/chaplain/Topic(href, href_list)
 	if(href_list["seticon"])
 		var/iconi = text2num(href_list["seticon"])

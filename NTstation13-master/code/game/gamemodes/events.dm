@@ -81,17 +81,11 @@
 		S.update_icon()
 		S.power_change()
 
-	var/list/skipped_areas = list(/area/engine/engineering, /area/turret_protected/ai)
-
 	for(var/area/A in world)
 		if( !A.requires_power || A.always_unpowered )
 			continue
 
 		var/skip = 0
-		for(var/area_type in skipped_areas)
-			if(istype(A,area_type))
-				skip = 1
-				break
 		if(A.contents)
 			for(var/atom/AT in A.contents)
 				if(AT.z != 1) //Only check one, it's enough.
@@ -105,13 +99,8 @@
 
 	for(var/obj/machinery/power/apc/C in world)
 		if(C.cell && C.z == 1)
-			var/area/A = get_area(C)
 
 			var/skip = 0
-			for(var/area_type in skipped_areas)
-				if(istype(A,area_type))
-					skip = 1
-					break
 			if(skip) continue
 
 			C.cell.charge = 0

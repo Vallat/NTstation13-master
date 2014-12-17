@@ -379,3 +379,6 @@
 			src.icon_state = "CR"
 
 	return
+
+
+/obj/structure/crematorium/auto/blacksmith_machine

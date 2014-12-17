@@ -650,3 +650,10 @@
 	if(organic_effects.len)
 		for(var/datum/organic_effect/OE in organic_effects)
 			OE.trigger()
+
+
+
+//personal journal
+//personal journal
+//personal journal
+//personal journal

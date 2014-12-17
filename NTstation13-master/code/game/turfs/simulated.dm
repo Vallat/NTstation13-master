@@ -56,7 +56,7 @@
 					playsound(src, "clownstep", 20, 1)
 
 			//shoes
-			if(istype(src, /turf/simulated/floor/grass || /turf/simulated/floor/holofloor/grass))
+			if(istype(src, /turf/simulated/floor/grass))
 				footstepsound = "grassfootsteps"
 			else if(istype(src, /turf/simulated/floor/beach/sand ||/turf/simulated/floor/plating/asteroid/airless))
 				footstepsound = "sandfootsteps"

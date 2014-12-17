@@ -80,7 +80,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient
 	name = "bottle of nutrient"
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle16"
+	icon_state = "box_22"
 	volume = 50
 	w_class = 1.0
 	amount_per_transfer_from_this = 10
@@ -95,7 +95,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/ez
 	name = "bottle of E-Z-Nutrient"
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle16"
+	icon_state = "box_22"
 
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/ez/New()
 	..()
@@ -104,7 +104,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/l4z
 	name = "bottle of Left 4 Zed"
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle18"
+	icon_state = "box_22"
 
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/l4z/New()
 	..()
@@ -113,7 +113,7 @@
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/rh
 	name = "bottle of Robust Harvest"
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle15"
+	icon_state = "box_22"
 
 /obj/item/weapon/reagent_containers/glass/bottle/nutrient/rh/New()
 	..()

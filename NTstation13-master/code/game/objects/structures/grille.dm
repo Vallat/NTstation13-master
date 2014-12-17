@@ -222,3 +222,26 @@
 			health -= 1
 			healthcheck()
 	..()
+
+
+
+/obj/structure/clockwork_toys
+	desc = "Insert the key"
+	name = "clockwork_toys"
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "clockwork"
+	density = 1
+	anchored = 1
+
+/obj/structure/clockwork_toys/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	user.changeNext_move(8)
+	if(istype(W, /obj/item/weapon/key))
+		playsound(loc, 'sound/effects/xylophone2.ogg', 100, 1)
+		new /mob/living/simple_animal/hostile/carp/clockwork_cyborg(loc)
+		qdel(src)
+
+/obj/item/weapon/key
+	desc = "Cyborg key"
+	name = "Key"
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "key"

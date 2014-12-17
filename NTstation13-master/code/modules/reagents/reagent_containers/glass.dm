@@ -259,3 +259,14 @@
 		reagents.add_reagent("fluorosurfactant", 20)
 
 */
+
+/obj/item/weapon/reagent_containers/glass/bucket/hydro
+	icon_state = "bucket_2"
+
+
+/obj/item/weapon/reagent_containers/glass/bucket/fire
+	icon_state = "bucket_3"
+
+
+/obj/item/weapon/reagent_containers/glass/bucket/classic
+	icon_state = "bucket_4"

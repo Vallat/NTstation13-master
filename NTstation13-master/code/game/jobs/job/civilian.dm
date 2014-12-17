@@ -2,7 +2,7 @@
 Bartender
 */
 /datum/job/bartender
-	title = "bartender"
+	title = "Bartender"
 	flag = BARTENDER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -56,7 +56,7 @@ Bartender
 Chef
 */
 /datum/job/chef
-	title = "chef"
+	title = "Chef"
 	flag = CHEF
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -84,7 +84,7 @@ Chef
 Botanist
 */
 /datum/job/hydro
-	title = "botanist"
+	title = "Hydroscientist"
 	flag = BOTANIST
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -390,3 +390,54 @@ Lawyer
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 
 	*/
+
+/datum/job/hermit
+	title = "Hermit"
+	flag = HERMIT
+	department_head = list("Sand law")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Sand law"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Hermit"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/hermit/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/color/orange(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
+
+
+/datum/job/actor
+	title = "Actor"
+	flag = ACTOR
+	department_head = list("Head of Personnel")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Head of Personnel"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Actor"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/actor/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/lawyer/blue(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)

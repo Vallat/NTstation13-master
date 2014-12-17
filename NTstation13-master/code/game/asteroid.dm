@@ -11,13 +11,6 @@ proc/spawn_room(var/atom/start_loc, var/x_size, var/y_size, var/list/walltypes, 
 			var/cur_loc = locate(start_loc.x + x, start_loc.y + y, start_loc.z)
 
 
-			var/area/asteroid/artifactroom/A = new
-			if(name)
-				A.name = name
-			else
-				A.name = "Artifact Room #[start_loc.x]-[start_loc.y]-[start_loc.z]"
-
-
 			if(x == 0 || x == x_size-1 || y == 0 || y == y_size-1)
 				var/wall = pickweight(walltypes)//totally-solid walls are pretty boring.
 				T = cur_loc
@@ -30,7 +23,6 @@ proc/spawn_room(var/atom/start_loc, var/x_size, var/y_size, var/list/walltypes, 
 				T.ChangeTurf(floor)
 				room_turfs["floors"] += T
 
-			A.contents += T
 
 	return room_turfs
 
@@ -169,10 +161,6 @@ proc/make_mining_asteroid_secret()
 			continue
 
 		if(locate(/turf/space) in surroundings)
-			valid = 0
-			continue
-
-		if(locate(/area/asteroid/artifactroom) in surroundings)
 			valid = 0
 			continue
 

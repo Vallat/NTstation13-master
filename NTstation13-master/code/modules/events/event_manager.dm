@@ -84,11 +84,8 @@ var/datum/controller/event/events
 
 /datum/round_event/proc/findEventArea() //Here's a nice proc to use to find an area for your event to land in!
 	var/list/safe_areas = list(
-	/area/turret_protected/ai,
-	/area/turret_protected/ai_upload,
 	/area/engine,
 	/area/solar,
-	/area/holodeck,
 	/area/shuttle/arrival,
 	/area/shuttle/escape/station,
 	/area/shuttle/escape_pod1/station,

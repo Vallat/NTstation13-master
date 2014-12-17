@@ -13,11 +13,6 @@
 	announceWhen = rand(50, 60)
 	endWhen = rand(20, 30)
 
-	for(var/area/security/A in world)
-		if(istype(A, /area/security/prison) || istype(A, /area/security/brig))
-			prisonAreas += A
-
-
 /datum/round_event/prison_break/announce()
 	if(prisonAreas && prisonAreas.len > 0)
 		priority_announce("Gr3y.T1d3 virus detected in [station_name()] imprisonment subroutines. Recommend station AI involvement.", "Security Alert")

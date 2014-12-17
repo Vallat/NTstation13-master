@@ -1,6 +1,6 @@
 /*
 Research Director
-*/
+
 /datum/job/rd
 	title = "Research Director"
 	flag = RD
@@ -42,6 +42,8 @@ Research Director
 //	if(H.backbag != 1)
 //		H.equip_to_slot_or_del(new /obj/item/weapon/melee/telebaton(H), slot_in_backpack)
 
+*/
+
 /*
 Scientist
 */
@@ -74,14 +76,14 @@ Scientist
 Roboticist
 */
 /datum/job/roboticist
-	title = "Steam and energy master"
+	title = "Watchmaker"
 	flag = ROBOTICIST
-	department_head = list("Research Director")
+	department_head = list("Time")
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "research director"
+	supervisors = "time"
 	selection_color = "#ffeeff"
 
 	//default_pda = /obj/item/device/pda/roboticist
@@ -98,3 +100,4 @@ Roboticist
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/labcoat(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/toolbox/mechanical(H), slot_l_hand)
+		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/welding(H), slot_glasses)

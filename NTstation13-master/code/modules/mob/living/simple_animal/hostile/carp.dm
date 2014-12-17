@@ -84,3 +84,23 @@
 
 	melee_damage_lower = 20
 	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/carp/clockwork_cyborg
+	name = "clockwork_cyborg"
+	desc = "The key is inserted"
+	icon_state = "toy"
+	icon_living = "toy"
+	icon_dead = "toy_dead"
+	icon_gib = "toy_gib"
+	speak_chance = 0
+	turns_per_move = 5
+	meat_type = list(/obj/item/weapon/circular_saw)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	speed = 1
+	maxHealth = 25
+	health = 25
+
+	attacktext = "режет"
+	attack_sound = 'sound/weapons/circsawhit.ogg'
