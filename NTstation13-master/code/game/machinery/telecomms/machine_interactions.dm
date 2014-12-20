@@ -5,7 +5,7 @@
 
 	All telecommunications interactions:
 
-*/
+
 
 #define STATION_Z 1
 #define TELECOMM_Z 3
@@ -224,7 +224,7 @@
 	if(href_list["process"])
 		temp = "<font color = #666633>-% Processing mode changed. %-</font color>"
 		src.process_mode = !src.process_mode
-*/
+
 
 // RELAY
 
@@ -395,3 +395,7 @@
 
 #undef TELECOMM_Z
 #undef STATION_Z
+
+
+*/
+*/

@@ -148,3 +148,17 @@
 				A.y = rand(teleport_y, teleport_y_offset)
 				A.z = rand(teleport_z, teleport_z_offset)
 
+
+/obj/effect/step_trigger/teleporter/z_random
+	var/teleport_x_offset = 0
+	var/teleport_y_offset = 0
+	var/teleport_z_offset = 9
+	teleport_z = 4
+
+	Trigger(var/atom/movable/A)
+		if(teleport_x && teleport_y && teleport_z)
+			if(teleport_x_offset && teleport_y_offset && teleport_z_offset)
+
+				A.x = rand(teleport_x, teleport_x_offset)
+				A.y = rand(teleport_y, teleport_y_offset)
+				A.z = rand(teleport_z, teleport_z_offset)

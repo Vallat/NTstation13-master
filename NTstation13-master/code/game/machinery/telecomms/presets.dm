@@ -1,5 +1,7 @@
 // ### Preset machines  ###
 
+
+/*
 //Relay
 
 /obj/machinery/telecomms/relay/preset
@@ -194,3 +196,5 @@
 	id = "Broadcaster B"
 	network = "tcommsat"
 	autolinkers = list("broadcasterB")
+
+	*/

@@ -730,16 +730,16 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	last_text = world.time
 	// check if telecomms I/O route 1459 is stable
 	//var/telecomms_intact = telecomms_process(P.owner, owner, t)
-	var/obj/machinery/message_server/useMS = null
-	if(message_servers)
-		for (var/obj/machinery/message_server/MS in message_servers)
+//	var/obj/machinery/message_server/useMS = null
+//	if(message_servers)
+	//	for (var/obj/machinery/message_server/MS in message_servers)
 		//PDAs are now dependant on the Message Server.
-			if(MS.active)
-				useMS = MS
-				break
+		//	if(MS.active)
+		//		useMS = MS
+		//		break
 
-	var/datum/signal/signal = src.telecomms_process()
-
+//	var/datum/signal/signal = src.telecomms_process()
+/*
 	var/useTC = 0
 	if(signal)
 		if(signal.data["done"])
@@ -781,6 +781,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	else
 		U << "<span class='notice'>ERROR: Server isn't responding.</span>"
 
+*/
 
 /obj/item/device/pda/verb/verb_remove_id()
 	set category = "Object"

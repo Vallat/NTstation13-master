@@ -80,14 +80,14 @@
 			user.unEquip(W)
 			W.loc = src
 			user.visible_message("<span class='notice'>[user] inserts [W] into \the [src]'s GPS device slot.</span>")
-	else if(istype(W, /obj/item/device/multitool))
-		var/obj/item/device/multitool/M = W
-		if(M.buffer && istype(M.buffer, /obj/machinery/telepad))
-			telepad = M.buffer
-			M.buffer = null
-			user << "<span class = 'caution'>You upload the data from the [W.name]'s buffer.</span>"
-	else
-		..()
+//	else if(istype(W, /obj/item/device/multitool))
+//		var/obj/item/device/multitool/M = W
+	//	if(M.buffer && istype(M.buffer, /obj/machinery/telepad))
+	//		telepad = M.buffer
+	//		M.buffer = null
+	//		user << "<span class = 'caution'>You upload the data from the [W.name]'s buffer.</span>"
+//	else
+//		..()
 
 /obj/machinery/computer/telescience/attack_ai(mob/user)
 	src.attack_hand(user)

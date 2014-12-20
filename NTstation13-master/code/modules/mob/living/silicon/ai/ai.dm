@@ -391,13 +391,13 @@ var/list/ai_list = list()
 		if(last_paper_seen)
 			src << browse(last_paper_seen, "window=show_paper")
 	//Carn: holopad requests
-	if (href_list["jumptoholopad"])
-		var/obj/machinery/hologram/holopad/H = locate(href_list["jumptoholopad"])
-		if(stat == CONSCIOUS)
-			if(H)
-				H.attack_ai(src) //may as well recycle
-			else
-				src << "<span class='notice'>Unable to locate the holopad.</span>"
+	//if (href_list["jumptoholopad"])
+	//	var/obj/machinery/hologram/holopad/H = locate(href_list["jumptoholopad"])
+	//	if(stat == CONSCIOUS)
+		//	if(H)
+		//		H.attack_ai(src) //may as well recycle
+		//	else
+			//	src << "<span class='notice'>Unable to locate the holopad.</span>"
 	if (href_list["track"])
 		var/mob/target = locate(href_list["track"]) in mob_list
 		var/mob/living/silicon/ai/A = locate(href_list["track2"]) in mob_list

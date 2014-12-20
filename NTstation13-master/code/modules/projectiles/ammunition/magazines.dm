@@ -6,6 +6,21 @@
 	caliber = "357"
 	max_ammo = 7
 
+
+/obj/item/ammo_box/magazine/internal/cylinder/crusher
+	name = "revolver cylinder"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "shotgun"
+	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/sheriff
+	name = "revolver cylinder"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "shotgun"
+	max_ammo = 3
+
 /obj/item/ammo_box/magazine/internal/cylinder/ammo_count(var/countempties = 1)
 	if (!countempties)
 		var/boolets = 0

@@ -424,6 +424,7 @@ obj/item/weapon/circuitboard/rdserver
 							"/obj/item/weapon/stock_parts/micro_laser" = 1,
 							"/obj/item/weapon/stock_parts/console_screen" = 1)
 
+/*
 /obj/item/weapon/circuitboard/clonepod
 	name = "circuit board (Clone Pod)"
 	build_path = /obj/machinery/clonepod
@@ -447,6 +448,8 @@ obj/item/weapon/circuitboard/rdserver
 							"/obj/item/weapon/stock_parts/console_screen" = 1,
 							"/obj/item/stack/cable_coil" = 2,)
 
+
+*/
 /obj/item/weapon/circuitboard/cyborgrecharger
 	name = "circuit board (Cyborg Recharger)"
 	build_path = /obj/machinery/recharge_station
@@ -458,7 +461,7 @@ obj/item/weapon/circuitboard/rdserver
 							"/obj/item/weapon/stock_parts/manipulator" = 1,)
 
 // Telecomms circuit boards:
-
+/*
 /obj/item/weapon/circuitboard/telecomms/receiver
 	name = "circuit board (Subspace Receiver)"
 	build_path = /obj/machinery/telecomms/receiver
@@ -534,3 +537,4 @@ obj/item/weapon/circuitboard/rdserver
 							"/obj/item/weapon/stock_parts/subspace/filter" = 1,
 							"/obj/item/weapon/stock_parts/subspace/crystal" = 1,
 							"/obj/item/weapon/stock_parts/micro_laser/high" = 2)
+*/

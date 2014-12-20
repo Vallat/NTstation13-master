@@ -129,6 +129,7 @@ datum/design/pandemic
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/pandemic
 
+/*
 datum/design/scan_console
 	name = "Computer Design (DNA Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new DNA scanning console."
@@ -137,7 +138,7 @@ datum/design/scan_console
 	build_type = IMPRINTER
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/scan_consolenew
-
+*/
 datum/design/comconsole
 	name = "Computer Design (Communications)"
 	desc = "Allows for the construction of circuit boards used to build a communications console."
@@ -209,7 +210,7 @@ datum/design/robocontrol
 	build_type = IMPRINTER
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/robotics
-
+/*
 datum/design/clonecontrol
 	name = "Computer Design (Cloning Machine Console)"
 	desc = "Allows for the construction of circuit boards used to build a new Cloning Machine console."
@@ -237,6 +238,7 @@ datum/design/clonescanner
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/clonescanner
 
+*/
 datum/design/arcadebattle
 	name = "Computer Design (Battle Arcade Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new arcade machine."
@@ -335,7 +337,7 @@ datum/design/mining
 	build_type = IMPRINTER
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mining
-
+/*
 datum/design/comm_monitor
 	name = "Computer Design (Telecommunications Monitoring Console)"
 	desc = "Allows for the construction of circuit boards used to build a telecommunications monitor."
@@ -390,6 +392,8 @@ datum/design/aifixer
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/aifixer
 
+
+*/
 ///////////////////////////////////
 //////////AI Module Disks//////////
 ///////////////////////////////////
@@ -532,6 +536,8 @@ datum/design/custom_module
 ///////////////////////////////////
 /////Subspace Telecomms////////////
 ///////////////////////////////////
+
+/*
 datum/design/subspace_receiver
 	name = "Machine Design (Subspace Receiver)"
 	desc = "Allows for the construction of Subspace Receiver equipment."
@@ -595,6 +601,8 @@ datum/design/subspace_broadcaster
 	materials = list("$glass" = 1000, "sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/telecomms/broadcaster
 
+
+*/
 ///////////////////////////////////
 /////Non-Board Computer Stuff//////
 ///////////////////////////////////

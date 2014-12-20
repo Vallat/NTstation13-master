@@ -53,7 +53,7 @@
 		else if (magazine)
 			user << "<span class='notice'>There's already a magazine in \the [src].</span>"
 	return 0
-
+/*
 /obj/item/weapon/gun/projectile/attack_self(mob/living/user as mob)
 	if (magazine)
 		magazine.loc = get_turf(src.loc)
@@ -65,7 +65,7 @@
 		user << "<span class='notice'>There's no magazine in \the [src].</span>"
 	update_icon()
 	return
-
+*/
 
 /obj/item/weapon/gun/projectile/examine()
 	..()
@@ -79,3 +79,25 @@
 	if (magazine)
 		boolets += magazine.ammo_count()
 	return boolets
+
+/obj/item/weapon/gun/projectile/twohanded
+	var/wielded = 0
+
+/obj/item/weapon/gun/projectile/twohanded/proc/unwield()
+	wielded = 0
+	name = "[initial(name)]"
+	update_icon()
+
+/obj/item/weapon/gun/projectile/twohanded/proc/wield()
+	wielded = 1
+	name = "[initial(name)] (Wielded)"
+	update_icon()
+
+/obj/item/weapon/gun/projectile/twohanded/mob_can_equip(M as mob, slot)
+	//Cannot equip wielded items.
+	if(wielded)
+		M << "<span class='warning'>Unwield the [initial(name)] first!</span>"
+		return 0
+
+	return ..()
+

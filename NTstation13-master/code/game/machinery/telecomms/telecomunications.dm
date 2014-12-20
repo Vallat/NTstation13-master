@@ -404,6 +404,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	Link to a subspace hub if it can't send to a server.
 */
 
+
 /obj/machinery/telecomms/bus
 	name = "bus mainframe"
 	icon = 'icons/obj/stationobjs.dmi'

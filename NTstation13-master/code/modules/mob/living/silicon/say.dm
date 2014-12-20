@@ -30,10 +30,10 @@
 				(copytext(message, 1, 3) == "#h") || (copytext(message, 1, 3) == "#H") || \
 				(copytext(message, 1, 3) == ".h") || (copytext(message, 1, 3) == ".H"))
 			if(isAI(src)&&client)//For patching directly into AI holopads.
-				var/mob/living/silicon/ai/U = src
+			//	var/mob/living/silicon/ai/U = src
 				message = copytext(message, 3)
 				message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
-				U.holopad_talk(message)
+				//U.holopad_talk(message)
 			else//Will not allow anyone by an active AI to use this function.
 				src << "This function is not available to you."
 				return
@@ -43,6 +43,9 @@
 		return ..(message, "R")
 
 //For holopads only. Usable by AI.
+
+/*
+
 /mob/living/silicon/ai/proc/holopad_talk(var/message)
 
 	log_say("[key_name(src)] : [message]")
@@ -83,6 +86,8 @@
 	else
 		src << "No holopad connected."
 	return
+
+*/
 
 /mob/living/proc/robot_talk(var/message)
 

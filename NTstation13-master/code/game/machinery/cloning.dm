@@ -1,3 +1,5 @@
+/*
+
 //Cloning revival method.
 //The pod handles the actual cloning while the computer manages the clone profiles
 
@@ -443,3 +445,5 @@
 */
 
 #undef CLONE_INITIAL_DAMAGE
+
+*/

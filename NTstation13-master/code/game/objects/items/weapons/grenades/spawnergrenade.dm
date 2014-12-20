@@ -41,3 +41,28 @@
 	spawner_type = /mob/living/simple_animal/hostile/carp
 	deliveryamt = 5
 	origin_tech = "materials=3;magnets=4;syndicate=4"
+
+
+/obj/item/weapon/grenade/spawnergrenade/goodwater
+	name = "water bomb"
+	spawner_type = /obj/effect/effect/goodwater
+	deliveryamt = 5
+	origin_tech = "materials=3;magnets=4;syndicate=4"
+
+/obj/item/weapon/grenade/spawnergrenade/capsaicinwater
+	name = "capsaicin bomb"
+	spawner_type = /obj/effect/effect/capsaicinwater
+	deliveryamt = 5
+	origin_tech = "materials=3;magnets=4;syndicate=4"
+
+/obj/item/weapon/grenade/spawnergrenade/rad
+	name = "radiation bomb"
+	spawner_type = /obj/effect/effect/radwater/two/two
+	deliveryamt = 5
+	origin_tech = "materials=3;magnets=4;syndicate=4"
+
+/obj/item/weapon/grenade/spawnergrenade/tripwater
+	name = "trip bomb"
+	spawner_type = /obj/effect/effect/tripwater
+	deliveryamt = 5
+	origin_tech = "materials=3;magnets=4;syndicate=4"

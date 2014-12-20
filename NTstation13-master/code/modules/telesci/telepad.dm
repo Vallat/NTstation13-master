@@ -31,11 +31,11 @@
 	if(default_deconstruction_screwdriver(user, "pad-idle-o", "pad-idle", I))
 		return
 
-	if(panel_open)
-		if(istype(I, /obj/item/device/multitool))
-			var/obj/item/device/multitool/M = I
-			M.buffer = src
-			user << "<span class = 'caution'>You save the data in the [I.name]'s buffer.</span>"
+//	if(panel_open)
+	//	if(istype(I, /obj/item/device/multitool))
+//			var/obj/item/device/multitool/M = I
+//			M.buffer = src
+	//		user << "<span class = 'caution'>You save the data in the [I.name]'s buffer.</span>"
 
 	if(exchange_parts(user, I))
 		return

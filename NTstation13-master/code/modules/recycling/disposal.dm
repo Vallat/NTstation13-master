@@ -879,6 +879,21 @@
 //		H.active = 0
 
 // a straight or bent segment
+
+/obj/structure/disposalpipe/attack_hand(mob/user as mob)
+	var/mob/O = usr
+	if(O.resting == 1)
+
+		for (var/mob/V in viewers(usr))
+			V.show_message("[usr] ползет по [src].", 3)
+		if(do_after(usr, 20))
+			O.client.perspective = EYE_PERSPECTIVE
+			O.client.eye = src
+			O.loc = src
+			sleep(30)
+			return
+
+
 /obj/structure/disposalpipe/segment
 	icon_state = "pipe-s"
 

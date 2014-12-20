@@ -5,7 +5,7 @@
 	do not have to be headsets; intercoms and station-bounced radios suffice.
 
 	They receive their message from a server after the message has been logged.
-*/
+
 
 var/list/recentmessages = list() // global list of recent messages broadcasted : used to circumvent massive radio spam
 var/message_delay = 0 // To make sure restarting the recentmessages list is kept in sync
@@ -794,4 +794,6 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	//world.log << "Level: [signal.data["level"]] - Done: [signal.data["done"]]"
 
 	return signal
+
+*/
 

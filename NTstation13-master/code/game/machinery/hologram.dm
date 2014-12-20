@@ -3,7 +3,7 @@
  *		Holopad
  *		Hologram
  *		Other stuff
- */
+
 
 /*
 Revised. Original based on space ninja hologram code. Which is also mine. /N
@@ -208,3 +208,5 @@ Holographic project of everything else.
 	desc = "It makes a hologram appear...with magnets or something..."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "hologram0"
+
+	 */

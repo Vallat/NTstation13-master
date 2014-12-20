@@ -242,7 +242,7 @@
 	if (!com.target)
 		visible_message("<span class='notice'>Cannot authenticate locked on coordinates. Please reinstate coordinate matrix.</span>")
 		return
-	if (istype(M, /atom/movable))		
+	if (istype(M, /atom/movable))
 		do_teleport(M, com.target)
  	return
 
@@ -306,7 +306,7 @@
 	if(teleporter_hub)
 		teleporter_hub.update_icon()
 	..()
-
+/*
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/device/multitool) && !panel_open)
 		var/obj/item/device/multitool/M = W
@@ -335,6 +335,8 @@
 			link_console_and_hub()
 			user << "<span class = 'caution'>You reconnect the station to nearby machinery.</span>"
 			return
+
+*/
 
 /obj/machinery/teleport/station/attack_paw()
 	src.attack_hand()

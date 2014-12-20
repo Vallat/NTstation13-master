@@ -824,3 +824,102 @@ var/list/slot_equipment_priority = list( \
     return null
 /mob/proc/assess_threat() //For sec bot threat assessment
 	return
+
+
+
+//personal journal
+mob/var//This is where the character variables take place.
+	JournalEntries = 0//This is the variable that records how many Journal Entries the character has.
+	JournalWriting = "Правок не обнаружено."//This is the variable that defines what the character has in his journal.
+mob/verb//This is where the character commands will be called.
+	View_Journal()//This is the character command 'View Journal'.
+		set category = "Journal Commands"//This is the category the verb will be placed in.
+		var/JournalHTML//This is the variable that contains the HTML, and the Journal Writing in it.
+		JournalHTML += {"<Title>Personal Journal -</Title>
+						<Body BGColor = #8B4513 Text = #000000 link =" #C0C0C0" vlink = "#C0C0C0" alink = "#C0C0C0" Scroll = No>
+						<Table Border = "4" Width = "100%" BGColor = "#FFD700" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center><Font Color = "#D2691E">Personal Journal
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						<Table Border = "4" Width = "100%" BGColor = "#FFFFFF" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center>[usr.JournalWriting]<BR><BR><HR Width = 75%><BR>Текущих правок : <B>[usr.JournalEntries]</B>
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						<Center><A Href = "?Action=JournalEdit&src=\ref[src]">Edit</A>
+						"}//This is where the writing is placed, and the HTML to make it look fancy.
+		usr << browse(JournalHTML,"window=Journal")//This is where the writing will pop up in a display box.
+	Delete_Journal()//This is the character command 'Delete Journal'.
+		set category = "Journal Commands"//This is the category the verb will be placed in.
+		usr.JournalEntries = 0//This sets the characters Journal Entries back to 0.
+		usr.JournalWriting = "No entries have been made yet."//This sets the Journal Writing back to the default.
+		alert("Journal was successfully deleted.","Personal Journal -")//This is a confirming message that the action has been completed.
+	Edit_Journal()//This is the character command 'Edit Journal'.
+		set category = "Journal Commands"//This is the category the verb will be placed in.
+		var/JournalEdit = input("What entry would you like to place inside of your journal?","Personal Journal -","[usr.JournalWriting]")as message//This is the pop up box that will let you edit your Journal Writing.
+		if(JournalEdit == "")//This is where if the Journal Entry is blank, it'll bring an error.
+			alert("The entry was not recieved, because of there being nothing.","Personal Journal -")//This is to show that the action could not be completed.
+		else//This is where if it is not blank, it'll bring the results.
+			usr.JournalWriting = JournalEdit//This turns the characters Journal Writing into Journal Edit
+			usr.JournalEntries ++//This makes the characters Journal Entries go up by 1.
+			var/JournalHTML//This is the variable that contains the HTML, and the Journal Writing in it.
+			JournalHTML += {"<Title>Personal Journal -</Title>
+					<Body BGColor = #8B4513 Text = #000000 link =" #C0C0C0" vlink = "#C0C0C0" alink = "#C0C0C0" Scroll = No>
+					<Table Border = "4" Width = "100%" BGColor = "#333333" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+					<Tr>
+					<Td Width = "100%" Colspan="2">
+					<Center><Font Color = "#C0C0C0">Personal Journal
+					</Td>
+					</Tr>
+					</Table>
+					<BR>
+					<Table Border = "4" Width = "100%" BGColor = "#FFFFFF" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+					<Tr>
+					<Td Width = "100%" Colspan="2">
+					<Center>[usr.JournalWriting]<BR><BR><HR Width = 75%><BR>Текущих правок : <B>[usr.JournalEntries]</B>
+					</Td>
+					</Tr>
+					</Table>
+					<BR>
+					<Center><A Href = "?Action=JournalEdit&src=\ref[src]">Edit</A>
+					"}//This is where the writing is placed, and the HTML to make it look fancy.
+			usr << browse(JournalHTML,"window=Journal")//This is where the writing will pop up in a display box.
+
+mob/Topic(href,list[])//This is the client/Topic which will activate the link.
+	switch(list["Action"])//This is the list in which the links are called from.
+		if("JournalEdit")//This displays what link I am verifying.
+			var/JournalEdit = input("What entry would you like to place inside of your journal?","Personal Journal -","[usr.JournalWriting]")as message//This is the pop up box that will let you edit your Journal Writing.
+			if(JournalEdit == "")//This is where if the Journal Entry is blank, it'll bring an error.
+				alert("The entry was not recieved, because of there being nothing.","Personal Journal -")//This is to show that the action could not be completed.
+			else//This is where if it is not blank, it'll bring the results.
+				usr.JournalWriting = JournalEdit//This turns the characters Journal Writing into Journal Edit
+				usr.JournalEntries ++//This makes the characters Journal Entries go up by 1.
+				var/JournalHTML//This is the variable that contains the HTML, and the Journal Writing in it.
+				JournalHTML += {"<Title>Personal Journal -</Title>
+						<Body BGColor = #8B4513 Text = #000000 link =" #C0C0C0" vlink = "#C0C0C0" alink = "#C0C0C0" Scroll = No>
+						<Table Border = "4" Width = "100%" BGColor = "#333333" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center><Font Color = "#C0C0C0">Personal Journal
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						<Table Border = "4" Width = "100%" BGColor = "#FFFFFF" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center>[usr.JournalWriting]<BR><BR><HR Width = 75%><BR>Текущих правок : <B>[usr.JournalEntries]</B>
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						<Center><A Href = "?Action=JournalEdit&src=\ref[src]">Edit</A>
+						"}//This is where the writing is placed, and the HTML to make it look fancy.
+				usr << browse(JournalHTML,"window=Journal")//This is where the writing will pop up in a display box.

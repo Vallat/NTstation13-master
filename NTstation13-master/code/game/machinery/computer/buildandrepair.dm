@@ -66,10 +66,13 @@
 	name = "circuit board (PanD.E.M.I.C. 2200)"
 	build_path = /obj/machinery/computer/pandemic
 	origin_tech = "programming=2;biotech=2"
+	/*
 /obj/item/weapon/circuitboard/scan_consolenew
 	name = "circuit board (DNA Machine)"
 	build_path = /obj/machinery/computer/scan_consolenew
 	origin_tech = "programming=2;biotech=2"
+
+	*/
 /obj/item/weapon/circuitboard/communications
 	name = "circuit board (Communications)"
 	build_path = /obj/machinery/computer/communications
@@ -112,10 +115,12 @@
 	name = "circuit board (Robotics Control)"
 	build_path = /obj/machinery/computer/robotics
 	origin_tech = "programming=3"
+	/*
 /obj/item/weapon/circuitboard/cloning
 	name = "circuit board (Cloning)"
 	build_path = /obj/machinery/computer/cloning
 	origin_tech = "programming=3;biotech=3"
+	*/
 /obj/item/weapon/circuitboard/arcade/battle
 	name = "circuit board (Arcade Battle)"
 	build_path = /obj/machinery/computer/arcade/battle
@@ -177,6 +182,7 @@
 /obj/item/weapon/circuitboard/mining
 	name = "circuit board (Outpost Status Display)"
 	build_path = /obj/machinery/computer/security/mining
+	/*
 /obj/item/weapon/circuitboard/comm_monitor
 	name = "circuit board (Telecommunications Monitor)"
 	build_path = /obj/machinery/computer/telecomms/monitor
@@ -189,6 +195,7 @@
 	name = "circuitboard (Telecommunications Traffic Control)"
 	build_path = /obj/machinery/computer/telecomms/traffic
 	origin_tech = "programming=3"
+	*/
 /*/obj/item/weapon/circuitboard/curefab
 	name = "circuit board (Cure fab)"
 	build_path = /obj/machinery/computer/curer

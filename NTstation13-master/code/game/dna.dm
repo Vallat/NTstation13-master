@@ -341,7 +341,7 @@
 	var/damage_coeff
 	var/scan_level
 	var/precision_coeff
-
+/*
 /obj/machinery/dna_scannernew/New()
 	..()
 	component_parts = list()
@@ -412,18 +412,18 @@
 		icon_state = initial(icon_state) + (occupant ? "_occupied" : "")
 
 		// search for ghosts, if the corpse is empty and the scanner is connected to a cloner
-		if(occupant)
-			if(locate(/obj/machinery/computer/cloning, get_step(src, NORTH)) \
-				|| locate(/obj/machinery/computer/cloning, get_step(src, SOUTH)) \
-				|| locate(/obj/machinery/computer/cloning, get_step(src, EAST)) \
-				|| locate(/obj/machinery/computer/cloning, get_step(src, WEST)))
+	//	if(occupant)
+		//	if(locate(/obj/machinery/computer/cloning, get_step(src, NORTH)) \
+			//	|| locate(/obj/machinery/computer/cloning, get_step(src, SOUTH)) \
+			//	|| locate(/obj/machinery/computer/cloning, get_step(src, EAST)) \
+			//	|| locate(/obj/machinery/computer/cloning, get_step(src, WEST)))
 
-				if(!occupant.key && occupant.mind)
-					for(var/mob/dead/observer/ghost in player_list)
-						if(ghost.mind == occupant.mind)
-							if(ghost.can_reenter_corpse)
-								ghost << "<b><font color = #330033><font size = 3>Your corpse has been placed into a cloning scanner. Return to your body if you want to be resurrected/cloned!</b> (Verbs -> Ghost -> Re-enter corpse)</font color>"
-							break
+				//if(!occupant.key && occupant.mind)
+				//	for(var/mob/dead/observer/ghost in player_list)
+					//	if(ghost.mind == occupant.mind)
+						//	if(ghost.can_reenter_corpse)
+						//		ghost << "<b><font color = #330033><font size = 3>Your corpse has been placed into a cloning scanner. Return to your body if you want to be resurrected/cloned!</b> (Verbs -> Ghost -> Re-enter corpse)</font color>"
+					//		break
 
 		return 1
 
@@ -530,7 +530,7 @@
 	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 400
-
+/*
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I as obj, mob/user as mob)
 	if (istype(I, /obj/item/weapon/disk/data)) //INSERT SOME DISKETTES
 		if (!src.diskette)
@@ -556,6 +556,9 @@
 			injectorready = 1
 		return
 	return
+*/
+
+/*
 
 /obj/machinery/computer/scan_consolenew/attack_hand(mob/user)
 	if(..())
@@ -753,7 +756,9 @@
 	popup.set_content(temp_html)
 	popup.open()
 
+*/
 
+/*
 /obj/machinery/computer/scan_consolenew/Topic(href, href_list)
 	if(..())
 		return
@@ -943,11 +948,15 @@
 	ShowInterface(usr,last_change)
 
 
+
 /////////////////////////// DNA MACHINES
 #undef INJECTOR_TIMEOUT
 #undef REJUVENATORS_INJECT
 #undef REJUVENATORS_MAX
 #undef NUMBER_OF_BUFFERS
+
+*/
+*/
 
 #undef RADIATION_STRENGTH_MAX
 #undef RADIATION_STRENGTH_MULTIPLIER

@@ -341,12 +341,12 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 
 		  //#### Sending the signal to all subspace receivers ####//
 
-			for(var/obj/machinery/telecomms/receiver/R in telecomms_list)
-				R.receive_signal(signal)
+		//	for(var/obj/machinery/telecomms/receiver/R in telecomms_list)
+		//		R.receive_signal(signal)
 
 			// Allinone can act as receivers.
-			for(var/obj/machinery/telecomms/allinone/R in telecomms_list)
-				R.receive_signal(signal)
+		//	for(var/obj/machinery/telecomms/allinone/R in telecomms_list)
+		//		R.receive_signal(signal)
 
 			// Receiving code can be located in Telecommunications.dm
 			return
@@ -354,11 +354,11 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 
 	  /* ###### Intercoms and station-bounced radios ###### */
 
-		var/filter_type = 2
+	//	var/filter_type = 2
 
 		/* --- Intercoms can only broadcast to other intercoms, but bounced radios can broadcast to bounced radios and intercoms --- */
-		if(istype(src, /obj/item/device/radio/intercom))
-			filter_type = 1
+	//	if(istype(src, /obj/item/device/radio/intercom))
+		//	filter_type = 1
 
 
 		var/datum/signal/signal = new
@@ -392,8 +392,8 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 		)
 		signal.frequency = connection.frequency // Quick frequency set
 
-		for(var/obj/machinery/telecomms/receiver/R in telecomms_list)
-			R.receive_signal(signal)
+	//	for(var/obj/machinery/telecomms/receiver/R in telecomms_list)
+	//		R.receive_signal(signal)
 
 
 		sleep(rand(10,25)) // wait a little...
@@ -408,9 +408,9 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 		//THIS IS TEMPORARY.
 		if(!connection)	return	//~Carn
 
-		Broadcast_Message(connection, M, voicemask, M.voice_message,
-						  src, message, displayname, jobname, real_name, M.voice_name,
-		                  filter_type, signal.data["compression"], list(position.z), connection.frequency)
+	//	Broadcast_Message(connection, M, voicemask, M.voice_message,
+				//		  src, message, displayname, jobname, real_name, M.voice_name,
+		       //         filter_type, signal.data["compression"], list(position.z), connection.frequency)
 
 
 

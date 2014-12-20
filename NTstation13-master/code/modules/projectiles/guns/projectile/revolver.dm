@@ -22,6 +22,7 @@
 		update_icon()
 		chamber_round()
 
+/*
 /obj/item/weapon/gun/projectile/revolver/attack_self(mob/living/user as mob)
 	var/num_unloaded = 0
 	while (get_ammo() > 0)
@@ -35,6 +36,8 @@
 		user << "<span class = 'notice'>You unload [num_unloaded] shell\s from [src].</span>"
 	else
 		user << "<span class='notice'>[src] is empty.</span>"
+
+*/
 
 /obj/item/weapon/gun/projectile/revolver/get_ammo(var/countchambered = 0, var/countempties = 1)
 	var/boolets = 0 //mature var names for mature people
@@ -247,4 +250,87 @@
 	name = "striker"
 	icon_state = "striker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/striker
+
+
+/obj/item/weapon/gun/projectile/revolver/twohanded
+	var/wielded = 0
+	firebale = 0
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/proc/unwield()
+	wielded = 0
+	name = "[initial(name)]"
+	update_icon()
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/proc/wield()
+	wielded = 1
+	name = "[initial(name)] (Wielded)"
+	update_icon()
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/dropped(mob/user as mob)
+	//handles unwielding a twohanded weapon when dropped as well as clearing up the offhand
+	if(user)
+		var/obj/item/weapon/twohanded/O = user.get_inactive_hand()
+		if(istype(O))
+			O.unwield()
+	return	unwield()
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/update_icon()
+	return
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/pickup(mob/user)
+	unwield()
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/attack_self(mob/user as mob)
+	if( istype(user,/mob/living/carbon/monkey) )
+		user << "<span class='warning'>It's too heavy for you to wield fully.</span>"
+		return
+
+	..()
+	if(wielded) //Trying to unwield it
+		unwield()
+		firebale = 0
+		user << "<span class='notice'>You are now carrying the [name] with one hand.</span>"
+
+		var/obj/item/weapon/twohanded/offhand/O = user.get_inactive_hand()
+		if(O && istype(O))
+			O.unwield()
+		return
+
+	else //Trying to wield it
+		if(user.get_inactive_hand())
+			user << "<span class='warning'>“воя втора€ рука должна быть пустой</span>"
+			return
+		wield()
+		firebale = 1
+		user << "<span class='notice'>“ы хватаешь [initial(name)] двумя руками .</span>"
+
+		var/obj/item/weapon/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
+		O.name = "[initial(name)] - offhand"
+		O.desc = "Your second grip on the [initial(name)]"
+		user.put_in_inactive_hand(O)
+		return
+
+
+
+/obj/item/weapon/gun/projectile/twohanded/revolver/attack_self(mob/user as mob)
+	var/num_unloaded = 0
+	if (num_unloaded)
+		user << "<span class = 'notice'>You unload [num_unloaded] shell\s from [src]!</span>"
+	else
+		user << "<span class='notice'>[src] is empty.</span>"
+
+
+//BIG GUN BY DERVEN
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/crusher
+	desc = "A big gun, baby"
+	name = "crusher"
+	icon_state = "crusher"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/crusher
+
+/obj/item/weapon/gun/projectile/revolver/twohanded/sheriff
+	desc = "Silverstone 2799"
+	name = "sheriff"
+	icon_state = "sheriff"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/sheriff
 

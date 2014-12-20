@@ -44,7 +44,7 @@
 </body>"}
 	for(var/client/C)
 		C << browse(dat,"window=credits;size=950x840")
-		C << 'sound/ambience/spaceasshole.ogg'
+	//	C << 'sound/ambience/spaceasshole.ogg'
 
 /*/mob/verb/credittest()
 	set category = "Special Verbs"

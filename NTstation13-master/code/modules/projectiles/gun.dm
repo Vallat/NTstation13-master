@@ -14,7 +14,7 @@
 	force = 5.0
 	origin_tech = "combat=1"
 	attack_verb = list("struck", "hit", "bashed")
-
+	var/firebale = 1
 	var/fire_sound = "gunshot"
 	var/silenced = 0
 	var/recoil = 0
@@ -54,6 +54,10 @@
 		O.emp_act(severity)
 
 /obj/item/weapon/gun/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)//TODO: go over this
+
+	if(firebale == 0)
+		return
+
 	if(flag) //It's adjacent, is the user, or is on the user's person
 		if(istype(target, /mob/) && target != user && !(target in user.contents)) //We make sure that it is a mob, it's not us or part of us.
 			if(user.a_intent == "harm") //Flogging action
