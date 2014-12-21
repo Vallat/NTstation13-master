@@ -54,3 +54,32 @@ mob/living/carbon/human/proc/handle_pain()
 			maxdam = dam
 	if(damaged_organ)
 		pain(damaged_organ.display_name, maxdam, 0)
+
+
+
+obj/item/organ/limb
+	var/display_name
+
+obj/item/organ/limb/l_arm
+	display_name = "left arm"
+
+obj/item/organ/limb/l_leg
+	display_name = "left leg"
+
+obj/item/organ/limb/r_arm
+	display_name = "right arm"
+
+obj/item/organ/limb/r_leg
+	display_name = "right leg"
+
+obj/item/organ/limb/l_foot
+	display_name = "left foot"
+
+obj/item/organ/limb/r_foot
+	display_name = "right foot"
+
+obj/item/organ/limb/r_hand
+	display_name = "right hand"
+
+obj/item/organ/limb/l_hand
+	display_name = "left hand"

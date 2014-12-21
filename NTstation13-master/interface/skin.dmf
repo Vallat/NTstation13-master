@@ -1771,6 +1771,34 @@ window "rpane"
 		macro = ""
 		menu = ""
 		on-close = ""
+	elem "button6"
+		type = BUTTON
+		pos = 548,0
+		size = 60x20
+		anchor1 = none
+		anchor2 = none
+		font-family = ""
+		font-size = 0
+		font-style = ""
+		text-color = #000000
+		background-color = none
+		is-visible = true
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = none
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		on-size = ""
+		text = ""
+		image = ""
+		command = ""
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0

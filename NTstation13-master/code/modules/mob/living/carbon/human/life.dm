@@ -93,6 +93,8 @@
 	//Спатеньки
 	handle_need_sleep()
 
+	handle_pain()
+
 	//stuff in the stomach
 	handle_stomach()
 
