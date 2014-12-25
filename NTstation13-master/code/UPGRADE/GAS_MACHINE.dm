@@ -1,4 +1,5 @@
 /obj/machinery/microwave/gasmicrowave
+	name = "gas-cooker"
 	var/active = 0
 	idle_power_usage = 0
 	active_power_usage = 0
@@ -14,9 +15,7 @@
 
 /obj/machinery/microwave/gasmicrowave/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/tank/plasma))
-		qdel(src)
+		qdel(W)
 		active = 1
-		sleep(800)
+		sleep(300)
 		active = 0
-
-

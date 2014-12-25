@@ -111,7 +111,7 @@
  * Plasma
  */
 /obj/item/weapon/tank/plasma
-	name = "plasma tank"
+	name = "propane tank"
 	desc = "Contains dangerous plasma. Do not inhale. Warning: extremely flammable."
 	icon_state = "plasma"
 	canbreathe = 0
