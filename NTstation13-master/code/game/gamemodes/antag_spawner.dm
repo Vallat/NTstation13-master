@@ -104,7 +104,7 @@
 	ticker.mode.traitors += M.mind
 	M.mind.special_role = "apprentice"
 
-/obj/item/weapon/antag_spawner/contract/equip_antag(mob/target as mob)
+/obj/item/weapon/antag_spawner/contract/equip_antag(mob/living/carbon/human/target as mob)
 	target.equip_to_slot_or_del(new /obj/item/device/radio/headset(target), slot_ears)
 	target.equip_to_slot_or_del(new /obj/item/clothing/under/color/lightpurple(target), slot_w_uniform)
 	target.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(target), slot_shoes)

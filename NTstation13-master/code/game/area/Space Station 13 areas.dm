@@ -111,7 +111,7 @@ proc/process_ghost_teleport_locs()
 	power_light = 0
 	power_equip = 0
 	power_environ = 0
-	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
+//	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
 
 
 
@@ -651,7 +651,7 @@ proc/process_ghost_teleport_locs()
 /area/prison/morgue
 	name = "\improper Prison Morgue"
 	icon_state = "morgue"
-	ambientsounds = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
+//	ambientsounds = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
 
 /area/prison/medical_research
 	name = "\improper Prison Genetic Research"
@@ -734,7 +734,7 @@ proc/process_ghost_teleport_locs()
 //Engineering
 
 /area/engine
-	ambientsounds = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
+//	ambientsounds = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
 /area/engine/engine_smes
 	name = "\improper Engineering SMES"

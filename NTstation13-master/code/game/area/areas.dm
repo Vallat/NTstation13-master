@@ -17,7 +17,7 @@
 /area
 	var/global/global_uid = 0
 	var/uid
-	var/list/ambientsounds = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg',\
+//	var/list/ambientsounds = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg',\
 									'sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg',\
 									'sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg',\
 									'sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg',\
@@ -271,13 +271,13 @@
 
 	if(!L.client.ambience_playing)
 		L.client.ambience_playing = 1
-		L << sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = 2)
+//		L << sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = 2)
 
 	if(prob(35))
-		var/sound = pick(ambientsounds)
+	//	var/sound = pick(ambientsounds)
 
 		if(!L.client.played)
-			L << sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1)
+		//	L << sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1)
 			L.client.played = 1
 			spawn(600)			//ewww - this is very very bad
 				if(L.&& L.client)

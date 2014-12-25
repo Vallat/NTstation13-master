@@ -2,7 +2,7 @@
 	icon = 'icons/turf/space.dmi'
 	name = "sand"
 	icon_state = "1"
-	temperature = PLASMA_MINIMUM_BURN_TEMPERATURE
+	temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 30
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
 	oxygen = MOLES_O2STANDARD

@@ -25,6 +25,7 @@ datum/preferences
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 	var/max_save_slots = 3
 
+
 	//non-preference stuff
 	var/warns = 0
 	var/muted = 0

@@ -13,7 +13,11 @@ mob
 		stat("Weight Used", weight) ///shows the capsule's used weight
 		//stat("--Weight--","--Item--") // seperator
 		for(var/obj/A in contents)
-			stat("[A.weight]",A) //the user's inventory
+			stat("[A.weight]",A)
+
+
+
+			//the user's inventory
 	//	if(captarget&&(captarget in src)) //used for checking if the capsule, to open the tab.
 	//		statpanel("Capsule")
 	//		stat(captarget) //shows the capsule
@@ -42,6 +46,7 @@ obj
 					src.Move(usr) //pickin it up!
 					usr << "You picked up \a [src]"
 					usr.weight += src.weight
+
 				else usr << "This object is too heavy, try dropping some others before picking this one up!!"
 			Drop() //used to put the item down
 				set src in usr
