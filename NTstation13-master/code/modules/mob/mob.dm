@@ -193,7 +193,6 @@ var/next_mob_id = 0
 
 //This is just a commonly used configuration for the equip_to_slot_if_possible() proc, used to equip people when the rounds tarts and when events happen and such.
 /mob/living/carbon/human/proc/equip_to_slot_or_del(obj/item/W as obj, slot)
-	overload()
 	equip_to_slot_if_possible(W, slot, 1, 1, 0)
 
 //The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
