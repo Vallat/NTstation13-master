@@ -19,3 +19,7 @@
 		active = 1
 		sleep(300)
 		active = 0
+		new /obj/item/weapon/tank/plasma/empty(loc)
+	if(istype(W, /obj/item/weapon/tank/plasma/empty))
+		user << "Эта канистра пуста"
+		return

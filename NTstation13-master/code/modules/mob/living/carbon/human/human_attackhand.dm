@@ -65,6 +65,31 @@
 			add_logs(M, src, "punched")
 
 			var/attack_verb = "бьет"
+
+			if(M.kick_in_the_groin == 1)
+				src.stunned = 2
+				attack_verb = "пинает ниже пояса, ай-ай-ай как подло по отношению к"
+			if(M.blow_to_the_eyes == 1)
+				attack_verb = "наносит удар по глазам, ай-ай-ай как подло по отношению к"
+				src.eye_blurry += rand(3,4)
+				src.eye_stat += rand(2,4)
+				if (src.eye_stat >= 10)
+					src.eye_blurry += 15+(0.1*M.eye_blurry)
+					src.disabilities |= NEARSIGHTED
+					if(src.stat != 2)
+						src.drop_item()
+					src.eye_blurry += 10
+					src.Paralyse(1)
+					src.Weaken(4)
+				if (prob(src.eye_stat - 10 + 1))
+					if(src.stat != 2)
+						src.sdisabilities |= BLIND
+
+			if(M.punch_in_the_stomach == 1)
+				src.adjustOxyLoss(20)
+				attack_verb = "наносит удар по животу, ай-ай-ай как подло по отношению к"
+
+
 			if(lying)
 				attack_verb = "пинает"
 			else if(M.dna)

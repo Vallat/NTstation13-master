@@ -42,7 +42,7 @@ var/const/MIME				=(1<<12)
 var/const/ASSISTANT			=(1<<13)
 var/const/HERMIT			=(1<<14)
 var/const/ACTOR				=(1<<15)
-var/const/REAVER				=(1<<15)
+var/const/BARBER			=(1<<16)
 
 var/list/assistant_occupations = list(
 	"Assistant",
@@ -97,7 +97,8 @@ var/list/civilian_positions = list(
 	"Hermit",
 	"Bandit",
 	"Actor",
-	"Worker"
+	"Worker",
+	"Barber"
 )
 
 

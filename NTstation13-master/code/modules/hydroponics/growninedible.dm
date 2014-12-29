@@ -129,6 +129,8 @@
 	plant_type = 1
 	origin_tech = "combat=1"
 	seed = "/obj/item/seeds/nettleseed"
+
+
 /obj/item/nettle/New(var/loc, var/potency = 10)
 	..()
 	if(reagents)

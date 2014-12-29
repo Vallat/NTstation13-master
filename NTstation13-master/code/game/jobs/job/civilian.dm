@@ -441,3 +441,27 @@ Lawyer
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+
+
+/datum/job/barber
+	title = "Barber"
+	flag = BARBER
+	department_head = list("Head of Personnel")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Head of Personnel"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Barber"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/barber/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chef(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex(H), slot_gloves)

@@ -149,6 +149,12 @@
 	src.air_contents.toxins = (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
 	return
 
+
+/obj/item/weapon/tank/plasma/empty/New()
+	..()
+	src.air_contents.toxins = (0.1*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+	return
+
 /*
  * Emergency Oxygen
  */

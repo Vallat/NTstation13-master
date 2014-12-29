@@ -833,7 +833,7 @@ mob/var//This is where the character variables take place.
 	JournalWriting = "Правок не обнаружено."//This is the variable that defines what the character has in his journal.
 mob/verb//This is where the character commands will be called.
 	View_Journal()//This is the character command 'View Journal'.
-		set category = "Journal Commands"//This is the category the verb will be placed in.
+		set category = ""//This is the category the verb will be placed in.
 		var/JournalHTML//This is the variable that contains the HTML, and the Journal Writing in it.
 		JournalHTML += {"<Title>Personal Journal -</Title>
 						<Body BGColor = #8B4513 Text = #000000 link =" #C0C0C0" vlink = "#C0C0C0" alink = "#C0C0C0" Scroll = No>
@@ -923,3 +923,95 @@ mob/Topic(href,list[])//This is the client/Topic which will activate the link.
 						<Center><A Href = "?Action=JournalEdit&src=\ref[src]">Edit</A>
 						"}//This is where the writing is placed, and the HTML to make it look fancy.
 				usr << browse(JournalHTML,"window=Journal")//This is where the writing will pop up in a display box.
+
+
+//WIKI
+//WIKI
+
+mob//This is where the character variables take place.
+	JournalEntries = 0//This is the variable that records how many Journal Entries the character has.
+	JournalWriting = "Правок не обнаружено."//This is the variable that defines what the character has in his journal.
+mob/verb//This is where the character commands will be called.
+	View_WIKI()//This is the character command 'View Journal'.
+		set category = "Wiki"//This is the category the verb will be placed in.
+		var/JournalHTML//This is the variable that contains the HTML, and the Journal Writing in it.
+		JournalHTML += {"<Title> MAIN PAGE </Title>
+						<Body BGColor = #8B4513 Text = #000000 link =" #C0C0C0" vlink = "#C0C0C0" alink = "#C0C0C0" Scroll = No>
+						<Table Border = "4" Width = "100%" BGColor = "#FFD700" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center><Font Color = "#D2691E">Wiki
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						<Table Border = "4" Width = "100%" BGColor = "#FFFFFF" CellSpacing = "0" CellPadding = "5" BorderColorLight = "#666666" BorderColorDark = "#333333">
+						<Tr>
+						<Td Width = "100%" Colspan="2">
+						<Center>
+
+
+<BR>
+Добро пожаловать в «Первую Энциклопедию» города Сэнд Сити – последнего оплота NanoTrasen во вселенной! В ней вы найдете все необходимое, для понятия сеттинга, механики и мира данного сервера, основанного на Space Station 13. Важно сразу сказать, что основой сеттинга является стимпанк. Данная Вики-энциклопедия призвана помочь вам освоится в игре.
+<BR>
+
+<BR>
+Стоит также учитывать, что сервер является ролевым, то есть, играя на нем, вам необходимо входить в роль того рабочего, которого вы выбрали и вести себя согласно определенным правилам. Это не просто песочница, которая ограничивается лишь вашей фантазией, это целый мир, с одной стороны которого достигший невероятных высот технологический прогресс, основанный на использовании пара, а с другой стороны – моральное разложение общества, убийства, революции, предательства, сумасшедшие ученые и гениальные преступники. Кем из них станете Вы? Это зависит только от Вас.
+<BR>
+
+<BR>
+Приветствуйте мир дирижаблей, паровых генераторов, дымовых труб, копоти, клепаного металла, паровых протезов, воздушных пиратов, аристократов, проституток и рабочих. Мир паровых технологий и полного расслоения общества!
+<BR>
+
+<Title>Высадка</Title>
+
+<BR>
+Войдя на сервер, вы попадете в игровое лобби, где вам будет нужно создать персонажа («Setup Character»). Подробнее об этом читайте в отдельной статье.
+<BR>
+
+<BR>
+После этого, у вас будет либо опция «Declare ready», если раунд еще не начался или же «Join game», если раунд уже начался. В случае с уже начавшимся раундом, вам предоставят выбор из свободных на данный момент должностей.
+<BR>
+
+<BR>
+Присоединившись к игре, вы сразу же зададитесь вопросами «Куда идти?» и «Что делать». Цель любого гражданина – обеспечить функционирование города. Паровые техники следят за паровыми машинами и, в особенности, за генераторами энергии, медики возвращают людей в работоспособное состояние, уборщики убирают различные выделения переработавших рабочих или просто бедолаг, губернатор удерживает власть и не дает рухнуть всей системе.
+<BR>
+
+<BR>
+Лучше всего на начальных парах играть за ассистента, поскольку от вас никто не будет ничего ожидать, у вас не будет никакой ответственности, и вы сможете спокойно познакомиться с аспектами игры. Также, будучи ассистентом, вы можете попросить кого-либо показать вам, как играть за определенную профессию и вообще помогать рабочим, что и является вашей основной задачей. Как именно играть и что именно делать – это ограничивается только вашей фантазией и правилами.
+<BR>
+
+<BR>
+Внимательно ознакомьтесь с интерфейсом – он довольно-таки специфичен (о нем детально повествует отдельная статья)
+<BR>
+
+<Title>Как пользоваться вашими руками</Title>
+
+<BR>
+Для передвижения и ввода сообщений используется клавиатура, для всего остального используется мышь. Левая кнопка использует предмет, правая – вызывает дополнительные варианты (изучить, тащить и так далее)
+<BR>
+
+<BR>
+Возьмите в руки любой предмет, кликнув на него свободной рукой (для смены рук существует специальная кнопка) из вкладки Pack.
+<BR>
+
+<BR>
+Чтобы снять такие предметы, как рюкзак или пояс с инструментами, нажмите на них и «перетащите» в иконку свободной руки.
+<BR>
+
+<BR>
+Закройте окошко. Попробуйте бросить ваш предмет на пол (кнопка drop), подобрать его, нажав на него свободной рукой (так же берутся все предметы в игре), швырнуть его (кнопка throw; нажмите на место вокруг вас, куда вы хотите быстро переместить предмет (учтите, что предмет попадет именно туда, куда вы хотите не со 100% вероятностью, он вполне может не долететь). Швыряя многие предметы в окружающих, вы можете их ранить, так что будьте осторожны.
+<BR>
+
+<BR>
+Так же вы можете взаимодействовать и с другими предметами. Вокруг места вашего прибытия должны быть различные шкафчики, в основном, с  баллонами с кислородом и дыхательными масками. Подойдите к одному из шкафчиков вплотную, нажмите на него правой кнопкой мыши. Вы уведете список дополнительных функций взаимодействия с объектом. Вы можете изучить («Examine»),  потащить за собой («Pull») или же указать на объект («Point to»). Попробуйте потащить шкафчик за собой. Это очень удобно для перемещения больших предметов, которые вы не можете просто взять в руку. Так же, открыв шкафчик, положив в него что-либо и закрыв его (все левым кликом), вы сможете переместить большое количество вещей за один раз.
+<BR>
+
+
+						<BR><BR><HR Width = 75%><BR>Текущих правок : <B>[usr.JournalEntries]</B>
+						</Td>
+						</Tr>
+						</Table>
+						<BR>
+						"}//This is where the writing is placed, and the HTML to make it look fancy.
+		usr << browse(JournalHTML,"window=Journal")//This is where the writing will pop up in a display box.
