@@ -40,5 +40,30 @@
 	M << "\red Это больно"
 	M.resting = 1
 
+/turf/space/k_K_K
+
+/turf/space/k_K_K/Enter(mob/living/carbon/human/M as mob )
+	..()
+	M << "\red Ты перешел в другой сектор"
+	M.z -= 1
+	M.y += 80
 
 
+/turf/space/k_K_K_back/Enter(mob/living/carbon/human/M as mob )
+	..()
+	M << "\red Ты перешел в другой сектор"
+	M.z += 1
+	M.y += 80
+
+
+/turf/space/k_K_K_UPBACK/Enter(mob/living/carbon/human/M as mob )
+	..()
+	M << "\red Ты перешел в другой сектор"
+	M.z -= 1
+	M.y -= 80
+
+/turf/space/k_K_K_back_back/Enter(mob/living/carbon/human/M as mob )
+	..()
+	M << "\red Ты перешел в другой сектор"
+	M.z += 1
+	M.y -= 80

@@ -68,7 +68,7 @@
 
 			if(M.kick_in_the_groin == 1)
 				src.stunned = 2
-				attack_verb = "пинает ниже пояса, ай-ай-ай как подло по отношению к"
+				attack_verb = "пинает ниже по&#255;са, ай-ай-ай как подло по отношению к"
 			if(M.blow_to_the_eyes == 1)
 				attack_verb = "наносит удар по глазам, ай-ай-ай как подло по отношению к"
 				src.eye_blurry += rand(3,4)
