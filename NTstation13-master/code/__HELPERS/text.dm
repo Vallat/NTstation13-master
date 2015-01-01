@@ -49,7 +49,7 @@ var/list/paper_tag_whitelist = list("center","p","div","span","h1","h2","h3","h4
 			index = findtext(t, char)
 	return t
 
-/proc/sanitize_simple_uni(var/t,var/list/repl_chars = list("\n"="#","\t"="#","ÿ"="&#255;","&lt;"=")"))
+/proc/sanitize_simple_uni(var/t,var/list/repl_chars = list("\n"="#","\t"="#","ÿ"="&#255;","&lt;"=")", "r"="&#255;"))
 	for(var/char in repl_chars)
 		var/index = findtext(t, char)
 		while(index)

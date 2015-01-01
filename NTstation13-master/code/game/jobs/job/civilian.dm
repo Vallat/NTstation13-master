@@ -465,3 +465,112 @@ Lawyer
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chef(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex(H), slot_gloves)
+
+
+
+/datum/job/tesla_boy
+	title = "Tesla_boy"
+	flag = TESLAB
+	department_head = list("Spirit of Nikola Tesla")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Spirit of Nikola Tesla"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Tesla_boy"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/tesla_boy/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/space(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/laserproof(H), slot_wear_suit)
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
+
+
+/datum/job/tesla_operative
+	title = "Tesla_operative"
+	flag = TESLAO
+	department_head = list("Spirit of Nikola Tesla")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Spirit of Nikola Tesla"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Tesla_boy"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/tesla_operative/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/redoveralls(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/powered(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/combat(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/laserproof(H), slot_wear_suit)
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
+
+
+/datum/job/tesla_sergeant
+	title = "Tesla_sergeant"
+	flag = TESLAS
+	department_head = list("Spirit of Nikola Tesla")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Spirit of Nikola Tesla"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Tesla_boy"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/tesla_sergeant/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/redoveralls(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/syndie(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/space_ninja(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/det_suit(H), slot_wear_suit)
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_glasses)
+
+
+/datum/job/tesla_commander
+	title = "Tesla_commander"
+	flag = TESLAC
+	department_head = list("Spirit of Nikola Tesla")
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Spirit of Nikola Tesla"
+	selection_color = "#dddddd"
+
+	access = list()
+	minimal_access = list()
+	assistant_access = list()
+	assistant_title = "Tesla_boy"
+
+	//default_pda = /obj/item/device/pda/janitor
+//	default_headset = /obj/item/device/radio/headset/headset_srv
+/datum/job/tesla_commander/equip_items(var/mob/living/carbon/human/H)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/chameleon(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/syndie(H), slot_shoes)
+	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/space_ninja(H), slot_gloves)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/bowler(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/space/rig/syndi(H), slot_wear_suit)
+	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/night(H), slot_glasses)

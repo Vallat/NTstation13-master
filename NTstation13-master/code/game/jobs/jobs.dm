@@ -43,6 +43,11 @@ var/const/ASSISTANT			=(1<<13)
 var/const/HERMIT			=(1<<14)
 var/const/ACTOR				=(1<<15)
 var/const/BARBER			=(1<<16)
+var/const/TESLAB			=(1<<17)
+var/const/TESLAO			=(1<<18)
+var/const/TESLAS			=(1<<19)
+var/const/TESLAC			=(1<<20)
+
 
 var/list/assistant_occupations = list(
 	"Assistant",

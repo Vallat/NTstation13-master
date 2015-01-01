@@ -1300,6 +1300,7 @@
 #include "code\UPGRADE\hair_master_system.dm"
 #include "code\UPGRADE\implants.dm"
 #include "code\UPGRADE\machinesystem.dm"
+#include "code\UPGRADE\mass_driver.dm"
 #include "code\UPGRADE\microscope.dm"
 #include "code\WorkInProgress\buildmode.dm"
 #include "code\WorkInProgress\explosion_particles.dm"
