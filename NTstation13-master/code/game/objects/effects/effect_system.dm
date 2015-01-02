@@ -44,6 +44,10 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		..()
 		reagents.add_reagent("water",1000)
 
+/obj/effect/effect/goodwater/mocha_govno
+	name = "mocha_govno"
+	icon_state = "mocha_govno"
+
 
 /obj/effect/effect/goodwater/New(loc, var/ismetal=0)
 	..(loc)

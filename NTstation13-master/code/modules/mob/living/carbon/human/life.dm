@@ -51,6 +51,21 @@
 	//blinded get reset each cycle and then get activated later in the
 	//code. Very ugly. I dont care. Moving this stuff here so its easy
 	//to find it.
+	if(Gloomy_thoughts == "Yes")
+		src << "# Я никчемен"
+		sleep(100)
+		src << pick("# Как же все плохо...","# Сейчас произойдет что-то плохое...","# Надо сваливать отсюда")
+		sleep(30)
+		src << "# Я никому не нужен"
+
+	if(Schizophrenia == "Yes")
+		src << "# Куда исчезает воздух?"
+		sleep(100)
+		src << pick("# Беги...","# Песок ест мою душу...","# Ты так и хочешь крикнуть: АААААААААААА")
+		sleep(30)
+		src << "# Интересно, что у него внутри"
+
+
 	blinded = null
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.
 	tinttotal = tintcheck() //here as both hud updates and status updates call it

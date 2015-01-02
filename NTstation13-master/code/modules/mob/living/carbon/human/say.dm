@@ -1,5 +1,13 @@
 /mob/living/carbon/human/say(var/message)
 
+	if(Stranger == "Yes")
+		if(copytext(message, 1, 2) != "*")
+			message = replacetext(message, "û", stutter("è"))
+			message = replacetext(message, "è", stutter("i"))
+			message = replacetext(message, "ï", stutter("p"))
+			message = replacetext(message, "ğ", stutter("ÿ"))
+			message = replacetext(message, "ä", stutter("d"))
+
 	if(silent)
 		return
 

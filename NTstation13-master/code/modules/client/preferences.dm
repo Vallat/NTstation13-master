@@ -57,6 +57,10 @@ datum/preferences
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/mutant_race = "human"			//Mutant race
+	var/sexuality = "Hetero"
+	var/Gloomy_thoughts = "No"
+	var/Schizophrenia = "No"
+	var/Stranger = "No"
 
 		//Mob preview
 	var/icon/preview_icon_front = null
@@ -149,8 +153,11 @@ datum/preferences
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
 
 				dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a><BR>"
-				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a>"
-
+				dat += "<b>Sexuality:</b> <a href='?_src_=prefs;preference=sexuality'>[sexuality == "Hetero" ? "Hetero" : "Homo"]</a><BR>"
+				dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+				dat += "<b>Gloomy_thoughts:</b> <a href='?_src_=prefs;preference=Gloomy_thoughts'>[Gloomy_thoughts == "No" ? "No" : "Yes"]</a><BR>"
+				dat += "<b>Schizophrenia:</b> <a href='?_src_=prefs;preference=Schizophrenia'>[Schizophrenia == "No" ? "No" : "Yes"]</a><BR>"
+				dat += "<b>Stranger:</b> <a href='?_src_=prefs;preference=Stranger'>[Stranger == "No" ? "No" : "Yes"]</a><BR>"
 
 				dat += "</td><td valign='center'>"
 
@@ -669,6 +676,29 @@ datum/preferences
 						facial_hair_style = random_facial_hair_style(gender)
 						hair_style = random_hair_style(gender)
 
+					if("sexuality")
+						if(sexuality == "Homo")
+							sexuality = "Hetero"
+						else
+							sexuality = "Homo"
+					if("Gloomy_thoughts")
+						if(Gloomy_thoughts == "No")
+							Gloomy_thoughts = "Yes"
+						else
+							Gloomy_thoughts = "No"
+
+					if("Schizophrenia")
+						if(Schizophrenia == "No")
+							Schizophrenia = "Yes"
+						else
+							Schizophrenia = "No"
+
+					if("Stranger")
+						if(Stranger == "No")
+							Stranger = "Yes"
+						else
+							Stranger = "No"
+
 					if("hear_adminhelps")
 						toggles ^= SOUND_ADMINHELP
 
@@ -746,6 +776,10 @@ datum/preferences
 				character.dna.mutantrace = mutant_race
 
 		character.gender = gender
+		character.sexuality = sexuality
+		character.Gloomy_thoughts = Gloomy_thoughts
+		character.Schizophrenia = Schizophrenia
+		character.Stranger = Stranger
 		character.age = age
 		character.blood_type = blood_type
 

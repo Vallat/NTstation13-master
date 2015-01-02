@@ -1302,6 +1302,7 @@
 #include "code\UPGRADE\machinesystem.dm"
 #include "code\UPGRADE\mass_driver.dm"
 #include "code\UPGRADE\microscope.dm"
+#include "code\UPGRADE\ROLEPLAY.dm"
 #include "code\WorkInProgress\buildmode.dm"
 #include "code\WorkInProgress\explosion_particles.dm"
 #include "interface\interface.dm"
