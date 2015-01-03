@@ -61,6 +61,17 @@
 		if(rand(0,200) < speak_chance)
 			src << pick("# Беги...","# Песок ест мою душу...","# Ты так и хочешь крикнуть: АААААААААААА", "# Как руки менять", "# Как дышать?")
 
+	if(nutrition < 350)
+		if(rand(0,200) < speak_chance)
+			src << pick("# Еда...","# Покушать бы...","# Хочу есть","# Интересно, сколько стоит сочный жареный стейк?")
+
+	if(nutrition > 450)
+		if(rand(0,200) < speak_chance)
+			src << pick("# Я ща обосрусь...","# Где ТУАЛЕТ?","# Быстрее в туалет")
+			emote("superfart")
+			nutrition -= 200
+
+
 
 	blinded = null
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.

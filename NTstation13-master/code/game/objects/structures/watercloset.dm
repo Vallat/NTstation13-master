@@ -17,27 +17,8 @@
 
 
 /obj/structure/toilet/attack_hand(mob/living/user)
-	if(swirlie)
-		user.visible_message("<span class='danger'>[user] slams the toilet seat onto [swirlie]'s head!</span>", "<span class='notice'>You slam the toilet seat onto [swirlie]'s head!</span>", "You hear reverberating porcelain.")
-		swirlie.adjustBruteLoss(8)
-		return
-
-	if(cistern && !open)
-		if(!contents.len)
-			user << "<span class='notice'>The cistern is empty.</span>"
-			return
-		else
-			var/obj/item/I = pick(contents)
-			if(ishuman(user))
-				user.put_in_hands(I)
-			else
-				I.loc = get_turf(src)
-			user << "<span class='notice'>You find [I] in the cistern.</span>"
-			w_items -= I.w_class
-			return
-
-	open = !open
-	update_icon()
+	user << "Ты больше не хочешь в туалет, умница"
+	user.nutrition -= 100
 
 
 /obj/structure/toilet/update_icon()
