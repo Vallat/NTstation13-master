@@ -1,5 +1,6 @@
 
 /mob/living/carbon/human
+	var/PO_TORMOZAM = 0
 
 /mob/living/carbon/human
 	name = "Unknown"
@@ -651,9 +652,16 @@
 		for(var/datum/organic_effect/OE in organic_effects)
 			OE.trigger()
 
+mob/living/carbon/human/verb/turn_back()
+	set name = "turn_back"
+	set category = "IC"
+	shadow = 0
+	sleep(15)
+	shadow = 1
 
-
-//personal journal
-//personal journal
-//personal journal
-//personal journal
+mob/living/carbon/human/verb/PO_TORMOZAM()
+	set name = "PO_TORMOZAM"
+	set category = "Foul blow"
+	PO_TORMOZAM = 1
+	sleep(15)
+	PO_TORMOZAM = 0

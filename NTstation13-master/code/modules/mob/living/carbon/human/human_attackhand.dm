@@ -85,6 +85,11 @@
 					if(src.stat != 2)
 						src.sdisabilities |= BLIND
 
+			if(M.PO_TORMOZAM == 1)
+				src.stunned = 2
+				Weaken(3)
+				attack_verb = "наносит удар PO_TORMOZAM, ай-ай-ай как подло по отношению к"
+
 			if(M.punch_in_the_stomach == 1)
 				src.adjustOxyLoss(20)
 				attack_verb = "наносит удар по животу, ай-ай-ай как подло по отношению к"
