@@ -36,6 +36,7 @@
 	var/need_sleep
 	var/need_pee
 	var/need_poo
+	var/speak_chance = 10
 
 
 /mob/living/carbon/human/Life()
@@ -51,19 +52,14 @@
 	//blinded get reset each cycle and then get activated later in the
 	//code. Very ugly. I dont care. Moving this stuff here so its easy
 	//to find it.
+
 	if(Gloomy_thoughts == "Yes")
-		src << "# Я никчемен"
-		sleep(100)
-		src << pick("# Как же все плохо...","# Сейчас произойдет что-то плохое...","# Надо сваливать отсюда")
-		sleep(30)
-		src << "# Я никому не нужен"
+		if(rand(0,200) < speak_chance)
+			src << pick("# Как же все плохо...","# Сейчас произойдет что-то плохое...","# Надо сваливать отсюда","# Что здесь есть кроме пустыни?")
 
 	if(Schizophrenia == "Yes")
-		src << "# Куда исчезает воздух?"
-		sleep(100)
-		src << pick("# Беги...","# Песок ест мою душу...","# Ты так и хочешь крикнуть: АААААААААААА")
-		sleep(30)
-		src << "# Интересно, что у него внутри"
+		if(rand(0,200) < speak_chance)
+			src << pick("# Беги...","# Песок ест мою душу...","# Ты так и хочешь крикнуть: АААААААААААА", "# Как руки менять", "# Как дышать?")
 
 
 	blinded = null

@@ -61,6 +61,7 @@ datum/preferences
 	var/Gloomy_thoughts = "No"
 	var/Schizophrenia = "No"
 	var/Stranger = "No"
+	var/NUMBER = 0
 
 		//Mob preview
 	var/icon/preview_icon_front = null
@@ -681,17 +682,35 @@ datum/preferences
 							sexuality = "Hetero"
 						else
 							sexuality = "Homo"
+
 					if("Gloomy_thoughts")
-						if(Gloomy_thoughts == "No")
-							Gloomy_thoughts = "Yes"
-						else
-							Gloomy_thoughts = "No"
+						if(NUMBER == 1)
+							return
+						if(NUMBER == 0)
+							if(Gloomy_thoughts == "No")
+								Gloomy_thoughts = "Yes"
+								NUMBER = 1
+							else
+								Gloomy_thoughts = "No"
+								if(Schizophrenia == "Yes")
+									return
+								else
+									NUMBER = 0
 
 					if("Schizophrenia")
-						if(Schizophrenia == "No")
-							Schizophrenia = "Yes"
-						else
-							Schizophrenia = "No"
+						if(NUMBER == 1)
+							return
+						if(NUMBER == 0)
+							if(Schizophrenia == "No")
+								Schizophrenia = "Yes"
+								NUMBER = 1
+							else
+								Schizophrenia = "No"
+								if(Gloomy_thoughts == "Yes")
+									return
+								else
+									NUMBER = 0
+
 
 					if("Stranger")
 						if(Stranger == "No")
