@@ -38,6 +38,9 @@
 	var/need_poo
 	var/speak_chance = 10
 	var/shadow = 1
+	var/pipe_implant_epta = 0
+	var/flash_implant_epta = 0
+	var/brightness_on = 3
 
 
 /mob/living/carbon/human/Life()
@@ -78,15 +81,16 @@
 			src << pick("# ÅÄÀ...","# ÆÐÀÒÜ...","# ÌßÑÀÀÀÀÀÀ!","# ÅÄÀÀÀÀÀ, ÃÄÅÅÅÅ?")
 			resting = 1
 
-
-	if(internal_organs == /obj/item/organ/pipe_implant)
+	if(pipe_implant_epta == 1)
 		nutrition -= 1
-		move_speed = 40
+		move_speed = 100
 		var/datum/effect/effect/system/harmless_smoke_spread/s = new /datum/effect/effect/system/harmless_smoke_spread
 		s.set_up(5, 1, src)
 		s.start()
 
-
+	if(flash_implant_epta == 1)
+		nutrition -= 1
+		SetLuminosity(brightness_on)
 
 	blinded = null
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.

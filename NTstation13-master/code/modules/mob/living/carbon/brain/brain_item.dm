@@ -25,26 +25,45 @@
 	icon_state = "internal_flasher"
 
 
-/obj/item/organ/flashlight_implant/attack(mob/living/carbon/human/H, mob/user)
-	if(ishuman(H))
-		H.internal_organs += /obj/item/organ/flashlight_implant
-
-
-
-/obj/item/organ/pipe_implant/attack(mob/living/carbon/M, mob/user)
+/obj/item/organ/flashlight_implant/attack(mob/living/carbon/human/M, mob/user)
 	if(!istype(M))
 		return ..()
-	if(!M.getorgan(/obj/item/organ/pipe_implant))
+	if(M.flash_implant_epta == 1)
+		return
+	if(!M.getorgan(/obj/item/organ/flashlight_implant))
 		var/mob/living/carbon/human/H = M
 		M.internal_organs += src
+		M.flash_implant_epta = 1
 		loc = null
+		qdel(src)
 		if(ishuman(M))
 			H.update_hair(0)
 
 		//Update the body's icon so it doesnt appear debrained anymore
 		if(ishuman(M))
 			H.update_hair(0)
+	else
+		..()
 
+
+
+/obj/item/organ/pipe_implant/attack(mob/living/carbon/human/M, mob/user)
+	if(!istype(M))
+		return ..()
+	if(M.pipe_implant_epta == 1)
+		return
+	if(!M.getorgan(/obj/item/organ/pipe_implant))
+		var/mob/living/carbon/human/H = M
+		M.internal_organs += src
+		M.pipe_implant_epta = 1
+		loc = null
+		qdel(src)
+		if(ishuman(M))
+			H.update_hair(0)
+
+		//Update the body's icon so it doesnt appear debrained anymore
+		if(ishuman(M))
+			H.update_hair(0)
 	else
 		..()
 
