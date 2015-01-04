@@ -72,6 +72,21 @@
 			emote("superfart")
 			nutrition -= 200
 
+	if(nutrition < 100)
+		if(rand(0,200) < speak_chance)
+			emote("shiver")
+			src << pick("# ÅÄÀ...","# ÆÐÀÒÜ...","# ÌßÑÀÀÀÀÀÀ!","# ÅÄÀÀÀÀÀ, ÃÄÅÅÅÅ?")
+			resting = 1
+
+
+	if(internal_organs == /obj/item/organ/pipe_implant)
+		nutrition -= 1
+		move_speed = 40
+		var/datum/effect/effect/system/harmless_smoke_spread/s = new /datum/effect/effect/system/harmless_smoke_spread
+		s.set_up(5, 1, src)
+		s.start()
+
+
 
 	blinded = null
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.

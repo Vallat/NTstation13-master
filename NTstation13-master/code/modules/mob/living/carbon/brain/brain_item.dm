@@ -13,6 +13,41 @@
 	var/mob/living/carbon/brain/brainmob = null
 
 
+/obj/item/organ/pipe_implant
+	name = "system accelerated metabolism"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "pipe_implant"
+	status = ORGAN_ORGANIC
+
+/obj/item/organ/flashlight_implant
+	name = "flashlight implant"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "internal_flasher"
+
+
+/obj/item/organ/flashlight_implant/attack(mob/living/carbon/human/H, mob/user)
+	if(ishuman(H))
+		H.internal_organs += /obj/item/organ/flashlight_implant
+
+
+
+/obj/item/organ/pipe_implant/attack(mob/living/carbon/M, mob/user)
+	if(!istype(M))
+		return ..()
+	if(!M.getorgan(/obj/item/organ/pipe_implant))
+		var/mob/living/carbon/human/H = M
+		M.internal_organs += src
+		loc = null
+		if(ishuman(M))
+			H.update_hair(0)
+
+		//Update the body's icon so it doesnt appear debrained anymore
+		if(ishuman(M))
+			H.update_hair(0)
+
+	else
+		..()
+
 /obj/item/organ/brain/New()
 	..()
 	//Shifting the brain "mob" over to the brain object so it's easier to keep track of. --NEO
