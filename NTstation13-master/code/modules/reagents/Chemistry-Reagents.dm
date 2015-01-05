@@ -18,6 +18,7 @@ datum
 		var/list/data
 		var/volume = 0
 		var/nutriment_factor = 0
+		var/TEMPERATURE = 0
 		//var/list/viruses = list()
 		var/color = "#000000" // rgb: 0, 0, 0 (does not support alpha channels - yet!)
 

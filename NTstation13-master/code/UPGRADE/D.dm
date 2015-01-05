@@ -32,6 +32,21 @@
 		O.z -= 1
 		return
 
+mob/
+	var/itch = 0
+	var/drought = 0
+
+/turf/space/Entered(mob/living/carbon/human/M as mob )
+	..()
+	M.drought += 1
+	if(!M.shoes)
+		M.itch += 1
+	if(!M.wear_mask)
+		M.drought += 1
+		M << "# Твое лицо не закрыто маской, тебе не очень хорошо"
+		M.adjustOxyLoss(1)
+
+
 /turf/space/k_k/Enter(mob/living/carbon/human/M as mob )
 	..()
 	M << "\red Ты куда-то упал"

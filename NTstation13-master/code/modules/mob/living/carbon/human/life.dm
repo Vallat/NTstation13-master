@@ -43,6 +43,7 @@
 	var/brightness_on = 3
 
 
+
 /mob/living/carbon/human/Life()
 	set invisibility = 0
 	set background = BACKGROUND_ENABLED
@@ -57,6 +58,10 @@
 	//code. Very ugly. I dont care. Moving this stuff here so its easy
 	//to find it.
 
+	if(reagents == /datum/reagent/water)
+		itch -= 2
+
+
 	if(Gloomy_thoughts == "Yes")
 		if(rand(0,200) < speak_chance)
 			src << pick("# Как же все плохо...","# Сейчас произойдет что-то плохое...","# Надо сваливать отсюда","# Что здесь есть кроме пустыни?")
@@ -64,6 +69,29 @@
 	if(Schizophrenia == "Yes")
 		if(rand(0,200) < speak_chance)
 			src << pick("# Беги...","# Песок ест мою душу...","# Ты так и хочешь крикнуть: АААААААААААА", "# Как руки менять", "# Как дышать?")
+
+	if(drought > 80)
+		src << pick("# Вода...","# Жаждаа...","# Хочу пить","# Водыыы")
+
+	if(drought > 100)
+		if(rand(0,200) < speak_chance)
+			emote("shiver")
+			src << pick("# ВОДА...","# ПИТЬ...","# ВОДЫЫЫ!","# ПИИИИИИИТЬ")
+			resting = 1
+			adjustOxyLoss(20)
+
+	if(drought < 0)
+		if(rand(0,200) < speak_chance)
+			emote("pee")
+			src << "# Поцаны, кто-то кажись тут нассал"
+
+	if(itch > 10)
+		if(rand(0,200) < speak_chance)
+			emote("scream")
+			src << pick("# Ноги...","# Ходить по раскаленному песку без ботинок было плохой идеей...","# ЗУД!","# Ноги!")
+			resting = 1
+			itch -= 5
+
 
 	if(nutrition < 350)
 		if(rand(0,200) < speak_chance)

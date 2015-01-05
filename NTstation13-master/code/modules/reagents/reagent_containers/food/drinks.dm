@@ -33,6 +33,7 @@
 			M << "<span class='notice'>You swallow a gulp of [src].</span>"
 			if(reagents.total_volume)
 				reagents.reaction(M, INGEST)
+				M.drought -= 20
 				spawn(5)
 					reagents.trans_to(M, gulp_size)
 
