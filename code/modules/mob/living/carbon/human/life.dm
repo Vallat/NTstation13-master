@@ -36,7 +36,7 @@
 	var/need_sleep
 	var/need_pee
 	var/need_poo
-	var/speak_chance = 10
+	var/speak_chance = 7
 	var/shadow = 1
 	var/pipe_implant_epta = 0
 	var/flash_implant_epta = 0
@@ -60,21 +60,17 @@
 	//to find it.
 
 	if(m_intent == "run")
-		stamina += 1
-		if(rand(0,600) < speak_chance)
-			src << pick("# Я бегу","# Я могу и запнутьс&#255;","# Аккуратнее с бегом","# Бег может и измотать")
-
+		if(rand(0,1600) < speak_chance)
+			src << pick("# В режиме бега вы тратите больше сил, осторожно")
+			stamina += 20
 
 	if(m_intent == "walk")
 		stamina -= 1
 
-	if(stamina > 100)
+	if(stamina > 600)
 		if(rand(0,1000) < speak_chance)
 			src << pick("# Я ща упаду","# Как же т&#255;жело","# Воздуха!","# Я измотан")
 			stamina -= 7
-			resting = 1
-
-
 
 	if(Gloomy_thoughts == "Yes")
 		if(rand(0,200) < speak_chance)
@@ -91,10 +87,8 @@
 		if(rand(0,200) < speak_chance)
 			emote("shiver")
 			src << pick("# ВОДА...","# ПИТЬ...","# ВОДЫЫЫ!","# ПИИИИИИИТЬ")
-			resting = 1
-			adjustOxyLoss(20)
 
-	if(drought < 0)
+	if(drought < -40)
 		if(rand(0,200) < speak_chance)
 			emote("pee")
 			src << "# Поцаны, кто-то кажись тут нассал"

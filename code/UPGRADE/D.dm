@@ -45,7 +45,6 @@ mob/
 		if(rand(0,300) < M.speak_chance)
 			M << "# Плохо ходить по пустыне без маски"
 		M.drought += 1
-		M.adjustOxyLoss(1)
 
 
 /turf/space/k_k/Enter(mob/living/carbon/human/M as mob )
