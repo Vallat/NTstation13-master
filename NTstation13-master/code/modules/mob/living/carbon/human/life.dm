@@ -41,6 +41,7 @@
 	var/pipe_implant_epta = 0
 	var/flash_implant_epta = 0
 	var/brightness_on = 3
+	var/stamina = 0
 
 
 
@@ -58,8 +59,21 @@
 	//code. Very ugly. I dont care. Moving this stuff here so its easy
 	//to find it.
 
-	if(reagents == /datum/reagent/water)
-		itch -= 2
+	if(m_intent == "run")
+		stamina += 1
+		if(rand(0,600) < speak_chance)
+			src << pick("# Я бегу","# Я могу и запнутьс&#255;","# Аккуратнее с бегом","# Бег может и измотать")
+
+
+	if(m_intent == "walk")
+		stamina -= 1
+
+	if(stamina > 100)
+		if(rand(0,1000) < speak_chance)
+			src << pick("# Я ща упаду","# Как же т&#255;жело","# Воздуха!","# Я измотан")
+			stamina -= 7
+			resting = 1
+
 
 
 	if(Gloomy_thoughts == "Yes")
@@ -84,6 +98,7 @@
 		if(rand(0,200) < speak_chance)
 			emote("pee")
 			src << "# Поцаны, кто-то кажись тут нассал"
+			drought += 20
 
 	if(itch > 10)
 		if(rand(0,200) < speak_chance)

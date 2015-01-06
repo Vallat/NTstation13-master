@@ -42,8 +42,9 @@ mob/
 	if(!M.shoes)
 		M.itch += 1
 	if(!M.wear_mask)
+		if(rand(0,300) < M.speak_chance)
+			M << "# Плохо ходить по пустыне без маски"
 		M.drought += 1
-		M << "# Твое лицо не закрыто маской, тебе не очень хорошо"
 		M.adjustOxyLoss(1)
 
 
