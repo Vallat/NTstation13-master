@@ -12,6 +12,8 @@
 	use_power = 1
 	idle_power_usage = 2
 	active_power_usage = 500
+	var/power_power = 0
+
 
 //auto-gibs anything that bumps into it
 /obj/machinery/gibber/autogibber

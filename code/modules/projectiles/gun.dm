@@ -21,6 +21,7 @@
 	var/clumsy_check = 1
 	var/obj/item/ammo_casing/chambered = null
 	var/trigger_guard = 1
+	var/bullet_shance = 5
 
 	var/list/upgrades = list()
 
@@ -36,6 +37,10 @@
 	return
 
 /obj/item/weapon/gun/proc/shoot_live_shot(mob/living/user as mob|obj, var/pointblank = 0, var/mob/pbtarget = null)
+	if(rand(0, 8) > bullet_shance)
+		user << "<span class='warning'>*click*</span>"
+		playsound(user, 'sound/weapons/emptyclick.ogg', 40, 1)
+
 	if(recoil)
 		spawn()
 			shake_camera(user, recoil + 1, recoil)
@@ -44,6 +49,9 @@
 		playsound(user, fire_sound, 10, 1)
 	else
 		playsound(user, fire_sound, 50, 1)
+		var/datum/effect/effect/system/harmless_smoke_spread/s = new /datum/effect/effect/system/harmless_smoke_spread
+		s.set_up(2, 1, src)
+		s.start()
 		if(pointblank)
 			user.visible_message("<span class='danger'>[user] fires [src] point blank at [pbtarget]!</span>", "<span class='danger'>You fire [src] point blank at [pbtarget]!</span>", "You hear a [istype(src, /obj/item/weapon/gun/energy) ? "laser blast" : "gunshot"]!")
 		else
@@ -107,6 +115,7 @@
 		shoot_with_empty_chamber(user)
 	process_chamber()
 	update_icon()
+
 
 	user.update_inv_hands(0)
 

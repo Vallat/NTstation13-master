@@ -11,6 +11,62 @@
 		O.z += 1
 		return
 
+/turf/unsimulated/wall/rock/attack_hand(mob/user as mob)
+	var/mob/O = usr
+
+	for (var/mob/V in viewers(usr))
+		V.show_message("[usr] ползет по [src].", 3)
+	if(do_after(usr, 20))
+		O.client.perspective = EYE_PERSPECTIVE
+		O.client.eye = src
+		O.loc = src
+		sleep(30)
+		O.z += 1
+		return
+
+/turf/unsimulated/wall/rock/ultra
+	name = "rock"
+	icon_state = "rock_up"
+
+/turf/unsimulated/wall/rock/ultra/attack_hand(mob/user as mob)
+	var/mob/living/carbon/human/O = usr
+
+	for (var/mob/V in viewers(usr))
+		V.show_message("[usr] ползет по [src].", 3)
+	if(rand(0,160) < O.speak_chance)
+		if(do_after(usr, 20))
+			O.client.perspective = EYE_PERSPECTIVE
+			O.client.eye = src
+			O.loc = src
+			O.z += 1
+			return
+	else
+		if(do_after(usr, 20))
+			if(src.x + 1 == O.x)
+				for (var/mob/V in viewers(usr))
+					V.show_message("[usr] падает!", 3)
+				O.x -= 1
+				O.emote("scream")
+				O.adjustBruteLoss(rand(0,200))
+			if(src.x - 1 == O.x)
+				for (var/mob/V in viewers(usr))
+					V.show_message("[usr] падает!", 3)
+				O.x += 1
+				O.emote("scream")
+				O.adjustBruteLoss(rand(0,200))
+			if(src.y - 1 == O.y)
+				for (var/mob/V in viewers(usr))
+					V.show_message("[usr] падает!", 3)
+				O.y += 1
+				O.emote("scream")
+				O.adjustBruteLoss(rand(0,200))
+			if(src.y + 1 == O.y)
+				for (var/mob/V in viewers(usr))
+					V.show_message("[usr] падает!", 3)
+				O.y -= 1
+				O.emote("scream")
+				O.adjustBruteLoss(rand(0,200))
+			return
 
 /turf/unsimulated/wall/rock
 	name = "rock"
@@ -20,6 +76,11 @@
 /turf/space/k_k
 	name = "pit"
 	icon = 'icons/turf/pit.dmi'
+
+/turf/space/k_k/rock
+	name = "rock"
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "rock_super"
 
 /turf/space/k_k/attack_hand(mob/user as mob)
 	var/mob/O = usr

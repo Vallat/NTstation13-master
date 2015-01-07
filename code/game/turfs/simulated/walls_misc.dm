@@ -26,6 +26,13 @@ turf/simulated/ladder_wall
 	density = 1
 	opacity = 1
 
+turf/simulated/ladder_wall/rock
+	name = "rock"
+	desc = "Rock."
+	icon_state = "rock_mini"
+	icon = 'icons/turf/walls.dmi'
+	density = 1
+	opacity = 1
 
 turf/simulated/illuminator_wall
 	name = "wall"

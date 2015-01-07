@@ -73,6 +73,9 @@ display round(lastgen) and plasmatank amount
 	if(active && HasFuel() && !crit_fail && anchored && powernet)
 		add_avail(power_gen * power_output)
 		UseFuel()
+		var/datum/effect/effect/system/bad_smoke_spread/s = new /datum/effect/effect/system/bad_smoke_spread
+		s.set_up(8, 1, src)
+		s.start()
 		src.updateDialog()
 
 	else
