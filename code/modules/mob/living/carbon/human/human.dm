@@ -665,3 +665,55 @@ mob/living/carbon/human/verb/PO_TORMOZAM()
 	PO_TORMOZAM = 1
 	sleep(15)
 	PO_TORMOZAM = 0
+
+////////////////////////////////////////////CRAAAAAAAAFT
+//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+mob/living/carbon/human/verb/bonfire(mob/living/carbon/human/O as mob, obj/item/log/Z as obj)
+	set name = "bonfire"
+	set category = "Craft"
+	if(istype(Z, /obj/item/log))
+		new /obj/structure/bonfire(O.loc)
+		qdel(Z)
+
+mob/living/carbon/human/verb/lantern(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/K as obj)
+	set name = "lantern"
+	set category = "Craft"
+	var/plus = 0
+	if(istype(Z, /obj/item/candle))
+		plus = 1
+	if(plus == 1 && istype(K, /obj/item/weapon/reagent_containers/food/drinks/drinkingglass))
+		new /obj/item/device/flashlight/lantern(O.loc)
+		qdel(Z)
+		qdel(K)
+
+mob/living/carbon/human/verb/shield(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/K as obj)
+	set name = "shield"
+	set category = "Craft"
+	var/plus = 0
+	if(istype(Z, /obj/item/weapon/tray))
+		plus = 1
+	if(plus == 1 && istype(K, /obj/item/weapon/weldingtool))
+		new /obj/item/weapon/shield/riot/roman(O.loc)
+		qdel(Z)
+
+mob/living/carbon/human/verb/knife(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/K as obj)
+	set name = "knife"
+	set category = "Craft"
+	var/plus = 0
+	if(istype(Z, /obj/item/weapon/face_hair_cutter))
+		plus = 1
+	if(istype(Z, /obj/item/weapon/hair_cutter))
+		plus = 1
+	if(istype(Z, /obj/item/weapon/scalpel))
+		plus = 1
+	if(istype(Z, /obj/item/weapon/shard))
+		plus = 1
+	if(plus == 1 && istype(K, /obj/item/taperoll/ISOLENTA))
+		new /obj/item/weapon/kitchenknife(O.loc)
+		qdel(Z)
+		qdel(K)
+

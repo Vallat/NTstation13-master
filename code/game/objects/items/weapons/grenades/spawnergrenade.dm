@@ -62,7 +62,7 @@
 	origin_tech = "materials=3;magnets=4;syndicate=4"
 
 /obj/item/weapon/grenade/spawnergrenade/tripwater
-	name = "trip bomb"
+	name = "liquefied funk grenage"
 	spawner_type = /obj/effect/effect/tripwater
 	deliveryamt = 5
 	origin_tech = "materials=3;magnets=4;syndicate=4"

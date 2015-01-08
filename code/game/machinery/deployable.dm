@@ -339,3 +339,21 @@ for reference:
 		explosion(src.loc,-1,-1,0)
 		if(src)
 			qdel(src)
+
+/obj/structure/bonfire
+	name = "bonfire"
+	icon = 'structures.dmi'
+	icon_state = "bonfire"
+	var/heating_power = 40000
+	var/heat_capacity = 1
+	var/set_temperature = 50
+
+/obj/structure/bonfire/New()
+	SetLuminosity(4)
+	var/turf/simulated/L = loc
+	if(istype(L))
+		var/datum/gas_mixture/env = L.return_air()
+		if(env.temperature < (set_temperature+T0C))
+			var/transfer_moles = 0.25 * env.total_moles()
+			var/datum/gas_mixture/removed = env.remove(transfer_moles)
+			removed.temperature = min((removed.temperature*heat_capacity + heating_power)/heat_capacity, 1000)

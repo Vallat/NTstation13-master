@@ -19,6 +19,13 @@
 	density = 1
 	var/icon_base
 
+/obj/item/taperoll/ISOLENTA
+	name = "tape roll"
+	icon = 'icons/obj/hazardtape.dmi'
+	desc = "”ниверсальный крепежный инструмент, епт."
+	icon_state = "ISOLENTA"
+	icon_base = "security"
+
 /obj/item/taperoll/security
 	name = "secruity tape roll"
 	desc = "A roll of security hazard tape used to block crime scenes from non-security staff. It can be placed in segments along hallways or on airlocks to restrict access."
@@ -99,8 +106,8 @@
 				var/obj/item/tape/P = new tape_type(cur)
 				P.icon_state = "[P.icon_base]_[dir]"
 			cur = get_step_towards(cur,end)
-			
-		usr << "<span class='notice'>You finish placing the [src].</span>"	
+
+		usr << "<span class='notice'>You finish placing the [src].</span>"
 
 /obj/item/taperoll/afterattack(var/atom/A, var/mob/user)
 	if (istype(A, /obj/machinery/door/airlock))
