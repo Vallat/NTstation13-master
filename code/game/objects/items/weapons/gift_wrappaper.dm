@@ -7,6 +7,15 @@
 /*
  * Gifts
  */
+
+/obj/item/weapon/rock
+	name = "rock"
+	desc = "That rock?"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "rock"
+	force = 5
+	throwforce = 18.0
+
 /obj/item/weapon/a_gift
 	name = "gift"
 	desc = "PRESENTS!!!! eek!"

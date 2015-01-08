@@ -4,7 +4,7 @@
 	animate_movement = 2
 	flags = 0
 	var/datum/mind/mind
-
+	var/affectedsex = null
 	var/stat = 0 //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/tmp/obj/screen/flash = null

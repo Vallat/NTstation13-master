@@ -717,3 +717,43 @@ mob/living/carbon/human/verb/knife(mob/living/carbon/human/O as mob, obj/item/Z 
 		qdel(Z)
 		qdel(K)
 
+
+
+mob/living/carbon/human/verb/gun(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/K as obj, obj/item/F as obj)
+	set name = "gun"
+	set category = "Craft"
+	var/plus = 0
+	var/plus_plus = 0
+	if(istype(Z, /obj/item/pipe))
+		plus = 1
+	if(istype(K, /obj/item/ammo_box/c38))
+		plus_plus = 1
+	if(plus == 1 && plus_plus == 1 && istype(F, /obj/item/taperoll/ISOLENTA))
+		new /obj/item/weapon/gun/projectile/revolver/steam/reaver(O.loc)
+		qdel(Z)
+		qdel(K)
+		qdel(F)
+
+mob/living/carbon/human/verb/bed(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/F as obj)
+	set name = "bed"
+	set category = "Craft"
+	var/plus = 0
+	if(istype(Z, /obj/item/weapon/bedsheet))
+		plus = 1
+	if(plus == 1 && istype(F, /obj/item/weapon/bedsheet))
+		new /obj/structure/stool/bed/qbed(O.loc)
+		qdel(Z)
+		qdel(F)
+
+mob/living/carbon/human/verb/flint(mob/living/carbon/human/O as mob, obj/item/Z as obj, obj/item/F as obj)
+	set name = "flint"
+	set category = "Craft"
+	var/plus = 0
+	if(istype(Z, /obj/item/weapon/rock))
+		plus = 1
+	if(plus == 1 && istype(F, /obj/item/weapon/rock))
+		new /obj/item/weapon/lighter/flint(O.loc)
+		qdel(Z)
+		qdel(F)
+
+

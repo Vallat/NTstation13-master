@@ -420,6 +420,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "zippoon"
 	icon_off = "zippo"
 
+
+/obj/item/weapon/lighter/flint
+	name = "flint"
+	desc = "That flint."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "flint"
+
 /obj/item/weapon/lighter/random
 	New()
 		var/color = pick("r","c","y","g")
