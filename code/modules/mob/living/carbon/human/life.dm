@@ -37,7 +37,7 @@
 	var/need_pee
 	var/need_poo
 	var/speak_chance = 7
-	var/shadow = 1
+	var/shadow = 0
 	var/pipe_implant_epta = 0
 	var/flash_implant_epta = 0
 	var/brightness_on = 3
