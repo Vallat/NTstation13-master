@@ -1065,19 +1065,6 @@
 		if(damageoverlay.overlays)
 			damageoverlay.overlays = list()
 
-
-		if(shadow == 1)
-			var/image/I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "shadow")
-			if(src.dir == 1)
-				I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "shadow")
-			if(src.dir == 2)
-				I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "shadow2")
-			if(src.dir == 4)
-				I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "shadow4")
-			if(src.dir == 8)
-				I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "shadow8")
-			damageoverlay.overlays += I
-
 		if(stat == UNCONSCIOUS)
 			//Critical damage passage overlay
 			if(health <= config.health_threshold_crit)
